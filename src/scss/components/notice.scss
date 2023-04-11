@@ -1,0 +1,15 @@
+.notice {
+    display: inline-flex;
+    align-items: center;
+    font-size: rem(14);
+    font-weight: 500;
+    padding: rem(5) rem(13);
+    border-radius: rem(10);
+    // ._blue
+
+    &._blue {
+        background: var(--blue);font-weight: 500;
+        color: var(--white);
+
+    }
+}

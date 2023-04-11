@@ -1,0 +1,43 @@
+.lk-section {
+}
+
+.lk {
+
+		// .lk__container
+
+		&__container {
+		}
+
+		// .lk__content
+
+		&__content {
+		}
+
+		// .lk__row
+
+		&__row {
+            
+            
+            @media (min-width:$tablet){
+                grid-template-columns: 200px minmax(500px, 1fr);
+                display: grid;
+            }
+
+            @media (min-width:em(1200)){
+                gap: rem(120);
+            }
+
+            @media (max-width: em(1200)){
+                gap: rem(30);
+            }
+
+		}
+
+
+        &__title {
+            @include adaptiveValue("font-size", 44,24 );
+            line-height: math.div( 28,24 );
+            font-weight: 300;
+            margin-bottom: rem(20); 
+        }
+}

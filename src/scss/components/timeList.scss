@@ -1,0 +1,54 @@
+.timeList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(4);
+
+    // .timeList__item
+
+    &__item {
+        max-width: rem(46);
+
+
+
+        label {
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #EEEEEE;
+            color: var(--gray-4);
+            font-size: rem(12);
+            font-weight: 500;
+            height: rem(28);
+            border-radius: rem(10);
+            padding: rem(5) rem(10);
+            background: var(--white);
+            transition: var(--transition);
+
+            &:hover {
+                border-color: #c7c7c7;
+            }
+            
+        }
+
+        input {
+            position: absolute;
+            width: 0;
+            height: 0;
+            opacity: 0;
+
+            &:checked+label {
+                background: var(--pink);
+                border-color: var(--pink);
+                color: var(--white);
+            }
+        }
+
+
+    }
+}
+
+
+
+
+

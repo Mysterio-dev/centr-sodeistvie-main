@@ -1,0 +1,156 @@
+<!-- Вход в личный кабинет -->
+<div id="enter" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content _enter">
+             <div class="popup__top">
+				<div class="form-check__row">
+				<div class="form-check__button">
+					<input type="radio" name="radioPopup" id="clientRadio" checked>
+					<label for="clientRadio">
+						Я клиент
+					</label>
+				  </div>
+				  <div class="form-check__button">
+					<input type="radio" name="radioPopup" id="assistantRadio" >
+					<label for="assistantRadio">
+						Я сиделка
+					</label>
+				  </div>
+				</div>
+			 </div>
+			<div class="popup__body">
+				<div class="form-group">
+					<div class="form-control">
+						<label class="form-control__label">Номер телефона</label>
+						<input class="form-control__input phone-mask" autocomplete="off" type="text" placeholder="+7" />
+					</div>
+				</div>
+				<button class="btn__pink w-100" type="button">Получить код</button>
+				<div class="form-login">
+					<p class="form-login__text">Войти с помощью</p>
+					<div class="form-login__row">
+						<button class="form-login__link _sber" type="button"></button>
+						<button class="form-login__link _gosuslugi" type="button"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Выбор города -->
+<div id="city" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content _city">
+			<h4 class="popup__title">
+				Выберите ваш город
+			</h4>
+			<div class="popup__body">
+				<button data-close type="button" class="popup__close">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>						
+				</button>
+				
+				<ul class="cityList">
+					<li class="cityList__item">
+						<a href="">
+							Набережные Челны
+						</a>
+					</li>
+					<li class="cityList__item">
+						<a href="">
+							Казань
+						</a>
+					</li>
+					<li class="cityList__item">
+						<a href="">
+							Нижнекамск
+						</a>
+					</li>
+					<li class="cityList__item">
+						<a href="">
+							Елабуга
+						</a>
+					</li>
+					<li class="cityList__item">
+						<a href="">
+							Заинск
+						</a>
+					</li>
+					<li class="cityList__item">
+						<a href="">
+							Альметьевск
+						</a>
+					</li>
+					<li class="cityList__item">
+						<a href="">
+							Бугульма
+						</a>
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Отправить заявку сиделке -->
+<div id="assistant-request" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<div class="popup__body">
+				<button data-close type="button" class="popup__close">
+					<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round"/>
+						<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>						
+				</button>
+				<h4 class="popup__title">
+					Связаться с работником
+				</h4>
+				<p class="popup__text">
+					Опишите сиделке кратко вашу задачу, дату и адрес выполнения	
+				</p>
+
+				<div class="form__row-grid">
+					<div class="form__col-grid col-12">
+						<div class="form-control">
+							<label class="form-control__label">Ваша задача</label>
+							<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Необходим уход за пожилой женщиной на дому" />
+						</div>
+					</div>
+
+					<div class="form__col-grid col-md-4">
+					<div class="form-control">
+						<label class="form-control__label">Дата</label>
+						<input class="form-control__input" name="date1" autocomplete="off" type="text" placeholder="" value="26 Апр." />
+						<i class="icon__calendar"></i>
+					</div>
+					</div>
+
+					<div class="form__col-grid col-md-8">
+						<div class="form-control">
+							<label class="form-control__label">Адрес</label>
+							<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="ул. Профсоюзная, дом 23" />
+						</div>
+					</div>
+				</div>
+
+				<div class="popup__bottom">
+					<button class="btn__pink _w-200" type="button">Отправить заявку</button>
+				</div>
+
+
+		
+			
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Просмотр услуги"
+	})
+	<body>
+		<div class="preloader">
+			<div class="preloader-inner">
+			  <div class="preloader-icon">
+				<span></span>
+				<span></span>
+			  </div>
+			</div>
+		  </div>
+		<div class="wrapper">
+				@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="breadcrumb__container">
+					<nav class="breadcrumb-nav">
+						<ol class="breadcrumb-nav__list">
+						  <li class="breadcrumb-nav__item"><a href="#">Главная</a></li>
+						  <li class="breadcrumb-nav__item"><a href="#">Услуги</a></li>
+						  <li class="breadcrumb-nav__item _active" aria-current="page">сиделка в больницу</li>
+						</ol>
+					</nav>
+				</div>
+				
+				@@include('html/_service-in.htm',{})
+				@@include('html/_reviews.htm',{})
+				@@include('html/_help.htm',{})
+				@@include('html/_partners.htm',{})
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -1,0 +1,70 @@
+<div class="form">
+  <div class="form__container">
+    <form action="">
+      <div class="form__wrapper">
+        <div class="form__grid-row _g-2">
+          <div class="form__content">
+            <h2 class="form__title">Заполните анкету</h2>
+            <p class="form__text">
+              Оставьте быструю заявку и мы свяжемся с вами в ближайшее время
+            </p>
+            <div class="form__grid-group">
+              <div class="form-control">
+                <label class="form-control__label">Ваше имя</label>
+                <input class="form-control__input" autocomplete="off" type="text" placeholder="Александра"
+                  inputmode="text" />
+              </div>
+              <div class="form-control">
+                <label class="form-control__label">Номер телефона</label>
+                <input class="form-control__input phone-mask" autocomplete="off" type="text" placeholder="+7"
+                  inputmode="text" />
+              </div>
+              <div class="form-control">
+                <label class="form-control__label">Электронная почта</label>
+                <input class="form-control__input" autocomplete="off" type="email" placeholder="name@mail.com"
+                  inputmode="text" />
+              </div>
+              <div class="form-control _span-3">
+                <label class="form-control__label">Опишите вашу проблему</label>
+                <input class="form-control__input" autocomplete="off" type="text" placeholder="Моя проблема..."
+                  inputmode="text" />
+              </div>
+            </div>
+            <div class="form__form-bottom">
+              <button type="submit" class="btn__white">Отправить заявку</button>
+
+              <button type="button" class="btn__attach">
+                <span>Прикрепить документ</span>
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M12.3297 12.15L9.85969 14.62C8.48969 15.99 8.48969 18.2 9.85969 19.57C11.2297 20.94 13.4397 20.94 14.8097 19.57L18.6997 15.68C21.4297 12.95 21.4297 8.51004 18.6997 5.78004C15.9697 3.05004 11.5297 3.05004 8.79969 5.78004L4.55969 10.02C2.21969 12.36 2.21969 16.16 4.55969 18.51"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <input type="file" id="doc-upload" accept=".pdf,.doc,.docx" style="display: none;">
+              </button>
+
+
+              <div class="checkbox">
+                <input id="c_1" class="checkbox__input" type="checkbox" value="1" checked="" />
+                <label for="c_1" class="checkbox__label"><span class="checkbox__text">Согласие
+                    <a href="">с политикой конфиденциальности</a></span></label>
+              </div>
+            </div>
+          </div>
+          <div class="form__picture">
+
+            <picture>
+              <source srcset="@img/icons/main-2.svg" media="(min-width: 1199px)">
+              <img srcset="" alt="">
+             </picture>
+
+            
+            
+          </div>
+        </div>
+
+          
+      </div>
+    </form>
+  </div>
+</div>

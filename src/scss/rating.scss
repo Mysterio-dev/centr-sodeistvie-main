@@ -1,0 +1,23 @@
+.rating {
+    display: flex;
+
+    // .rating__star
+
+    &__star {
+        path {
+            fill: #D6DAE2;
+        }
+
+        &._active {
+            path {
+                fill: #07B3E8
+            }
+
+        }
+    }
+}
+
+
+.rating-container {
+    display: flex;
+}

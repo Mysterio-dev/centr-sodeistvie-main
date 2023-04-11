@@ -1,0 +1,145 @@
+.sidebar {
+
+    @media (max-width:$tablet){
+         margin-bottom: rem(40); 
+    }
+
+    // .sidebar__head
+
+    &__head {
+      
+
+        @media (min-width:$mobile){
+            margin-bottom: rem(40); 
+       }
+
+       @media (max-width:$mobile){
+            margin-bottom: rem(20); 
+       }
+    }
+
+    // .sidebar__user
+
+    &__user {
+     
+
+        @media (min-width:$mobile){
+             margin-bottom: rem(40); 
+        }
+
+        @media (max-width:$mobile){
+             margin-bottom: rem(20); 
+        }
+    }
+
+    // .sidebar__user-name
+
+    &__user-name {
+        display: block;
+        @include adaptiveValue("font-size", 24,20 );
+        line-height: math.div( 28,22 );
+        font-weight: 500;
+        margin-bottom: rem(8);
+    }
+
+    // .sidebar__user-phone
+
+    &__user-phone {
+        font-size: rem(12);
+        color: var(--gray-5);
+        font-weight: 500;
+        transition: var(--transition);
+
+        &:hover {
+            color: var(--blue-dark);
+        }
+    }
+
+    // .sidebar__tariff
+
+    &__tariff {
+    }
+
+    // .sidebar__tariff-title
+
+    &__tariff-title {
+        font-size: rem(12);
+        color: var(--gray-5);
+        font-weight: 500;
+        margin-bottom: rem(8);
+    }
+
+    // .sidebar__nav
+
+    &__nav {
+    }
+
+    // .sidebar__nav-list
+
+    &__nav-list {
+    }
+
+    // .sidebar__nav-item
+
+    &__nav-item {
+        margin-bottom: rem(25);
+
+        &:last-child {
+            margin-bottom: rem(0);
+        }
+       
+    }
+
+    // .sidebar__nav-link
+
+    &__nav-link {
+        display: flex;
+        align-items: center;
+        gap: rem(20);
+        @include adaptiveValue("font-size", 18,16 );
+        transition: var(--transition);
+
+        &._active {
+            color: var(--pink);
+
+            svg {
+                path {
+                    stroke: var(--pink);
+                }
+            }
+        }
+
+        &._muted {
+            color: var(--gray-6);
+
+            svg {
+                path {
+                    stroke: var(--gray-6);
+                }
+            }
+        }
+
+        svg {
+            path {
+                transition: all .2s ease;
+                stroke: var(--blue-dark);
+            }
+        }
+
+        &:hover {
+            color: var(--pink);
+
+            svg {
+                path {
+                    stroke: var(--pink);
+                }
+            }
+        }
+    }
+
+    // .sidebar__nav-icon
+
+    &__nav-icon {
+        display: flex;
+    }
+}

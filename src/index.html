@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Главная"
+	})
+	<body>
+		<div class="preloader">
+			<div class="preloader-inner">
+			  <div class="preloader-icon">
+				<span></span>
+				<span></span>
+			  </div>
+			</div>
+		  </div>
+		<div class="wrapper">
+			<section class="hero">
+				@@include('html/_header.htm',{})
+				@@include('html/_hero-slider.htm',{})
+			</section>
+			<main class="page">
+				@@include('html/_about.htm',{})
+				@@include('html/_features.htm',{})
+				@@include('html/_features-card.htm',{})
+				@@include('html/_assistant.htm',{})
+				@@include('html/_services.htm',{})
+				@@include('html/_about_2.htm',{})
+				@@include('html/_reviews.htm',{})
+				@@include('html/_help.htm',{})
+				@@include('html/_partners.htm',{})
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -1,0 +1,45 @@
+.social {
+
+    // .social__title
+
+    &__title {
+        @include adaptiveValue("font-size", 20,18 );
+        font-weight: 500;
+        margin-bottom: rem(16);
+    }
+
+    // .social__row
+
+    &__row {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+    }
+
+    // .social__item
+
+    &__item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(54);
+        height: rem(54);
+        background: var(--pink);
+        border-radius: rem(20);
+        transition: var(--transition);
+
+        &:hover {
+            background: var(--pink-dark);
+        }
+    }
+}
+
+
+@media (max-width:$mobile){
+    .social__item {
+        width: rem(50);
+        height: rem(50);
+       
+        
+    } 
+}

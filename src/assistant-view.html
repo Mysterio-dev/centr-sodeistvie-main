@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Просмотр сиделки"
+	})
+	<body>
+		<div class="preloader">
+			<div class="preloader-inner">
+			  <div class="preloader-icon">
+				<span></span>
+				<span></span>
+			  </div>
+			</div>
+		  </div>
+		<div class="wrapper">
+				@@include('html/_header.htm',{})
+			<main class="page">
+				<div class="breadcrumb__container">
+					<nav class="breadcrumb-nav">
+						<ol class="breadcrumb-nav__list">
+						  <li class="breadcrumb-nav__item"><a href="#">главная</a></li>
+						  <li class="breadcrumb-nav__item"><a href="#">сиделки</a></li>
+						  <li class="breadcrumb-nav__item _active" aria-current="page">сиделка галина николаевна</li>
+						</ol>
+					  </nav>
+					</div>
+
+
+				@@include('html/assistant-view/_assistant-card.htm',{})
+				@@include('html/_services.htm',{})
+				@@include('html/_help.htm',{})
+				@@include('html/_partners.htm',{})
+			</main>
+			@@include('html/_footer.htm',{})
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

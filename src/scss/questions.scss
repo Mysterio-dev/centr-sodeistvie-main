@@ -1,0 +1,22 @@
+.questions {
+    margin-top: rem(90);
+
+    // .questions__container
+
+    &__container {
+    }
+
+    // .questions__title
+
+    &__title {
+        @include adaptiveValue("font-size", 24,18 );
+        margin-bottom: rem(20);
+        font-weight: 500;
+    }
+}
+
+@media (max-width:$mobile){
+    .questions {
+        margin-top: rem(50);
+    } 
+}

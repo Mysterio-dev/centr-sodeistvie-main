@@ -1,0 +1,134 @@
+.donate {
+    .title-main {
+        @media (min-width:$mobile) {
+            margin-bottom: rem(40);
+        }
+    }
+
+    // .donate__container
+
+    &__container {}
+
+    // .donate__row
+
+    &__row {
+        display: grid;
+        gap: rem(45);
+
+
+        @media (min-width:em(1199)) {
+            grid-template-columns: minmax(500px, 780px) 1fr;
+        }
+    }
+
+    // .donate__content
+
+    &__content {}
+
+
+
+    // .donate__subtitle
+
+    &__subtitle {
+        @include adaptiveValue("font-size", 18, 16);
+        line-height: math.div(28, 22);
+        margin-bottom: rem(47);
+    }
+
+
+    // .donate__form
+
+    &__form {}
+
+    // .donate__block
+
+    &__block {}
+
+    // .donate__img
+
+    &__img {
+        position: relative;
+        z-index: 2;
+        width: 100%;
+
+        img {
+
+            @media (max-width: em(1199)) {
+                max-width: rem(540);
+                width: 100%;
+            }
+
+        }
+
+
+    }
+
+
+
+    // .donate__tabs
+
+    &__tabs {
+        margin-top: rem(50);
+    }
+
+
+    // .donate__collected
+
+    &__collected {
+        max-width: rem(450);
+        margin-top: rem(40);
+        position: relative;
+        z-index: 1;
+
+        @media (min-width:em(1199)){
+            padding-left: rem(90);
+        }
+
+        svg {
+            position: absolute;
+            top: 25%;
+            left: 70%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+        }
+
+    }
+
+    // .donate__collected-total
+
+    &__collected-total {
+        display: flex;
+        @include adaptiveValue("font-size", 52, 32);
+        font-weight: 300;
+        margin-bottom: rem(20);
+        color: var(--pink);
+    }
+
+
+
+    // .donate__collected-wrap
+
+    &__collected-wrap {}
+
+
+    // .donate__collected-title
+
+    &__collected-title {
+        font-weight: 500;
+        color: var(--blue-dark);
+        @include adaptiveValue("font-size", 22, 18);
+        margin-bottom: rem(22);
+    }
+
+    // .donate__collected-text
+
+    &__collected-text {
+        color: var(--gray);
+        font-family: 'Montserrat';
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: math.div(28, 22);
+        font-weight: 500;
+    }
+
+
+}

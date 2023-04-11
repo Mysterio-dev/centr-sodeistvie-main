@@ -1,0 +1,47 @@
+.badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: rem(16);
+      font-weight: 500;
+      font-size: rem(12);
+      height: rem(24);
+
+      // ._dark
+
+      &._dark {
+            padding: rem(5) rem(14);
+            background: var(--blue-dark);
+            color: var(--white);
+      }
+
+      // ._success
+
+      &._success {
+            gap: rem(12);
+            background: var(--gray-3);
+            color: var(--pink);
+            padding: rem(5) rem(5) rem(5) rem(14);
+
+      }
+
+      // primary
+
+      &._primary {
+            gap: rem(12);
+            background: var(--gray-3);
+            color: var(--pink);
+            padding: rem(5) rem(5) rem(5) rem(14);
+
+      }
+
+
+
+      // ._secondary
+
+      &._secondary {
+            gap: rem(10);
+            padding: rem(5) rem(2) rem(5) rem(14);
+            background: var(--blue-dark);
+            color: var(--white);
+      }
+}

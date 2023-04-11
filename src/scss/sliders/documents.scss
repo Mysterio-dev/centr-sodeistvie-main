@@ -1,0 +1,33 @@
+.documents {
+
+    @media (min-width:$mobile){
+         margin-top: rem(120); 
+    }
+
+    @media (max-width:$mobile){
+         margin-top: rem(40); 
+    }
+
+    // .documents__title
+
+    &__title {
+        margin-bottom: rem(40);
+        @media (max-width:$mobile){
+             margin-bottom: rem(20); 
+        }
+    }
+
+    // .documents__container
+
+    &__container {}
+
+    // .documents__slider-container
+
+    &__slider-container {
+        position: relative;
+    }
+
+    // .documents__slider
+
+    &__slider {}
+}

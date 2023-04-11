@@ -1,0 +1,141 @@
+.messages {
+
+    // .messages__list
+
+    &__list {
+        margin-top: rem(35);
+    }
+
+    // .messages__item
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: rem(13) 0;
+        border-top: 1px solid var(--gray-light);
+
+        &:last-child {
+            border-bottom: 1px solid var(--gray-light);
+        }
+    }
+
+    // .messages__profile
+
+    &__profile {
+        display: flex;
+        align-items: center;
+        gap: rem(15);
+        margin-right: rem(20);
+
+        @media (min-width:$tablet) {
+            flex: 0 0 rem(283);
+        }
+
+        @media (max-width:$tablet) {
+            flex: 0 0 rem(250);
+        }
+
+        @media (max-width: em(575)){
+            flex: 0 0 rem(200);
+            margin-right: rem(15);
+            gap: rem(10);
+
+        }
+    }
+
+    // .messages__avatar
+
+    &__avatar {
+        width: rem(46);
+        height: rem(46);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // .messages__info
+
+    &__info {}
+
+    // .messages__name
+
+    &__name {
+        display: block;
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: math.div( 28,22 );
+        font-weight: 500;
+        margin-bottom: rem(5);
+
+        @media (max-width: em(575)){
+              margin-bottom: rem(4);
+        }
+    }
+
+    // .messages__details
+
+    &__details {
+        font-size: rem(12);
+        white-space: nowrap;
+    }
+
+    // .messages__rating
+
+    &__rating {}
+
+    // .messages__reviews
+
+    &__reviews {
+        &::before {
+            content: '·';
+        }
+    }
+
+    // .messages__body
+
+    &__body {
+        flex-grow: 1;
+        margin-right: rem(10)
+    }
+
+    // .messages__text
+
+    &__text {
+        position: relative;
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: math.div(28, 22);
+        margin-bottom: rem(5);
+        @media (max-width: em(575)){
+            margin-bottom: rem(4);
+      }
+
+        p {
+            @media (max-width: em(575)) {
+                display: -webkit-box;
+                -webkit-line-clamp: 2;
+                -webkit-box-orient: vertical;
+                overflow-y: hidden;
+            }
+        }
+    }
+
+    // .messages__date
+
+    &__date {
+        font-size: rem(12);
+        color: var(--gray-7);
+        white-space: nowrap;
+    }
+
+    // .messages__date-number
+
+    &__date-number {}
+
+    // .messages__date-time
+
+    &__date-time {
+        &::before {
+            content: '·';
+        }
+    }
+}

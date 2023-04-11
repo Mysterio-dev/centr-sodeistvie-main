@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{ "title":"Клиент - Настройки" })
+
+<body>
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<div class="breadcrumb__container">
+				<nav class="breadcrumb-nav">
+					<ol class="breadcrumb-nav__list">
+						<li class="breadcrumb-nav__item"><a href="#">главная</a></li>
+						<li class="breadcrumb-nav__item _active" aria-current="page">
+							регистрация
+						</li>
+					</ol>
+				</nav>
+			</div>
+
+			<div class="lk-section">
+				<div class="lk__container">
+					
+						<div class="lk__row">
+							@@include('html/lk-client/_sidebar.htm',{})
+							<div class="lk__content">
+							<div class="form">
+								<div class="form__section">
+									<h2 class="lk__title">Настройки</h2>
+									<h5 class="form__row-title">
+										Основная контактная информация
+									</h5>
+									<div class="form__row-grid">
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="form-control">
+												<label class="form-control__label">Ваше имя</label>
+												<input class="form-control__input" autocomplete="off" type="text"
+													placeholder="Валерия" inputmode="text" />
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="form-control">
+												<label class="form-control__label">Фамилия</label>
+												<input class="form-control__input" autocomplete="off" type="text"
+													placeholder="Салаватов" inputmode="text" />
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="form-control">
+												<label class="form-control__label">Отчество</label>
+												<input class="form-control__input" autocomplete="off" type="text"
+													placeholder="Камильевич" inputmode="text" />
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="form-upload">
+												<label for="" class="form-upload__label">
+													<div class="form-upload__wrap">
+														<h5 class="form-upload__title">
+															Фотография
+														</h5>
+														<p class="form-upload__text">
+															Загрузить фото
+														</p>
+														<input autocomplete="off" type="text" placeholder=""
+															class="form-upload__input" />
+													</div>
+													<div class="form-upload__photo">
+														<i class="icon__camera"></i>
+													</div>
+												</label>
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="form-control">
+												<label class="form-control__label">Город</label>
+												<input class="form-control__input" autocomplete="off" type="text"
+													placeholder="Москва" inputmode="text" />
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="form-control">
+												<label class="form-control__label">Номер телефона</label>
+												<input class="form-control__input phone-mask" autocomplete="off" type="text"
+													placeholder="+7" inputmode="text" />
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+											<div class="form-control">
+												<label class="form-control__label">Электронная почта</label>
+												<input class="form-control__input" autocomplete="off" type="text"
+													placeholder="name@mail.com" inputmode="text" />
+											</div>
+										</div>
+									</div>
+									<div class="form__row-bottom mt-40">
+										<button class="btn__pink _w-235" type="sumbit">
+											Сохранить изменения
+										</button>
+									</div>
+								</div>
+
+								<div class="form__section">
+									<h5 class="form__section-title _fw-bold">
+										Изменить пароль
+									</h5>
+									<div class="form__row-grid">
+										<div class="form__col-grid col-12 col-sm-6 col-md-4">
+											<div class="form-control">
+												<label class="form-control__label">Придумайте пароль</label>
+												<input class="form-control__input" autocomplete="off" type="password"
+													placeholder="" value="dff442fw5683dfghk"/>
+												<i class="icon__eye __viewpass"></i>
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4">
+											<div class="form-control">
+												<label class="form-control__label">Повторите пароль</label>
+												<input class="form-control__input" autocomplete="off" type="password"
+													placeholder="" value="dff442fw5683dfghk"/>
+												<i class="icon__eye __viewpass"></i>
+											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4">
+											<div class="form-control">
+												<label class="form-control__label">Повторите новый пароль</label>
+												<input class="form-control__input" autocomplete="off" type="password"
+													placeholder="" value="dff442fw5683dfghk">
+												<i class="icon__eye __viewpass"></i>
+											</div>
+										</div>
+									</div>
+									<div class="form__row-bottom mt-40">
+										<button class="btn__pink" type="sumbit">
+											Изменить пароль
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+						</div>
+					
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+</body>
+
+</html>

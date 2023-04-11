@@ -1,0 +1,94 @@
+.deposit {
+
+    @media (min-width:$mobile) {
+        margin-top: rem(140);
+    }
+
+    @media (max-width:$mobile) {
+        margin-top: rem(40);
+    }
+
+    .title-main {
+       
+        @media (min-width:$mobile){
+            margin-bottom: rem(40);   
+        }
+
+        @media (max-width:$mobile){
+            margin-bottom: rem(20);    
+        }
+    }
+
+    // .deposit__container
+
+    &__container {}
+
+    // .deposit__list
+
+    &__list {
+        columns: 27rem;
+        column-gap: rem(45);
+        margin-bottom: rem(50);
+    }
+
+    // .deposit__item
+
+    &__item {
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        gap: rem(5);
+        font-size: rem(14);
+        line-height: math.div( 28,22 );
+
+
+        &:nth-child(odd) {
+            .deposit__item-name {
+                background: var(--gray-3);
+            }
+
+            .deposit__item-money {
+                background: var(--gray-3);
+            }
+        }
+  
+
+    }
+
+    // .deposit__item-name
+
+    &__item-name {
+        flex: 1;
+        padding: rem(12) rem(17) rem(12) rem(38);
+        border-radius: rem(10);
+        position: relative;
+
+        &::before {
+            content: '';
+            background: url('@img/icons/tag.svg') no-repeat;
+            display: flex;
+            width: rem(16);
+            height: rem(16);
+            margin-right: rem(8);
+            position: absolute;
+            top: 50%;
+            transform: translate(0,-50%);
+            left: rem(12);
+        }
+    }
+
+    // .deposit__item-money
+
+    &__item-money {
+        padding: rem(12) rem(17);
+        border-radius: rem(10);
+
+        @media (min-width:$mobile){
+            flex: 0 1 rem(180); 
+        }
+
+        @media (max-width:$mobile){
+            flex: 0 1 rem(130);      
+        }
+    }
+}

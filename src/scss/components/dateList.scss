@@ -1,0 +1,56 @@
+.dateList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(4);
+    &__item {
+        flex: 0 1 rem(46);
+        max-width: rem(46);
+
+        &._today {
+            max-width: rem(68);
+        }
+
+
+    }
+
+    label {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: rem(46);
+        border-radius: rem(10);
+        padding: rem(5) rem(10);
+        background: var(--gray-3);
+        transition: var(--transition);
+        font-size: rem(12);
+
+        &:hover {
+            background: #e6e6e6;
+        }
+        
+    }
+
+    .weekday {
+        font-size: rem(12);
+        margin-bottom: rem(5);
+    }
+
+    .date {
+        font-weight: 500;
+        font-size: rem(14);
+    }
+
+    input {
+        position: absolute;
+        width: 0;
+        height: 0;
+        opacity: 0;
+
+        &:checked+label {
+            background: var(--blue-dark);
+            color: var(--white);
+        }
+    }
+}

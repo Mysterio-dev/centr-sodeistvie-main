@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+	@@include('html/_head.htm',{
+	"title":"Страницы"
+	})
+	<body>
+		<div class="preloader">
+			<div class="preloader-inner">
+			  <div class="preloader-icon">
+				<span></span>
+				<span></span>
+			  </div>
+			</div>
+		  </div>
+		  <style>
+			.page {
+				padding-top: 50px;
+			}
+
+			.page h1 {
+				margin-bottom: 15px;
+			}
+
+			.page li{
+				font-size: 25px;
+				padding: 5px 0;
+			}
+
+			.page li a {
+				color: var(--pink);
+			}
+
+			.page ul {
+				margin-bottom: 30px;
+			}
+
+		  </style>
+		<div class="wrapper">
+			<main class="page">
+				<div class="page__container">
+					<h1 class="title-main">Сайт</h1>
+					<ul>
+						<li><a href="index.html">Главная</a></li>
+						<li><a href="assistant.html">Сиделки</a></li>
+						<li><a href="assistant-view.html">Просмотр сиделки </a></li>
+						<li><a href="services.html">Услуги </a></li>
+						<li><a href="services-in.html">Просмотр услуги</a></li>
+						<li><a href="tariffs.html">Тарифы - Клиентам, Тарифы - Сиделкам</a></li>
+						<li><a href="about.html">О центре</a></li>
+						<li><a href="reviews.html">Отзывы</a></li>
+						<li><a href="articles.html">Статьи </a></li>
+						<li><a href="article-in.html">Просмотр статьи</a></li>
+						<li><a href="contacts.html">Контакты </a></li>
+						<li><a href="donation.html">Я хочу помочь</a></li>
+						<li><a href="help.html">Нужна помощь</a></li>
+					</ul>
+					<h1 class="title-main">Клиент</h1>
+					<ul>
+						<li><a href="client-lk__request.html">Клиент - ЛК - Заявки сиделкам</a></li>
+						<li><a href="client-lk__messages.html">Клиент - ЛК - Сообщения</a></li>
+						<li><a href="client-lk__reviews.html">Клиент - ЛК - Мои отзывы</a></li>
+						<li><a href="client-lk__subscription.html">Клиент - ЛК - Моя подписка</a></li>
+						<li><a href="client-lk__settings.html">Клиент - ЛК - Настройки</a></li>
+						<li><a href="client-lk__registration.html">Клиент - Регистрация</a></li>
+
+
+					</ul>
+				</div>
+				
+
+		
+			</main>
+			
+		</div>
+		@@include('html/_popup.htm',{})
+		@@include('html/_js.htm',{})
+	</body>
+</html>

@@ -1,0 +1,136 @@
+.advantage {
+
+    @media (min-width:$mobile) {
+        margin-top: rem(130);
+    }
+
+    @media (max-width:$mobile) {
+        margin-top: rem(40);
+    }
+
+    .title-main {
+        margin-bottom: rem(30);
+
+        @media (max-width:$mobile){
+             margin-bottom: rem(20); 
+        }
+    }
+
+    // .advantage__container
+
+    &__container {}
+
+    // .advantage__text
+
+    &__text {
+        @include adaptiveValue("font-size", 18,16 );
+        line-height: math.div( 28,20 );
+        margin-bottom: rem(48);
+
+        @media (max-width:$mobile){
+             margin-bottom: rem(30); 
+        }
+    }
+
+    // .advantage__row
+
+    &__row {
+        display: grid;
+        gap: rem(15);
+
+
+        @media (min-width:em(1199)){
+            grid-template-columns: repeat(5,1fr);
+        }
+        
+        @media (max-width: em(1199)){
+            grid-template-columns: repeat(4,1fr);    
+        }
+
+        @media (max-width:$tablet){
+            grid-template-columns: repeat(3,1fr);    
+        }
+
+        @media (max-width:$mobile){
+            grid-template-columns: repeat(2,1fr);       
+        }
+
+        @media (max-width:$mobileSmall){
+            grid-template-columns: repeat(1,1fr);       
+        }
+    }
+
+    // .advantage__item
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        padding: rem(30) rem(30) rem(25) rem(30);
+        background: linear-gradient(white, white) padding-box, linear-gradient(to right, #F1ECEC, #f1ecec36) border-box;
+        border: 1px solid transparent;
+        border-radius: rem(40);
+    }
+
+    // .advantage__title
+
+    &__title {
+        max-width: rem(180);
+        flex: 1 1 auto;
+        @include adaptiveValue("font-size", 20,18 );
+        line-height: math.div( 28,22 );
+        font-weight: 500;
+        margin-bottom: rem(30);
+
+        @media (max-width:$mobileSmall){
+             margin-bottom: rem(15); 
+        }
+    }
+
+  
+
+		// .advantage__footer
+
+		&__footer {
+           
+            padding-top: rem(22);
+
+            .btn__pink {
+                max-width: rem(120);
+                width: 100%;
+            }
+
+		}
+
+
+    // .advantage__icon
+
+    &__icon {
+        display: flex;
+        margin-bottom: rem(27);
+
+        @media (max-width:$mobileSmall){
+             margin-bottom: rem(15); 
+
+             img {
+                width: rem(60);
+             }
+        }
+    }
+
+    // .advantage__body
+
+    &__body {
+        flex: 1 1 auto;
+    }
+
+    // .advantage__desc
+
+    &__desc {
+        font-family: 'Montserrat';
+        color: var(--gray);
+        @include adaptiveValue("font-size", 16,14 );
+        line-height: math.div( 28,20 );
+        font-weight: 500;
+    }
+
+}
