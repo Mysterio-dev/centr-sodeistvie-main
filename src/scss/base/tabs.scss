@@ -91,6 +91,14 @@
         justify-content: space-between;
     }
 
+
+		// .tabs__icon
+
+		&__icon {
+            display: flex;
+		}
+
+
     &__navigation {
         display: flex;
         border-bottom: 1px solid var(--gray-light);

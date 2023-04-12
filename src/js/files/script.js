@@ -145,69 +145,66 @@ if (checkboxesdate.length > 0) {
 }
 
 
+document.addEventListener('DOMContentLoaded', () => {
+const photoUpload = document.getElementById('photo-upload');
+const photoPreview = document.getElementById('photo-preview');
+const formUploadText = document.querySelector('.form-upload__text');
 
+photoUpload.addEventListener('change', () => {
+  const file = photoUpload.files[0];
+  const reader = new FileReader();
 
+  reader.addEventListener('load', () => {
+    photoPreview.src = reader.result;
+  });
 
+  if (file) {
+    reader.readAsDataURL(file);
+    formUploadText.textContent = `${file.name}`;
+  } else {
+    formUploadText.textContent = 'Загрузить фото для анкеты';
+  }
+});
 
-// const formUploadLabel = document.querySelector('.form-upload__label');
-// const fileInput = document.querySelector('.form-upload__file-input');
+// Получаем элементы формы
+const input = document.querySelector('#productImage');
+const imagesList = document.querySelector('#prodImages');
 
-// if (fileInput) {
-//   fileInput.addEventListener('change', () => {
-//     const file = fileInput.files[0];
-//     const reader = new FileReader();
+// Обрабатываем событие выбора файлов
+input.addEventListener('change', (event) => {
+  const files = event.target.files;
+  if (!files) return;
 
-//     reader.addEventListener('load', () => {
-//       const photoWrapper = document.querySelector('.form-upload__photo');
-//       photoWrapper.innerHTML = ''; // очищаем содержимое
-//       const img = document.createElement('img');
-//       img.src = reader.result;
-//       img.alt = 'photo';
-//       photoWrapper.appendChild(img);
-//       const iconCamera = document.querySelector('.icon__camera');
-//       iconCamera.style.display = 'none';
-//     });
+  // Обходим все выбранные файлы
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
 
-//     if (file) {
-//       reader.readAsDataURL(file);
-//     }
-//   });
-// }
+    // Создаем новый элемент списка изображений
+    const listItem = document.createElement('li');
+    listItem.setAttribute('data-ord', imagesList.children.length + 1);
 
-// if (formUploadLabel) {
-//   formUploadLabel.addEventListener('click', () => {
-//     if (fileInput) {
-//       fileInput.click();
-//     }
-//   });
-// }
+    // Создаем новый элемент с изображением
+    const label = document.createElement('label');
+    label.setAttribute('for', `product_img_${file.name}`);
 
+    const span = document.createElement('span');
+    span.classList.add('deleteImage');
+    span.setAttribute('data-id', '');
+    span.setAttribute('data-ord', imagesList.children.length + 1);
 
-// const dateList = document.querySelector('.dateList');
-// const today = new Date();
+    span.addEventListener('click', () => {
+      imagesList.removeChild(listItem);
+      input.value = '';
+    });
 
-// for (let i = 0; i < 7; i++) {
-//   const date = new Date();
-//   date.setDate(today.getDate() + i);
-//   const formattedDate = date.toLocaleDateString('ru-RU', {weekday: 'short'});
-//   const li = document.createElement('li');
-//   li.classList.add('dateList__item');
-//   const input = document.createElement('input');
-//   input.type = 'checkbox';
-//   input.id = `date${i+1}`;
-//   const label = document.createElement('label');
-//   label.setAttribute('for', `date${i+1}`);
-//   const spanDate = document.createElement('span');
-//   spanDate.classList.add('date');
-//   spanDate.textContent = date.getDate();
-//   if (date.getDate() === today.getDate()) {
-//     label.textContent = 'Сегодня';
-//     li.classList.add('active');
-   
-//   }
-//   label.appendChild(spanDate);
-//   label.innerHTML += '' + formattedDate;
-//   li.appendChild(input);
-//   li.appendChild(label);
-//   dateList.appendChild(li);
-// }
+    const div = document.createElement('div');
+    div.style.backgroundImage = `url('${URL.createObjectURL(file)}')`;
+
+    // Добавляем все элементы на страницу
+    label.appendChild(span);
+    label.appendChild(div);
+    listItem.appendChild(label);
+    imagesList.appendChild(listItem);
+  }
+});
+});

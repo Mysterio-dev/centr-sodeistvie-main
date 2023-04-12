@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{ "title":"Сиделка - Регистрация - Личные данные" })
+
+<body>
+	<div class="preloader">
+		<div class="preloader-inner">
+			<div class="preloader-icon">
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</div>
+	<div class="wrapper">
+		@@include('html/_header.htm',{})
+		<main class="page">
+			<div class="breadcrumb__container">
+				<nav class="breadcrumb-nav">
+					<ol class="breadcrumb-nav__list">
+						<li class="breadcrumb-nav__item"><a href="#">главная</a></li>
+						<li class="breadcrumb-nav__item _active" aria-current="page">
+							регистрация
+						</li>
+					</ol>
+				</nav>
+			</div>
+
+			<div class="lk-section">
+				<div class="lk__container">
+					<div class="lk__content">
+						<div class="form">
+							<h2 class="lk__title">Регистрация сиделки</h2>
+							<div data-tabs class="tabs">
+								<nav data-tabs-titles class="tabs__navigation">
+									<button type="button" class="tabs__title _tab-active">
+										<i class="tabs__icon">
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path
+													d="M15.1166 18.0166C14.3833 18.2333 13.5166 18.3333 12.5 18.3333H7.49997C6.4833 18.3333 5.61663 18.2333 4.8833 18.0166C5.06663 15.85 7.29163 14.1416 9.99997 14.1416C12.7083 14.1416 14.9333 15.85 15.1166 18.0166Z"
+													stroke="#27314A" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path
+													d="M12.5 1.66699H7.49996C3.33329 1.66699 1.66663 3.33366 1.66663 7.50033V12.5003C1.66663 15.6503 2.61663 17.3753 4.88329 18.017C5.06663 15.8503 7.29163 14.142 9.99996 14.142C12.7083 14.142 14.9333 15.8503 15.1166 18.017C17.3833 17.3753 18.3333 15.6503 18.3333 12.5003V7.50033C18.3333 3.33366 16.6666 1.66699 12.5 1.66699ZM9.99996 11.8086C8.34996 11.8086 7.01662 10.467 7.01662 8.81701C7.01662 7.16701 8.34996 5.83366 9.99996 5.83366C11.65 5.83366 12.9833 7.16701 12.9833 8.81701C12.9833 10.467 11.65 11.8086 9.99996 11.8086Z"
+													stroke="#27314A" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path
+													d="M12.9834 8.81636C12.9834 10.4664 11.6501 11.808 10.0001 11.808C8.35006 11.808 7.01672 10.4664 7.01672 8.81636C7.01672 7.16636 8.35006 5.83301 10.0001 5.83301C11.6501 5.83301 12.9834 7.16636 12.9834 8.81636Z"
+													stroke="#27314A" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+										</i>
+										<span>Личные данные</span>
+									</button>
+									<button type="button" class="tabs__title">
+										<i class="tabs__icon">
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M10.3083 7.40039H14.6834" stroke="#27314A" stroke-width="1.5"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M5.31665 7.40039L5.94165 8.02539L7.81665 6.15039"
+													stroke="#27314A" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path d="M10.3083 13.2334H14.6834" stroke="#27314A" stroke-width="1.5"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M5.31665 13.2334L5.94165 13.8584L7.81665 11.9834"
+													stroke="#27314A" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path
+													d="M7.49996 18.3337H12.5C16.6666 18.3337 18.3333 16.667 18.3333 12.5003V7.50033C18.3333 3.33366 16.6666 1.66699 12.5 1.66699H7.49996C3.33329 1.66699 1.66663 3.33366 1.66663 7.50033V12.5003C1.66663 16.667 3.33329 18.3337 7.49996 18.3337Z"
+													stroke="#27314A" stroke-width="1.5" stroke-linecap="round"
+													stroke-linejoin="round" />
+											</svg>
+										</i>
+										<span>Анкета сиделки</span>
+									</button>
+									<button type="button" class="tabs__title">
+										<i class="tabs__icon">
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+												xmlns="http://www.w3.org/2000/svg">
+												<path d="M6.66663 1.66699V4.16699" stroke="#27314A" stroke-width="1.5"
+													stroke-miterlimit="10" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path d="M13.3334 1.66699V4.16699" stroke="#27314A" stroke-width="1.5"
+													stroke-miterlimit="10" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path d="M2.91663 7.5752H17.0833" stroke="#27314A" stroke-width="1.5"
+													stroke-miterlimit="10" stroke-linecap="round"
+													stroke-linejoin="round" />
+												<path
+													d="M17.5 7.08366V14.167C17.5 16.667 16.25 18.3337 13.3333 18.3337H6.66667C3.75 18.3337 2.5 16.667 2.5 14.167V7.08366C2.5 4.58366 3.75 2.91699 6.66667 2.91699H13.3333C16.25 2.91699 17.5 4.58366 17.5 7.08366Z"
+													stroke="#27314A" stroke-width="1.5" stroke-miterlimit="10"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M13.079 11.4167H13.0864" stroke="#27314A" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M13.079 13.9167H13.0864" stroke="#27314A" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M9.9962 11.4167H10.0037" stroke="#27314A" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M9.9962 13.9167H10.0037" stroke="#27314A" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M6.91197 11.4167H6.91945" stroke="#27314A" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+												<path d="M6.91197 13.9167H6.91945" stroke="#27314A" stroke-width="2"
+													stroke-linecap="round" stroke-linejoin="round" />
+											</svg>
+										</i>
+										<span>График работы</span>
+									</button>
+								</nav>
+								<div data-tabs-body class="tabs__content">
+									<div class="tabs__body">
+
+										<div class="form__section">
+											<h5 class="form__row-title">Заполните основную контактную информацию
+											</h5>
+											<div class="form__row-grid">
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Ваше имя</label>
+														<input class="form-control__input" autocomplete="off"
+															type="text" placeholder="Валерия" inputmode="text"
+															required />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Фамилия</label>
+														<input class="form-control__input" autocomplete="off"
+															type="text" placeholder="Балашова" inputmode="text"
+															required />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Отчество</label>
+														<input class="form-control__input" autocomplete="off"
+															type="text" placeholder="Камильевна" inputmode="text"
+															required />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-upload">
+														<label for="photo-upload" class="form-upload__label">
+															<div class="form-upload__wrap">
+																<h5 class="form-upload__title">
+																	Фотография
+																</h5>
+																<p class="form-upload__text">Загрузить фото для анкеты
+																</p>
+																<input id="photo-upload" type="file" accept="image/*"
+																	class="form-upload__input">
+															</div>
+															<div class="form-upload__photo">
+																<img id="photo-preview" src="#" alt="">
+															</div>
+														</label>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Город</label>
+														<input class="form-control__input" autocomplete="off"
+															type="text" placeholder="Москва" inputmode="text"
+															required />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Номер телефона</label>
+														<input class="form-control__input phone-mask" autocomplete="off"
+															type="text" placeholder="+7 999 156-19-92"
+															inputmode="text" />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Электронная почта</label>
+														<input class="form-control__input" autocomplete="off"
+															type="text" placeholder="name@mail.com" inputmode="text" />
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form__section">
+											<h5 class="form__row-title">Введите паспортные данные
+											</h5>
+											<div class="form__row-grid">
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Серия паспорта</label>
+														<input class="form-control__input passportSeriesMask"
+															autocomplete="off" type="text" placeholder="00 00"
+															inputmode="text" />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Номер паспорта</label>
+														<input class="form-control__input passportNumberMask"
+															autocomplete="off" type="text" placeholder="000 000"
+															inputmode="text" />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form__help">
+														<i class="icon__security-user"></i>
+														<p class="form__help-text">
+															Это нужно в первую очередь, для вашей безопасности и
+															безопасности подопечного.
+															Клиенту и другим третьим лицам они не передаются.
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form__section">
+											<h5 class="form__row-title">Придумайте пароль для входа в личный кабинет
+											</h5>
+											<div class="form__row-grid">
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Придумайте пароль</label>
+														<input class="form-control__input" autocomplete="off"
+															type="password" placeholder="" value="dff442fw5683dfghk" />
+														<i class="icon__eye __viewpass"></i>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control">
+														<label class="form-control__label">Повторите пароль</label>
+														<input class="form-control__input" autocomplete="off"
+															type="password" placeholder="" value="dff442fw5683dfghk" />
+														<i class="icon__eye __viewpass"></i>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form__help">
+														<i class="icon__unlock"></i>
+														<p class="form__help-text">
+															Пароль должен состоять из букв латинского алфавита
+															(A-z), арабских
+															цифр (0-9)
+															и специальных символов (#!$&)
+														</p>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form__section">
+											<div class="form__row-grid">
+
+												<div class="form__attach">
+													<div class="form__attach-group">
+														<ul id="prodImages" class="form__attach-list">
+														</ul>
+													</div>
+													<div class="form__attach-field">
+														<label for="productImage">
+															<span>Загрузить фото</span>
+															</label>
+														<input type="file" class="form-control" name="productImage[]"
+															id="productImage"  accept="image/png, image/jpeg, application/pdf, text/plain" data-id=""
+															multiple="">
+													</div>
+												</div>
+
+											</div>
+										</div>
+
+										<div class="form__footer">
+											<button class="btn__pink" type="sumbit">
+												Завершить регистрацию
+											</button>
+											<div class="checkbox">
+												<input id="c_2" class="checkbox__input" type="checkbox" value="1"
+													checked="" />
+												<label for="c_2" class="checkbox__label"><span
+														class="checkbox__text _black">Согласие
+														<a href="">с политикой конфиденциальности</a></span></label>
+											</div>
+										</div>
+
+
+									</div>
+									<div class="tabs__body">
+										Содержимое второго таба
+									</div>
+									<div class="tabs__body">
+										Содержимое третьего таба
+									</div>
+								</div>
+							</div>
+
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		@@include('html/_footer.htm',{})
+	</div>
+	@@include('html/_popup.htm',{}) @@include('html/_js.htm',{})
+</body>
+
+</html>

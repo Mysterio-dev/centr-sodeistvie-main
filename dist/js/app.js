@@ -4382,9 +4382,17 @@
         modules_flsModules.select = new SelectConstructor({});
         __webpack_require__(125);
         const inputMasksPhone = document.querySelectorAll(".phone-mask");
+        const inputSeriesPassport = document.querySelectorAll(".passportSeriesMask");
+        const inputNumberPassport = document.querySelectorAll(".passportNumberMask");
         if (inputMasksPhone.length) modules_flsModules.inputMasksPhone = Inputmask({
             mask: "+7(999) 999-99-99"
         }).mask(inputMasksPhone);
+        if (inputMasksPhone.length) modules_flsModules.inputSeriesPassport = Inputmask({
+            mask: "99 99"
+        }).mask(inputSeriesPassport);
+        if (inputMasksPhone.length) modules_flsModules.inputNumberPassport = Inputmask({
+            mask: "999 999"
+        }).mask(inputNumberPassport);
         function getWindow_getWindow(node) {
             if (null == node) return window;
             if ("[object Window]" !== node.toString()) {
@@ -13362,6 +13370,49 @@ PERFORMANCE OF THIS SOFTWARE.
                 checkboxCount++;
             }));
         }
+        document.addEventListener("DOMContentLoaded", (() => {
+            const photoUpload = document.getElementById("photo-upload");
+            const photoPreview = document.getElementById("photo-preview");
+            const formUploadText = document.querySelector(".form-upload__text");
+            photoUpload.addEventListener("change", (() => {
+                const file = photoUpload.files[0];
+                const reader = new FileReader;
+                reader.addEventListener("load", (() => {
+                    photoPreview.src = reader.result;
+                }));
+                if (file) {
+                    reader.readAsDataURL(file);
+                    formUploadText.textContent = `${file.name}`;
+                } else formUploadText.textContent = "Загрузить фото для анкеты";
+            }));
+            const input = document.querySelector("#productImage");
+            const imagesList = document.querySelector("#prodImages");
+            input.addEventListener("change", (event => {
+                const files = event.target.files;
+                if (!files) return;
+                for (let i = 0; i < files.length; i++) {
+                    const file = files[i];
+                    const listItem = document.createElement("li");
+                    listItem.setAttribute("data-ord", imagesList.children.length + 1);
+                    const label = document.createElement("label");
+                    label.setAttribute("for", `product_img_${file.name}`);
+                    const span = document.createElement("span");
+                    span.classList.add("deleteImage");
+                    span.setAttribute("data-id", "");
+                    span.setAttribute("data-ord", imagesList.children.length + 1);
+                    span.addEventListener("click", (() => {
+                        imagesList.removeChild(listItem);
+                        input.value = "";
+                    }));
+                    const div = document.createElement("div");
+                    div.style.backgroundImage = `url('${URL.createObjectURL(file)}')`;
+                    label.appendChild(span);
+                    label.appendChild(div);
+                    listItem.appendChild(label);
+                    imagesList.appendChild(listItem);
+                }
+            }));
+        }));
         window["FLS"] = false;
         isWebp();
         menuInit();

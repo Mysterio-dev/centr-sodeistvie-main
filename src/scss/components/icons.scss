@@ -60,15 +60,6 @@
         background-size: contain;
     }
 
-    // .icon__camera
-
-    &__camera {
-        display: block;
-        background: url('@img/icons/camera.svg') no-repeat;
-        width: rem(20);
-        height: rem(20);
-        background-size: contain;
-    }
 
 
     // .icon__unlock
@@ -181,6 +172,20 @@
 
           
 		}
+
+
+     
+
+            // .icon__security-user
+    
+            &__security-user {
+                display: block;
+                background: url('@img/icons/security-user.svg') no-repeat;
+                min-width: rem(24);
+                min-height: rem(24);
+                background-size: contain;
+            }
+        
 
 
 

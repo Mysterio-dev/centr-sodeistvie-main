@@ -209,6 +209,45 @@
 
 .form {
 
+    &__attach {
+        display: flex;
+    }
+    
+
+    &__attach-group {
+      
+    }
+
+    &__attach-list {
+        display: flex;
+        align-items: center;
+        gap: rem(15);
+        label {
+            position: relative;
+            display: flex;
+            width: rem(215);
+            height: rem(152);
+            border-radius: rem(20);
+            overflow: hidden;
+
+            > div {
+                position: relative;
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                width: 100%;
+                height: 100%;
+                transition: .3s ease;
+                user-select: none;
+            }
+        }
+    }
+
+
+    &__attach-field {
+
+    }
+
     &._mt-140 {
         @media (min-width:$mobile) {
             margin-top: rem(140);
@@ -676,11 +715,17 @@
     // .form-upload__label
 
     &__label {
+        cursor: pointer;
         display: flex;
         border: 1px solid var(--gray-light);
         border-radius: rem(20);
         height: rem(68);
         padding: rem(11) rem(16);
+        transition: var(--transition);
+
+        &:hover {
+            border-color: var(--pink);
+        }
     }
 
     // .form-upload__wrap
@@ -712,6 +757,8 @@
     // .form-upload__photo
 
     &__photo {
+        position: relative;
+        z-index: 1;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -720,6 +767,19 @@
         box-shadow: 4px 4px 44px 0px #27314A1F;
         background: var(--white);
         border-radius: 50%;
+
+        &::before {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            background: url('@img/icons/camera.svg') no-repeat;
+            width: rem(20);
+            height: rem(20);
+            background-size: cover;
+        }
 
         img {
             width: 100%;
@@ -736,6 +796,10 @@
     &__text {
         @include adaptiveValue("font-size", 16, 14);
         color: var(--pink);
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow-y: hidden;
     }
 
 }

@@ -394,3 +394,33 @@
 
 
 }
+
+
+.deleteImage {
+    position: absolute;
+    cursor: pointer;
+    z-index: 1;
+    top: rem(8);
+    right: rem(6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: rem(32);
+    height: rem(32);
+    border-radius: rem(13);
+    background-color: #27314A;
+    opacity: .5;
+    transition: var(--transition);
+
+    &:hover {
+        opacity: .8;
+    }
+
+    &:before {
+        content: '';
+        background: url('@img/icons/Trash.svg') no-repeat;
+        background-size: cover;
+        width: rem(20);
+        height: rem(20);
+    }
+}

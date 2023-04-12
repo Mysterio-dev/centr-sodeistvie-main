@@ -58,17 +58,18 @@
 										</div>
 										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
 											<div class="form-upload">
-												<label for="" class="form-upload__label">
+												<label for="photo-upload" class="form-upload__label">
 													<div class="form-upload__wrap">
 														<h5 class="form-upload__title">
-															Фотография · Не обязательно
+															Фотография · Не обязательно 
 														</h5>
-														<p class="form-upload__text">Загрузить фото профиля</p>
-														<input autocomplete="off" type="text" placeholder=""
-															class="form-upload__input" />
+														<p class="form-upload__text">Загрузить фото профиля
+														</p>
+														<input id="photo-upload" type="file" accept="image/*"
+															class="form-upload__input">
 													</div>
 													<div class="form-upload__photo">
-														<i class="icon__camera"></i>
+														<img id="photo-preview" src="#" alt="">
 													</div>
 												</label>
 											</div>
@@ -83,7 +84,7 @@
 										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
 											<div class="form-control">
 												<label class="form-control__label">Номер телефона</label>
-												<input class="form-control__input" autocomplete="off" type="text"
+												<input class="form-control__input phone-mask" autocomplete="off" type="text"
 													placeholder="Москва" inputmode="text" />
 											</div>
 										</div>

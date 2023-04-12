@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230411115909" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230412142807" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -331,16 +331,17 @@
 										</div>
 										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
 											<div class="form-upload">
-												<label for="" class="form-upload__label">
+												<label for="photo-upload" class="form-upload__label">
 													<div class="form-upload__wrap">
 														<h5 class="form-upload__title">
 															Фотография · Не обязательно
 														</h5>
-														<p class="form-upload__text">Загрузить фото профиля</p>
-														<input autocomplete="off" type="text" placeholder="" class="form-upload__input" />
+														<p class="form-upload__text">Загрузить фото профиля
+														</p>
+														<input id="photo-upload" type="file" accept="image/*" class="form-upload__input">
 													</div>
 													<div class="form-upload__photo">
-														<i class="icon__camera"></i>
+														<img id="photo-preview" src="#" alt="">
 													</div>
 												</label>
 											</div>
@@ -354,7 +355,7 @@
 										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
 											<div class="form-control">
 												<label class="form-control__label">Номер телефона</label>
-												<input class="form-control__input" autocomplete="off" type="text" placeholder="Москва" inputmode="text" />
+												<input class="form-control__input phone-mask" autocomplete="off" type="text" placeholder="Москва" inputmode="text" />
 											</div>
 										</div>
 										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
@@ -879,8 +880,8 @@
 
 
 
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=562bae56-7532-4afb-bb3e-e10bfb191f68&lang=ru_RU&_v=20230411115909" type="text/javascript"></script>
-	<script src="js/app.min.js?_v=20230411115909"></script>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=562bae56-7532-4afb-bb3e-e10bfb191f68&lang=ru_RU&_v=20230412142807" type="text/javascript"></script>
+	<script src="js/app.min.js?_v=20230412142807"></script>
 </body>
 
 </html>
