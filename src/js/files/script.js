@@ -146,27 +146,31 @@ if (checkboxesdate.length > 0) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-const photoUpload = document.getElementById('photo-upload');
-const photoPreview = document.getElementById('photo-preview');
-const formUploadText = document.querySelector('.form-upload__text');
-
-photoUpload.addEventListener('change', () => {
-  const file = photoUpload.files[0];
-  const reader = new FileReader();
-
-  reader.addEventListener('load', () => {
-    photoPreview.src = reader.result;
+  
+  const photoUpload = document.getElementById('photo-upload');
+  const formUploadPhoto = document.querySelector('.form-upload__photo');
+  const formUploadText = document.querySelector('.form-upload__text');
+  
+  photoUpload.addEventListener('change', () => {
+    const file = photoUpload.files[0];
+    const reader = new FileReader();
+    const img = document.createElement('img');
+  
+    reader.addEventListener('load', () => {
+      img.src = reader.result;
+      formUploadPhoto.innerHTML = ''; // Очистить контейнер formUploadPhoto
+      formUploadPhoto.appendChild(img); // Добавить img в контейнер formUploadPhoto
+    });
+  
+    if (file) {
+      reader.readAsDataURL(file);
+      formUploadText.textContent = `${file.name}`;
+    } else {
+      formUploadText.textContent = 'Загрузить фото';
+    }
   });
+  
 
-  if (file) {
-    reader.readAsDataURL(file);
-    formUploadText.textContent = `${file.name}`;
-  } else {
-    formUploadText.textContent = 'Загрузить фото для анкеты';
-  }
-});
-
-// Получаем элементы формы
 const input = document.querySelector('#productImage');
 const imagesList = document.querySelector('#prodImages');
 
@@ -183,7 +187,7 @@ input.addEventListener('change', (event) => {
     const listItem = document.createElement('li');
     listItem.setAttribute('data-ord', imagesList.children.length + 1);
 
-    // Создаем новый элемент с изображением
+    // Создаем новый элемент с изображением или эскизом документа
     const label = document.createElement('label');
     label.setAttribute('for', `product_img_${file.name}`);
 
@@ -198,7 +202,46 @@ input.addEventListener('change', (event) => {
     });
 
     const div = document.createElement('div');
-    div.style.backgroundImage = `url('${URL.createObjectURL(file)}')`;
+
+    // Если выбранный файл является PDF-документом, загружаем его и создаем эскиз
+    if (file.type === 'application/pdf') {
+      // Создаем элемент canvas
+      const canvas = document.createElement('canvas');
+    
+      // Загружаем PDF-файл
+      const fileReader = new FileReader();
+      fileReader.onload = function() {
+        const typedarray = new Uint8Array(this.result);
+        pdfjsLib.getDocument({data: typedarray}).promise.then(function(pdf) {
+          pdf.getPage(1).then(function(page) {
+            const viewport = page.getViewport({ scale: 1 });
+            canvas.width = viewport.width;
+            canvas.height = viewport.height;
+    
+            // Отображаем страницу PDF-файла на элементе canvas
+            const context = canvas.getContext('2d');
+            const renderContext = {
+              canvasContext: context,
+              viewport: viewport
+            };
+            page.render(renderContext).promise.then(function() {
+                // Добавляем стили для canvas
+                canvas.style.maxWidth = '100%';
+                canvas.style.maxHeight = '100%';
+                canvas.style.display = 'block';
+
+              div.appendChild(canvas);
+            });
+          });
+        });
+      };
+      fileReader.readAsArrayBuffer(file);
+    } 
+    
+    // Если выбранный файл является изображением, создаем эскиз изображения
+    else {
+      div.style.backgroundImage = `url('${URL.createObjectURL(file)}')`;
+    }
 
     // Добавляем все элементы на страницу
     label.appendChild(span);
@@ -207,4 +250,6 @@ input.addEventListener('change', (event) => {
     imagesList.appendChild(listItem);
   }
 });
+
+
 });

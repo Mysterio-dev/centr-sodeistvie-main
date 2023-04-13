@@ -68,9 +68,7 @@
 														<input id="photo-upload" type="file" accept="image/*"
 															class="form-upload__input">
 													</div>
-													<div class="form-upload__photo">
-														<img id="photo-preview" src="#" alt="">
-													</div>
+													<div class="form-upload__photo"></div>
 												</label>
 											</div>
 										</div>
@@ -84,8 +82,10 @@
 										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
 											<div class="form-control">
 												<label class="form-control__label">Номер телефона</label>
-												<input class="form-control__input phone-mask" autocomplete="off" type="text"
-													placeholder="Москва" inputmode="text" />
+												<input class="form-control__input phone-mask" disabled="" autocomplete="off"
+													type="text" placeholder="" value="+7 999 156-19-92"
+													inputmode="text" />
+												<span class="badge _confirmed">Подтвержден</span>	
 											</div>
 										</div>
 										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
@@ -94,6 +94,9 @@
 												<input class="form-control__input" autocomplete="off" type="text"
 													placeholder="name@mail.com" inputmode="text" />
 											</div>
+										</div>
+										<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+
 										</div>
 									</div>
 								</div>

@@ -151,9 +151,7 @@
 																<input id="photo-upload" type="file" accept="image/*"
 																	class="form-upload__input">
 															</div>
-															<div class="form-upload__photo">
-																<img id="photo-preview" src="#" alt="">
-															</div>
+															<div class="form-upload__photo"></div>
 														</label>
 													</div>
 												</div>
@@ -168,9 +166,10 @@
 												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
 													<div class="form-control">
 														<label class="form-control__label">Номер телефона</label>
-														<input class="form-control__input phone-mask" autocomplete="off"
-															type="text" placeholder="+7 999 156-19-92"
-															inputmode="text" />
+														<input class="form-control__input phone-mask" disabled=""
+															autocomplete="off" type="text" placeholder=""
+															value="+7 999 156-19-92" inputmode="text" />
+														<span class="badge _confirmed">Подтвержден</span>
 													</div>
 												</div>
 												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
@@ -178,6 +177,15 @@
 														<label class="form-control__label">Электронная почта</label>
 														<input class="form-control__input" autocomplete="off"
 															type="text" placeholder="name@mail.com" inputmode="text" />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+													<div class="form-control__select">
+														<label class="form-control__label">Образование</label>
+														<select class="form">
+															<option value="1" selected>Высшее образование</option>
+															<option value="2">Среднее образование</option>
+														</select>
 													</div>
 												</div>
 											</div>
@@ -202,7 +210,7 @@
 															inputmode="text" />
 													</div>
 												</div>
-												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+												<div class="form__col-grid col-12 col-sm-6 col-md-4">
 													<div class="form__help">
 														<i class="icon__security-user"></i>
 														<p class="form__help-text">
@@ -234,7 +242,7 @@
 														<i class="icon__eye __viewpass"></i>
 													</div>
 												</div>
-												<div class="form__col-grid col-12 col-sm-6 col-md-4 col-lg-3">
+												<div class="form__col-grid col-12 col-sm-6 col-md-4">
 													<div class="form__help">
 														<i class="icon__unlock"></i>
 														<p class="form__help-text">
@@ -248,29 +256,34 @@
 											</div>
 										</div>
 										<div class="form__section">
-											<div class="form__row-grid">
+											<h5 class="form__row-title">Прикрепить документы которые у вас есть ·
+												Медицинские справки и лицензии, документы, сертификаты, рекомендательные
+												письма
+											</h5>
 
-												<div class="form__attach">
-													<div class="form__attach-group">
-														<ul id="prodImages" class="form__attach-list">
-														</ul>
-													</div>
-													<div class="form__attach-field">
-														<label for="productImage">
-															<span>Загрузить фото</span>
-															</label>
-														<input type="file" class="form-control" name="productImage[]"
-															id="productImage"  accept="image/png, image/jpeg, application/pdf, text/plain" data-id=""
-															multiple="">
-													</div>
+											<div class="form__attach">
+												<div class="form__attach-group">
+													<ul id="prodImages" class="form__attach-list">
+													</ul>
 												</div>
-
+												<div class="form__attach-field">
+													<label for="productImage">
+														<i class="icon__camera"></i>
+														<span>Загрузить фото</span>
+													</label>
+													<input type="file" class="form-control" name="productImage[]"
+														id="productImage"
+														accept="image/png, image/jpeg, application/pdf" data-id=""
+														multiple="">
+												</div>
 											</div>
+
+
 										</div>
 
 										<div class="form__footer">
-											<button class="btn__pink" type="sumbit">
-												Завершить регистрацию
+											<button class="btn__pink _w-200" type="sumbit">
+												Следующий шаг
 											</button>
 											<div class="checkbox">
 												<input id="c_2" class="checkbox__input" type="checkbox" value="1"
@@ -284,7 +297,19 @@
 
 									</div>
 									<div class="tabs__body">
-										Содержимое второго таба
+										<div class="form__section">
+											<h5 class="form__row-title">Основная информация 
+											</h5>
+											<div class="form__row-grid">
+												<div class="form__col-grid col-12">
+													<div class="form-control">
+														<label class="form-control__label">Описание на сайте</label>
+														<textarea class="form-control__textarea" name="" id="" cols="30" rows="10" value="">Проработала сиделкой в американской семье для пожилой пары в штате Нью Джерси в г Флорхэм парк 7,5 лет, с мая 2013 по октябрь 2020. Паре, на момент начала работы мужу было 86 лет, а жене 82 года. Работала с проживанием. В мои обязанности входило: - Готовить разную еду и кормить три раза в день, следить
+															и напоминать принимать таблетки, приготовить их на две недели. - Измерять давление, контролировать сахар</textarea>
+													</div>
+												</div>
+											</div>
+										</div>
 									</div>
 									<div class="tabs__body">
 										Содержимое третьего таба

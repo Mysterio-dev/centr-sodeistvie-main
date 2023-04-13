@@ -133,6 +133,34 @@
             box-shadow: 0 0 0 0.25rem rgba(190, 52, 94, 0.32);
         }
     }
+
+    // .filter__select
+
+    &__select {
+        .select__title {
+            border: 1px solid var(--gray-light);
+            border-radius: 14px;
+        }
+
+        .select__value {
+            height: rem(44);
+
+            &::after {
+                position: absolute;
+                top: rem(15);
+                right: rem(15);
+                width: rem(16);
+                height: rem(16);
+                background: url('@img/icons/arrow-down-black.svg') no-repeat;
+                background-size: contain;
+            }
+        }
+        
+        .select__options {
+            top: 55px;
+        }
+
+    }
 }
 
 
@@ -186,4 +214,9 @@
         color: var(--gray);
         transition: var(--transition);
     }
+
+
+
+
+
 }

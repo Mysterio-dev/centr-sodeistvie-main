@@ -120,23 +120,19 @@ body {
 	}
 }
 
-
-// Подключение базовых стилей, шаблонов (заготовок) и вспомогательных  классов
-// Для подключения/отключения конкретных стилей смотри base.scss
-
 // Подключение стилей календаря
 @import '../scss/libs/datepicker.scss';
 
-
 @import "base";
 
-// Подключение стилей компоненты 
 @import "common";
-@import "components/btn";
+
+@import "elements/btn";
+@import "elements/icons";
+
+@import "components/form";
 @import "components/options";
-@import "components/pagination";
 @import "components/rating";
-@import "components/breadcrumb";
 @import "components/social";
 @import "components/slider";
 @import "components/menu";
@@ -144,41 +140,35 @@ body {
 @import "components/schedule";
 @import "components/аmount";
 @import "components/filter";
-@import "components/badge";
-@import "components/icons";
-@import "components/timeList";
-@import "components/dateList";
 @import "components/sidebar";
-@import "components/notice";
 @import "components/messages";
 @import "components/request";
 
+@import "utilities/pagination";
+@import "utilities/breadcrumb";
+@import "utilities/badge";
+@import "utilities/timeList";
+@import "utilities/dateList";
+@import "utilities/notice";
 
-@import "contacts";
-@import "lk";
+@import "pages/contacts";
+@import "pages/about";
+@import "pages/assistant";
+@import "pages/services";
+@import "pages/reviews";
+@import "pages/partners";
+@import "pages/article";
+@import "pages/advantage";
+@import "pages/deposit";
+@import "pages/donate";
 
-@import "form";
-
-
-// Подключение стилей отдельных блоков
-@import "header";
-@import "footer";
-
-// Подключение стилей отдельных секций
-@import "hero";
-@import "about";
-@import "features";
-@import "assistant";
-@import "services";
-@import "reviews";
-@import "partners";
-@import "tariffs";
-@import "questions";
-@import "article";
-@import "advantage";
-@import "deposit";
-@import "donate";
-
+@import "modules/header";
+@import "modules/footer";
+@import "modules/features";
+@import "modules/lk";
+@import "modules/hero";
+@import "modules/tariffs";
+@import "modules/questions";
 
 @import "sliders/letter";
 @import "sliders/documents";
