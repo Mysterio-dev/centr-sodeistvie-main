@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
       reader.readAsDataURL(file);
       formUploadText.textContent = `${file.name}`;
     } else {
-      formUploadText.textContent = 'Загрузить фото';
+      formUploadText.textContent = 'Загрузить фото для анкеты';
     }
   });
   
