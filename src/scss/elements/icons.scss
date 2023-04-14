@@ -80,6 +80,7 @@
         width: rem(18);
         height: rem(18);
         background-size: contain;
+        pointer-events: none;
     }
 
     // .icon__clock-2
@@ -200,8 +201,32 @@
         background-size: contain;
     }
 
+ 
 
+		// .icon__del
 
+		&__del {
+            display: block;
+            background: url('@img/icons/close-circle.svg') no-repeat;
+            width: rem(16);
+            height: rem(16);
+            background-size: contain;
+           
+		}
+
+ 
+
+            // .icon__plus
+    
+            &__plus {
+                display: block;
+                background: url('@img/icons/plus.svg') no-repeat;
+                width: rem(20);
+                height: rem(20);
+                background-size: contain;
+            }
+    
+    
 
 
 }

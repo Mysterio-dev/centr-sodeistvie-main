@@ -444,8 +444,5 @@ $dp-one-seventh: math.percentage(math.div(1, 7));
 .datepicker-input.in-edit {
   border-color: $dp-input-in-edit-border-color;
 
-  &:focus,
-  &:active {
-    box-shadow: $dp-input-in-edit-box-shadow;
-  }
+
 }

@@ -1,0 +1,46 @@
+.range {
+    padding: rem(38) rem(16) rem(5);
+    border-radius: rem(20);
+    border: 1px solid var(--gray-light);
+    height: rem(66);
+    position: relative;
+
+
+
+    // .range__label
+
+    &__label {
+        display: block;
+        font-size: rem(12);
+        position: absolute;
+        top: rem(10);
+    }
+
+
+    // .range__values
+
+    &__values {
+        display: flex;
+        margin-bottom: rem(7);
+
+        input {
+            width: 100%;
+            outline: none;
+        }
+    }
+
+    // .range__slider
+
+    &__slider {}
+
+
+
+    // .range__input
+
+    &__input {
+        display: flex;
+        align-items: center;
+        gap: rem(4);
+    }
+
+}

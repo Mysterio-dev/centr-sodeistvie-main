@@ -8,7 +8,7 @@
         align-items: center;
         gap: rem(6);
 
-       
+
     }
 
     // .schedule__item
@@ -58,18 +58,20 @@
     }
 }
 
+
+
 .workSchedule {
     overflow: auto;
     padding-bottom: rem(12);
-    
 
 
 
-	// .workSchedule__list
 
-		&__list {
-            display: flex;
-		}
+    // .workSchedule__list
+
+    &__list {
+        display: flex;
+    }
 
 
     // .workSchedule__block
@@ -82,6 +84,7 @@
         padding: rem(5);
         border-radius: rem(10);
         font-size: rem(12);
+
         &:nth-child(odd) {
             background: var(--gray-3);
         }
@@ -105,7 +108,7 @@
         &._from {
             border-bottom: 1px solid #DBDBDB;
         }
-  
+
     }
 
     // .workSchedule__weekend
@@ -115,7 +118,84 @@
         color: var(--gray);
         font-weight: 500;
         text-align: center;
-        line-height: math.div( 28,22 );
+        line-height: math.div(28, 22);
     }
 }
 
+.workScheduleTable {
+    display: flex;
+    gap: rem(40);
+    margin-top: rem(27);
+    overflow: auto;
+    padding-bottom: rem(15);
+
+    // .workScheduleTable__col
+
+    &__col {
+        position: relative;
+        flex: 0 1 rem(120);
+        min-width: rem(110);
+
+        &:last-child {
+            &::after {
+                content: none;
+            }
+        }
+
+        &::after {
+            content: '';
+            border-right: 1px solid var(--gray-light);
+            height: 95%;
+            margin-top: rem(15);
+            position: absolute;
+            right: rem(-20);
+            top: 0;
+            bottom: 0;
+        }
+    }
+
+    // .workScheduleTable__top
+
+    &__top {
+        padding: rem(10) rem(15);
+        background: var(--gray-3);
+        border-radius: rem(10);
+        text-align: center;
+        margin-bottom: rem(4);
+        height: rem(60);
+
+        &._active {
+            background: var(--blue-dark);
+            color: var(--white);
+        }
+    }
+
+
+
+    // .workScheduleTable__day
+
+    &__day {
+        font-size: rem(20);
+        font-weight: 500;
+        margin-bottom: rem(2);
+    }
+
+    // .workScheduleTable__weekday
+
+    &__weekday {
+        font-weight: 500;
+        font-size: rem(12);
+    }
+
+
+    // .workScheduleTable__list
+
+    &__list {}
+
+    // .workScheduleTable__item
+
+    &__item {
+        display: flex;
+        margin-bottom: rem(4);
+    }
+}

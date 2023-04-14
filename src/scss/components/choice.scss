@@ -1,0 +1,49 @@
+.choice {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+
+    // .choice__list
+
+    &__list {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: rem(10);
+    }
+
+    // .choice__item
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: rem(10) rem(20);
+        background: var(--gray-3);
+        border-radius: rem(10);
+        transition: var(--transition);
+
+        &:hover {
+           background: #EAEAEA;
+        }
+    }
+
+    // .choice__btn-del
+
+    &__btn-del {
+        margin-right: rem(12);
+
+        &:hover {
+            .icon__del {
+                background: url('@img/icons/close-circle-dark.svg');
+            }
+        }
+
+    }
+
+    // .choice__name
+
+    &__name {
+        font-size: rem(14);
+        font-weight: 500;
+    }
+}

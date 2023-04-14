@@ -58,6 +58,7 @@
 	&__options {
 		color: #000;
 		position: absolute;
+		z-index: 2;
 		padding: 10px 0;
 		min-width: 100%;
 		left: 0;
@@ -110,7 +111,7 @@
 
 	// Состояния селекта
 	&._select-open {
-		z-index: 5;
+		
 	}
 	&._select-disabled {
 	}

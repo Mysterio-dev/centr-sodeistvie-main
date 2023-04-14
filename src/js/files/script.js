@@ -64,7 +64,13 @@ const datepicker1 = new Datepicker(elem1, {
   minDate: new Date() // установка опции minDate на сегодняшнюю дату
 });
 
-
+const elem2 = document.querySelector('input[name="formDate"]');
+const datepicker2 = new Datepicker(elem2, {
+  autohide: true,
+  clearButton: true,
+  format: 'd MM yyyy',
+  language: 'ru'
+});
 
 const radioButtons = document.querySelectorAll('.аmount__root input[type=radio]');
 
@@ -160,13 +166,14 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = reader.result;
       formUploadPhoto.innerHTML = ''; // Очистить контейнер formUploadPhoto
       formUploadPhoto.appendChild(img); // Добавить img в контейнер formUploadPhoto
+      formUploadPhoto.classList.add('loaded'); // Добавить класс loaded
     });
   
     if (file) {
       reader.readAsDataURL(file);
       formUploadText.textContent = `${file.name}`;
     } else {
-      formUploadText.textContent = 'Загрузить фото для анкеты';
+      formUploadText.textContent = 'Загрузить фото';
     }
   });
   
@@ -249,6 +256,52 @@ input.addEventListener('change', (event) => {
     listItem.appendChild(label);
     imagesList.appendChild(listItem);
   }
+});
+
+const priceInput = document.querySelector("#price-input");
+if (priceInput) {
+  priceInput.addEventListener("input", function(event) {
+     // Оставляем только цифры
+    const newValue = event.target.value.replace(/[^0-9]/g, "");
+    // Добавляем пробелы между разрядами
+    const formattedValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+     // Добавляем знак ₽ к концу
+    event.target.value = formattedValue + " ₽";
+  });
+}
+
+priceInput.addEventListener("keydown", function(event) {
+  if (event.key === "Backspace") {
+    const currentValue = event.target.value.replace(/[^0-9]/g, "");
+    event.target.value = currentValue.slice(0, -1);
+    event.preventDefault();
+  }
+});
+
+
+const checkboxes = document.querySelectorAll('.workTime__item input[type="checkbox"]');
+
+checkboxes.forEach(checkbox => {
+  const item = checkbox.closest('.workTime__item');
+  if (!checkbox.checked) {
+    item.classList.add('disabled');
+  }
+
+  checkbox.addEventListener('change', () => {
+    if (checkbox.checked) {
+      item.classList.remove('disabled');
+    } else {
+      item.classList.add('disabled');
+    }
+  });
+});
+
+const checkboxTime = document.querySelectorAll('.checkboxTime__input');
+checkboxTime.forEach((checkbox, index) => {
+  const id = `t_${index + 1}`;
+  checkbox.setAttribute('id', id);
+  const label = checkbox.nextElementSibling;
+  label.setAttribute('for', id);
 });
 
 

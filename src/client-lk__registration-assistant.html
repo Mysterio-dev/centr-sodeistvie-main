@@ -298,21 +298,2413 @@
 									</div>
 									<div class="tabs__body">
 										<div class="form__section">
-											<h5 class="form__row-title">Основная информация 
+											<h5 class="form__row-title">Основная информация
 											</h5>
 											<div class="form__row-grid">
 												<div class="form__col-grid col-12">
-													<div class="form-control">
+													<div class="form-control__wrap-textarea">
 														<label class="form-control__label">Описание на сайте</label>
-														<textarea class="form-control__textarea" name="" id="" cols="30" rows="10" value="">Проработала сиделкой в американской семье для пожилой пары в штате Нью Джерси в г Флорхэм парк 7,5 лет, с мая 2013 по октябрь 2020. Паре, на момент начала работы мужу было 86 лет, а жене 82 года. Работала с проживанием. В мои обязанности входило: - Готовить разную еду и кормить три раза в день, следить
-															и напоминать принимать таблетки, приготовить их на две недели. - Измерять давление, контролировать сахар</textarea>
+														<textarea class="form-control__textarea" cols="60" rows="3"
+															maxlength="500">Проработала сиделкой в американской семье для пожилой пары в штате Нью Джерси в г Флорхэм парк 7,5 лет, с мая 2013 по октябрь 2020. Паре, на момент начала работы мужу было 86 лет, а жене 82 года. Работала с проживанием. В мои обязанности входило: - Готовить разную еду и кормить три раза в день, следить и напоминать принимать таблетки, приготовить их на две недели. - Измерять давление, контролировать сахар</textarea>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control">
+														<label class="form-control__label">Ваш общий стаж</label>
+														<input class="form-control__input" autocomplete="off"
+															type="text" placeholder="" inputmode="text"
+															value="12 лет" />
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3">
+													<div class="form-control__select">
+														<label class="form-control__label">Район работы</label>
+														<select class="form">
+															<option value="1" selected>Казань, Вахитовский</option>
+															<option value="2">Казань, Вахитовский</option>
+														</select>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control__select">
+														<label class="form-control__label">Занятость</label>
+														<select class="form">
+															<option value="1" selected>Неполный день</option>
+															<option value="2">Полный день</option>
+														</select>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3">
+													<div class="range">
+														<label class="range__label">Оплата за час работы</label>
+														<div class="range__values">
+															<div class="range__input">
+																<span>от</span>
+																<input id="minPrice" type="text" />
+															</div>
+															<div class="range__input">
+																<span>от</span>
+																<input id="maxPrice" type="text" />
+															</div>
+														</div>
+														<div class="range__slider">
+															<div id="range"></div>
+														</div>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control">
+														<label class="form-control__label">С проживанием на
+															месяц</label>
+														<input id="price-input" class="form-control__input"
+															autocomplete="off" type="text" placeholder=""
+															inputmode="text" value="64 000 ₽" />
 													</div>
 												</div>
 											</div>
 										</div>
+										<div class="form__section">
+											<h5 class="form__row-title">Кратко о вас </h5>
+											<div class="form__row-grid">
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control">
+														<label class="form-control__label">Дата рождения</label>
+														<input class="form-control__input" autocomplete="off"
+															placeholder="Когда" name="formDate" type="text"
+															inputmode="text" value="">
+														<i class="icon__calendar"></i>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control__select">
+														<label class="form-control__label">Пол</label>
+														<select class="form">
+															<option value="1" selected>Женский</option>
+															<option value="2">Мужской</option>
+														</select>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control__select">
+														<label class="form-control__label">Вариант работы</label>
+														<select class="form">
+															<option value="1" selected>Без проживания</option>
+															<option value="2">С проживанием</option>
+														</select>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control__select">
+														<label class="form-control__label">Гражданство</label>
+														<select class="form">
+															<option value="1" selected>Россия</option>
+															<option value="2">Иное</option>
+															<option value="2">Двойное</option>
+														</select>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control__select">
+														<label class="form-control__label">Национальность</label>
+														<select class="form">
+															<option value="1" selected>Русская</option>
+															<option value="2">Русская</option>
+														</select>
+													</div>
+												</div>
+												<div class="form__col-grid col-12 col-sm-6 col-md-3 col-lg-2">
+													<div class="form-control__select">
+														<label class="form-control__label">Наличие прав</label>
+														<select class="form">
+															<option value="1" selected>Нет</option>
+															<option value="2">Да</option>
+														</select>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="form__section">
+											<h5 class="form__row-title">Опыт выполнения медицинских процедур</h5>
+											<div class="choice">
+												<div class="choice__list">
+													<div class="choice__item">
+														<button class="choice__btn-del" type="button">
+															<i class="icon__del"></i>
+														</button>
+														<h4 class="choice__name">
+															Деменция (болезнь Альцгеймера)
+														</h4>
+													</div>
+													<div class="choice__item">
+														<button class="choice__btn-del" type="button">
+															<i class="icon__del"></i>
+														</button>
+														<h4 class="choice__name">
+															Инсульт (постинсультная реабилитация)
+														</h4>
+													</div>
+													<div class="choice__item">
+														<button class="choice__btn-del" type="button">
+															<i class="icon__del"></i>
+														</button>
+														<h4 class="choice__name">
+															Онкология (рак)
+														</h4>
+													</div>
+													<button class="btn__add" type="button" data-popup="#popup-choice-1">
+														<i class="icon__plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+										<div class="form__section">
+											<h5 class="form__row-title">Опыт работы с больными по диагнозам</h5>
+											<div class="choice">
+												<div class="choice__list">
+													<div class="choice__item">
+														<button class="choice__btn-del" type="button">
+															<i class="icon__del"></i>
+														</button>
+														<h4 class="choice__name">
+															Гигиена больного
+														</h4>
+													</div>
+													<div class="choice__item">
+														<button class="choice__btn-del" type="button">
+															<i class="icon__del"></i>
+														</button>
+														<h4 class="choice__name">
+															Обработка ран, перевязка
+														</h4>
+													</div>
+													<button class="btn__add" type="button">
+														<i class="icon__plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+										<div class="form__section">
+											<h5 class="form__row-title">Дополнительные обязанности, которые вы можете
+												выполнять</h5>
+											<div class="choice">
+												<div class="choice__list">
+													<div class="choice__item">
+														<button class="choice__btn-del" type="button">
+															<i class="icon__del"></i>
+														</button>
+														<h4 class="choice__name">
+															Покупка продуктов и медикаментов
+														</h4>
+													</div>
+													<button class="btn__add" type="button">
+														<i class="icon__plus"></i>
+													</button>
+												</div>
+											</div>
+										</div>
+
+										<div class="form__section">
+											<h5 class="form__row-title">Настроить время работы в анкете</h5>
+											<div class="workTime">
+												<div class="workTime__item">
+													<label for="monday-checkbox" class="workTime__toggle">
+														<span class="toggle-label">Понедельник</span>
+														<input id="monday-checkbox" class="toggle-checkbox" type="checkbox" checked>
+														<div class="toggle-switch"></div>
+													</label>
+													<div class="workTime__wrap">
+														<div class="workTime__select _border-end">
+															<label for="" class="workTime__label">
+																От
+															</label>
+															<select class="form">
+																<option value="1" selected>8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15">22:00</option>
+															</select>
+														</div>
+														<div class="workTime__select">
+															<label for="" class="workTime__label">
+																До
+															</label>
+															<select class="form">
+																<option value="1">8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15" selected>22:00</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="workTime__item">
+													<label for="tuesday-checkbox" class="workTime__toggle">
+														<span class="toggle-label">Вторник</span>
+														<input id="tuesday-checkbox" class="toggle-checkbox" type="checkbox" checked>
+														<div class="toggle-switch"></div>
+													</label>
+													<div class="workTime__wrap">
+														<div class="workTime__select _border-end">
+															<label for="" class="workTime__label">
+																От
+															</label>
+															<select class="form">
+																<option value="1" selected>8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15">22:00</option>
+															</select>
+														</div>
+														<div class="workTime__select">
+															<label for="" class="workTime__label">
+																До
+															</label>
+															<select class="form">
+																<option value="1">8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15" selected>22:00</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="workTime__item">
+													<label for="wednesday-checkbox" class="workTime__toggle">
+														<span class="toggle-label">Среда</span>
+														<input id="wednesday-checkbox" class="toggle-checkbox" type="checkbox" checked>
+														<div class="toggle-switch"></div>
+													</label>
+													<div class="workTime__wrap">
+														<div class="workTime__select _border-end">
+															<label for="" class="workTime__label">
+																От
+															</label>
+															<select class="form">
+																<option value="1" selected>8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15">22:00</option>
+															</select>
+														</div>
+														<div class="workTime__select">
+															<label for="" class="workTime__label">
+																До
+															</label>
+															<select class="form">
+																<option value="1">8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15" selected>22:00</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="workTime__item">
+													<label for="thursday-checkbox" class="workTime__toggle">
+														<span class="toggle-label">Четверг</span>
+														<input id="thursday-checkbox" class="toggle-checkbox" type="checkbox" checked>
+														<div class="toggle-switch"></div>
+													</label>
+													<div class="workTime__wrap">
+														<div class="workTime__select _border-end">
+															<label for="" class="workTime__label">
+																От
+															</label>
+															<select class="form">
+																<option value="1" selected>8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15">22:00</option>
+															</select>
+														</div>
+														<div class="workTime__select">
+															<label for="" class="workTime__label">
+																До
+															</label>
+															<select class="form">
+																<option value="1">8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15" selected>22:00</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="workTime__item">
+													<label for="friday-checkbox" class="workTime__toggle">
+														<span class="toggle-label">Пятница</span>
+														<input id="friday-checkbox" class="toggle-checkbox" type="checkbox" checked>
+														<div class="toggle-switch"></div>
+													</label>
+													<div class="workTime__wrap">
+														<div class="workTime__select _border-end">
+															<label for="" class="workTime__label">
+																От
+															</label>
+															<select class="form">
+																<option value="1" selected>8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15">22:00</option>
+															</select>
+														</div>
+														<div class="workTime__select">
+															<label for="" class="workTime__label">
+																До
+															</label>
+															<select class="form">
+																<option value="1">8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15" selected>22:00</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="workTime__item">
+													<label for="saturday-checkbox" class="workTime__toggle">
+														<span class="toggle-label">Суббота</span>
+														<input id="saturday-checkbox" class="toggle-checkbox" type="checkbox" checked>
+														<div class="toggle-switch"></div>
+													</label>
+													<div class="workTime__wrap">
+														<div class="workTime__select _border-end">
+															<label for="" class="workTime__label">
+																От
+															</label>
+															<select class="form">
+																<option value="1" selected>8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15">22:00</option>
+															</select>
+														</div>
+														<div class="workTime__select">
+															<label for="" class="workTime__label">
+																До
+															</label>
+															<select class="form">
+																<option value="1">8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15" selected>22:00</option>
+															</select>
+														</div>
+													</div>
+												</div>
+												<div class="workTime__item">
+													<label for="sunday-checkbox" class="workTime__toggle">
+														<span class="toggle-label">Воскресенье</span>
+														<input id="sunday-checkbox" class="toggle-checkbox" type="checkbox">
+														<div class="toggle-switch"></div>
+													</label>
+													<div class="workTime__wrap">
+														<div class="workTime__select _border-end">
+															<label for="" class="workTime__label">
+																От
+															</label>
+															<select class="form">
+																<option value="1" selected>8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15">22:00</option>
+															</select>
+														</div>
+														<div class="workTime__select">
+															<label for="" class="workTime__label">
+																До
+															</label>
+															<select class="form">
+																<option value="1">8:00</option>
+																<option value="2">9:00</option>
+																<option value="3">10:00</option>
+																<option value="4">11:00</option>
+																<option value="5">12:00</option>
+																<option value="6">13:00</option>
+																<option value="7">14:00</option>
+																<option value="8">15:00</option>
+																<option value="9">16:00</option>
+																<option value="10">17:00</option>
+																<option value="11">18:00</option>
+																<option value="12">19:00</option>
+																<option value="13">20:00</option>
+																<option value="14">21:00</option>
+																<option value="15" selected>22:00</option>
+															</select>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+
+										<div class="form__footer">
+											<button class="btn__pink _w-200" type="sumbit">
+												Следующий шаг
+											</button>
+										</div>
+
 									</div>
 									<div class="tabs__body">
-										Содержимое третьего таба
+									      <h5 class="form__row-title">Заполните график работы на следующие две недели</h5>
+										 <div data-tabs class="tabs">
+											<nav data-tabs-titles class="tabs-fillBlue__navigation">
+												<button type="button" class="tabs-fillBlue__title _tab-active">Текущая неделя</button>
+												<button type="button" class="tabs-fillBlue__title">Следующая неделя</button>
+											</nav>
+											<div data-tabs-body>
+												<div class="tabs__body">
+													<div class="workScheduleTable">
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">12</h4>
+																<span class="workScheduleTable__weekday">Понедельник</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top _active">
+																<h4 class="workScheduleTable__day">13</h4>
+																<span class="workScheduleTable__weekday">Вторник</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">14</h4>
+																<span class="workScheduleTable__weekday">Среда</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">15</h4>
+																<span class="workScheduleTable__weekday">Четверг</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">16</h4>
+																<span class="workScheduleTable__weekday">Пятница</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">17</h4>
+																<span class="workScheduleTable__weekday">Суббота</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">18</h4>
+																<span class="workScheduleTable__weekday">Воскресенье</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												
+												</div>
+												<div class="tabs__body">
+													<div class="workScheduleTable">
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">19</h4>
+																<span class="workScheduleTable__weekday">Понедельник</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">20</h4>
+																<span class="workScheduleTable__weekday">Вторник</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">21</h4>
+																<span class="workScheduleTable__weekday">Среда</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">22</h4>
+																<span class="workScheduleTable__weekday">Четверг</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">23</h4>
+																<span class="workScheduleTable__weekday">Пятница</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top _active">
+																<h4 class="workScheduleTable__day">24</h4>
+																<span class="workScheduleTable__weekday">Суббота</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+														<div class="workScheduleTable__col">
+															<div class="workScheduleTable__top">
+																<h4 class="workScheduleTable__day">25</h4>
+																<span class="workScheduleTable__weekday">Воскресенье</span>
+															</div>
+															<ul class="workScheduleTable__list">
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">8:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">9:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">10:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">11:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">12:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">13:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">14:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">15:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">16:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">17:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" disabled>
+																		<label class="checkboxTime__label" disabled>
+																			<span class="checkboxTime__text">18:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox">
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">19:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">20:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">21:00</span>
+																		</label>
+																	</div>
+																</li>
+																<li class="workScheduleTable__item">
+																	<div class="checkboxTime">
+																		<input class="checkboxTime__input" type="checkbox" checked>
+																		<label class="checkboxTime__label">
+																			<span class="checkboxTime__text">22:00</span>
+																		</label>
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+												</div>
+											</div>
+										 </div>
+
+										 <div class="form__footer">
+											<button class="btn__pink-lg" type="sumbit">
+												Завершить регистрацию
+											</button>
+										</div>
 									</div>
 								</div>
 							</div>

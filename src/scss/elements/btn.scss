@@ -97,6 +97,30 @@
     }
 
 
+
+    &__pink-lg {
+        height: rem(68);
+        border-radius: rem(24);
+        color: var(--white);
+        background-color: var(--pink);
+        font-size: rem(16);
+        padding: rem(10) rem(35);
+        transition: var(--transition);
+
+        &:hover {
+            background-color: var(--pink-dark);
+        }
+
+        &:focus {
+            background-color: var(--pink-dark);
+            box-shadow: 0 0 0 0.25rem rgba(190, 52, 94, 0.32);
+        }
+
+
+
+    }
+
+
         // .btn__pink-sm
 
         &__pink-sm {
@@ -369,7 +393,23 @@
         }
     }
 
+    // .btn__add
 
+    &__add {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: rem(10); 
+        background: var(--pink);
+        width: rem(38);
+        height: rem(38);
+        transition: var(--transition);
+
+        &:hover {
+            background: var(--pink-dark);
+        }
+     }
+ 
 
 }
 
@@ -424,3 +464,7 @@
         height: rem(20);
     }
 }
+
+
+
+
