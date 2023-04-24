@@ -1120,7 +1120,6 @@ body::after {
   width: 100%;
   max-width: 42rem;
   border-radius: 1.875rem;
-  overflow: hidden;
 }
 .popup__content._enter {
   max-width: 18.125rem;
@@ -1135,6 +1134,9 @@ body::after {
   transform: scale(1);
 }
 
+.popup__content--overflow {
+  overflow: hidden;
+}
 .popup__body {
   animation: fade-in 0.4s;
 }
@@ -8491,6 +8493,11 @@ input[type=password] {
   gap: 0.625rem;
   line-height: 1.2727272727;
   font-weight: 500;
+}
+@media (min-width: 47.99875em) {
+  .monitoring__status {
+    max-width: 7.625rem;
+  }
 }
 .monitoring__status._active {
   color: var(--pink);

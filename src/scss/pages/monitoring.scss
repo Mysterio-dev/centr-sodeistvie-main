@@ -204,6 +204,10 @@
         line-height: math.div(28, 22);
         font-weight: 500;
 
+        @media (min-width:$mobile){
+             max-width: rem(122); 
+        }
+
         &._active {
             color: var(--pink);
         }

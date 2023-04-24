@@ -61,7 +61,7 @@ body::after {
     width: 100%;
     max-width: rem(672);
     border-radius: rem(30);
-    overflow: hidden;
+
 
 
 
@@ -83,6 +83,11 @@ body::after {
 
 .popup {
 
+
+
+    &__content--overflow {
+        overflow: hidden;
+    }
 
 
     // .popup__body
