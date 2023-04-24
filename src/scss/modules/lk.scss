@@ -1,43 +1,113 @@
-.lk-section {
-}
+.lk-section {}
 
 .lk {
 
-		// .lk__container
+    // .lk__heading
 
-		&__container {
-		}
-
-		// .lk__content
-
-		&__content {
-		}
-
-		// .lk__row
-
-		&__row {
-            
-            
-            @media (min-width:$tablet){
-                grid-template-columns: 200px minmax(500px, 1fr);
-                display: grid;
-            }
-
-            @media (min-width:em(1200)){
-                gap: rem(120);
-            }
-
-            @media (max-width: em(1200)){
-                gap: rem(30);
-            }
-
-		}
+    &__heading {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: rem(15) rem(20);
+        margin-bottom: rem(30);
 
 
-        &__title {
-            @include adaptiveValue("font-size", 44,24 );
-            line-height: math.div( 28,24 );
-            font-weight: 300;
-            margin-bottom: rem(20); 
+        @media (min-width:em(575)) {
+            margin-bottom: rem(30);
         }
+
+        @media (max-width:em(575)) {
+            margin-bottom: rem(15);
+        }
+
+        .lk__title {
+            margin-bottom: 0;
+        }
+
+
+    }
+
+
+    // .lk__container
+
+    &__container {}
+
+    // .lk__content
+
+    &__content {}
+
+
+
+    // .lk__navbar
+
+    &__navbar {
+        display: flex;
+        justify-content: space-between;
+        gap: rem(16);
+        margin-bottom: rem(30);
+        flex-wrap: wrap;
+
+        @media (max-width:$mobileSmall){
+             margin-bottom: rem(20); 
+        }
+    }
+
+    // .lk__navbar-left
+
+    &__navbar-left {
+        display: flex;
+        align-items: center;
+        gap: rem(16);
+    }
+
+
+
+
+    // .lk__navbar-right
+
+    &__navbar-right {
+        display: flex;
+        flex-wrap: wrap;
+        gap: rem(16);
+    }
+
+
+
+		// .lk__navbar-right-btn
+
+		&__navbar-right-btn {
+            display: flex;
+            flex-wrap: wrap;
+            gap: rem(10);
+		}
+
+
+    // .lk__row
+
+    &__row {
+
+
+        @media (min-width:$tablet) {
+            grid-template-columns: 200px minmax(500px, 1fr);
+            display: grid;
+        }
+
+        @media (min-width:em(1200)) {
+            gap: rem(115);
+        }
+
+        @media (max-width: em(1200)) {
+            gap: rem(30);
+        }
+
+    }
+
+
+    &__title {
+        @include adaptiveValue("font-size", 44, 24);
+        line-height: math.div(28, 24);
+        font-weight: 300;
+        margin-bottom: rem(20);
+    }
 }

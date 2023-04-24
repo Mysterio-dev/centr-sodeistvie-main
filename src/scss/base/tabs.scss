@@ -92,6 +92,15 @@
     }
 
 
+    &__monitoring {
+        margin-bottom: rem(50);
+
+        @media (max-width:$mobile){
+             margin-bottom: rem(30); 
+        }
+    }
+
+
 		// .tabs__icon
 
 		&__icon {

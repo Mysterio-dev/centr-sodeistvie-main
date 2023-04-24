@@ -1,0 +1,242 @@
+.chat {
+    background-color: var(--gray-3);
+    border-radius: rem(30);
+    // .chat__timeLine
+
+    &__timeLine {
+        display: flex;
+        height: rem(488);
+        padding: rem(20) rem(20) rem(10) rem(20);
+        flex-direction: column;
+        overflow-y: auto;
+
+
+
+        @media (min-width:$mobile) {
+            margin-right: rem(20);
+        }
+
+        ::-webkit-scrollbar {
+            width: 9px;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            border-radius: 4px;
+
+
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background-color: #888;
+            border-radius: 4px;
+        }
+
+    }
+
+    // .chat__messageItem
+
+    &__messageItem {
+        opacity: 0;
+        transition: all 0.15s ease-in-out;
+        animation: fadeNewMessage 0.5s;
+        animation-fill-mode: none;
+        animation-fill-mode: forwards;
+
+    }
+
+    // .chat__messageItem--left
+
+    &__messageItem--left {
+        padding-bottom: rem(30);
+        width: 100%;
+        margin-right: auto;
+
+        @media (min-width:$mobile) {
+            max-width: 68.666%;
+        }
+
+        @media (max-width:$mobile) {
+            max-width: 100%;
+        }
+
+        .chat__messageValue {
+            background-color: var(--white);
+            border-radius: 4px 20px 20px 20px;
+            float: left;
+            text-align: left;
+
+        }
+
+    }
+
+    // .chat__messageDate
+
+    &__messageDate {
+        display: block;
+        margin-bottom: rem(8);
+        color: var(--gray-7);
+        font-size: rem(12);
+    }
+
+    // .chat__messageValue
+
+    &__messageValue {
+        position: relative;
+        min-height: 45px;
+        padding: rem(11) rem(17) rem(11) rem(19);
+        @include adaptiveValue("font-size", 16, 14);
+        line-height: math.div(28, 22);
+        box-sizing: border-box;
+        overflow: hidden;
+
+
+
+
+
+    }
+
+    // .chat__messageItem--right
+
+    &__messageItem--right {
+        margin-left: auto;
+        padding-bottom: rem(15);
+        width: 100%;
+
+        @media (min-width:$mobile) {
+            max-width: 68.666%;
+        }
+
+        @media (max-width:$mobile) {
+            max-width: 100%;
+        }
+
+        .chat__messageValue {
+            background-color: var(--blue-dark);
+            border-radius: 20px 4px 20px 20px;
+            color: var(--white);
+            float: right;
+            text-align: right;
+
+        }
+
+        .chat__messageDate {
+            text-align: right;
+        }
+    }
+
+    // .chat__sendMessage
+
+    &__sendMessage {
+        padding: rem(7);
+        position: relative;
+    }
+
+    // .chat__input
+
+    &__input {
+        width: 100%;
+        min-height: rem(58);
+        background-color: var(--white);
+        border-radius: rem(30);
+        outline: none;
+        transition: var(--transition);
+        border: 1px solid transparent;
+        padding: rem(5) rem(57);
+        @include adaptiveValue("font-size", 16, 14);
+
+        &:placeholder {
+            opacity: 1;
+            color: var(--blue-dark);
+        }
+
+        &:focus {
+            border-color: var(--pink);
+        }
+    }
+
+    // .chat__button
+
+    &__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(38);
+        height: rem(38);
+        transition: var(--transition);
+        border-radius: rem(14);
+        background: var(--pink);
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-50%, -50%);
+
+        &:hover {
+            background: var(--pink-dark);
+        }
+    }
+
+
+
+    // .chat__attach
+
+    &__attach {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        left: rem(40);
+
+        input {
+            display: none;
+        }
+    }
+
+
+
+    // .chat__messageAttach
+
+    &__messageAttach {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+    }
+
+    // .chat__messageAttach-wrap
+
+    &__messageAttach-wrap {}
+
+    // .chat__messageAttach-name
+
+    &__messageAttach-name {}
+
+    // .chat__messageAttach-details
+
+    &__messageAttach-details {
+        font-size: rem(12);
+    }
+
+    // .chat__messageAttach-photo
+
+    &__messageAttach-photo {
+        width: rem(36);
+        height: rem(36);
+        border-radius: rem(10);
+
+        img {
+            width: 100%
+        }
+    }
+
+
+}
+
+@keyframes fadeNewMessage {
+    0% {
+        opacity: 0;
+        transform: translateY(1rem);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}

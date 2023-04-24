@@ -15,6 +15,7 @@
     --gray-7:  #BBBDC3;
     --gray-light: #F1ECEC;
     --green: #B3C997;
+    --red: #F13636;
   
 
     
@@ -71,6 +72,10 @@
 
 .mt-2 {
   margin-top: rem(40)!important;
+}
+
+.mb-15 {
+  margin-bottom: rem(15);
 }
 
 .mb-15 {
@@ -194,3 +199,7 @@ input[type="password"] {
   font-family: caption;
   letter-spacing: 5px;
 }
+
+
+
+

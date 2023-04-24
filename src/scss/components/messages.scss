@@ -3,7 +3,7 @@
     // .messages__list
 
     &__list {
-        margin-top: rem(35);
+        margin-top: rem(40);
     }
 
     // .messages__item
@@ -43,14 +43,43 @@
         }
     }
 
+
+
+		// .messages__address
+
+		&__address {
+            font-style: normal;
+		}
+
+
     // .messages__avatar
 
     &__avatar {
+        position: relative;
+        z-index: 1;
         width: rem(46);
         height: rem(46);
+        background-color: var(--white);
+        border-radius: 50%;
+        box-shadow: 4px 4px 44px rgba(39, 49, 74, 0.12);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -1;
+            display: block;
+            background: url('@img/icons/user-2.svg');
+            width: rem(22);
+            height: rem(22);
+            background-size: contain;
+        }
 
         img {
             width: 100%;
+            border-radius: 50%;
         }
     }
 

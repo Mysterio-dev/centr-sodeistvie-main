@@ -1,0 +1,8 @@
+.application-accepted {
+    display: flex;
+    align-items: center;
+    gap: rem(10);
+    max-width: rem(135);
+    font-size: rem(12);
+    line-height: math.div( 28,22 );
+}

@@ -37,10 +37,34 @@
     &__user-name {
         display: block;
         @include adaptiveValue("font-size", 24,20 );
-        line-height: math.div( 28,22 );
+        line-height: math.div( 28,25 );
         font-weight: 500;
         margin-bottom: rem(8);
     }
+
+
+
+		// .sidebar__review
+
+		&__review {
+            display: flex;
+            align-items: center;
+            gap: rem(8);
+		}
+
+		// .sidebar__rating
+
+		&__rating {
+		}
+
+		// .sidebar__rating-text
+
+		&__rating-text {
+            font-size: rem(12);
+            font-weight: 500;
+		}
+
+
 
     // .sidebar__user-phone
 

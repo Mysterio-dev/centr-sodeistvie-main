@@ -85,9 +85,6 @@
 			background: #F2F2F2;
 		}
 
-		&:disabled + .checkboxTime__label > .checkboxTime__text  {
-			color: #BFC3CE;
-		}
 
 		&:disabled + .checkboxTime__label:after {
 			content: none;

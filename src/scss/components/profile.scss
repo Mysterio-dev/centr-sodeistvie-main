@@ -1,0 +1,129 @@
+.profile {
+    display: flex;
+    align-items: center;
+    gap: rem(13);
+
+    // .profile__avatar
+
+    &__avatar {
+        width: rem(46);
+        height: rem(46);
+        border-radius: 50%;
+
+        img {
+            width: 100%;
+            border-radius: 50%;
+        }
+    }
+
+    // .profile__body
+
+    &__body {}
+
+    // .profile__title
+
+    &__title {
+        color: var(--gray-6);
+        font-size: rem(12);
+        font-weight: 500;
+        margin-bottom: rem(5);
+    }
+
+    // .profile__name
+
+    &__name {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 16, 14);
+
+    }
+}
+
+
+.profile {
+
+
+
+    // .profile__contact
+
+    &__contact {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        span {
+            color: var(--gray-6);
+            font-size: rem(12);
+            font-weight: 500;
+            margin-bottom: rem(5);
+        }
+
+        a {
+            font-weight: 500;
+            @include adaptiveValue("font-size", 16, 14);
+            transition: var(--transition);
+
+            &:hover {
+                color: var(--pink);
+            }
+        }
+    }
+}
+
+
+.profile-assistant {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+
+    // .profile-assistant__avatar
+
+    &__avatar {
+        display: flex;
+        align-items: center;
+        border-radius: 50%;
+        width: rem(46);
+        height: rem(46);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // .profile-assistant__profile-wrap
+
+    &__profile-wrap {}
+
+    // .profile-assistant__name
+
+    &__name {
+        @include adaptiveValue("font-size", 16, 14);
+        font-weight: 500;
+        margin-bottom: rem(5);
+    }
+
+    // .profile-assistant__details
+
+    &__details {
+        white-space: nowrap;
+        font-size: rem(12);
+    }
+
+    // .profile-assistant__rating
+
+    &__rating {}
+
+    // .profile-assistant__reviews
+
+    &__reviews {
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 2px;
+            height: 2px;
+            margin: -2px 2px 0;
+            border-radius: rem(50);
+            background-color: black;
+            vertical-align: middle;
+        }
+    }
+}

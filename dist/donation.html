@@ -6,7 +6,7 @@
 	<meta charset="UTF-8" />
 	<meta name="format-detection" content="telephone=no" />
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20230414164238" />
+	<link rel="stylesheet" href="css/style.min.css?_v=20230424110207" />
 	<link rel="shortcut icon" href="favicon.ico" />
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1245,17 +1245,19 @@
 	<div id="city" aria-hidden="true" class="popup">
 		<div class="popup__wrapper">
 			<div class="popup__content _city">
-				<h4 class="popup__title">
-					Выберите ваш город
-				</h4>
-				<div class="popup__body">
+				<div class="popup__head">
+					<h4 class="popup__title">
+						Выберите ваш город
+					</h4>
 					<button data-close type="button" class="popup__close">
 						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
 							<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
 						</svg>
 					</button>
+				</div>
 
+				<div class="popup__body">
 					<ul class="cityList">
 						<li class="cityList__item">
 							<a href="">
@@ -1304,15 +1306,18 @@
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<div class="popup__body">
-					<button data-close type="button" class="popup__close">
-						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-					</button>
-					<h4 class="popup__title">
-						Связаться с работником
-					</h4>
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Связаться с работником
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
 					<p class="popup__text">
 						Опишите сиделке кратко вашу задачу, дату и адрес выполнения
 					</p>
@@ -1351,42 +1356,1127 @@
 
 
 
-	<div id="popup-choice-1" aria-hidden="true" class="popup">
+	<div id="popup-choice-1" aria-hidden="true" class="popup popup_choice">
 		<div class="popup__wrapper">
 			<div class="popup__content">
 				<div class="popup__body">
-					<button data-close type="button" class="popup__close">
-						<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
-							<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
-						</svg>
-					</button>
-					<h4 class="popup__title">
-						Ваш опыт
-					</h4>
-					<p class="popup__text">
-						Опыт выполнения медицинских процедур
-					</p>
-
+					<div class="popup__head">
+						<h4 class="title">
+							Опыт выполнения медицинских процедур
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
 					<div class="form__row-grid">
 						<div class="form__col-grid col-12">
 							<div class="form-control">
-								<label class="form-control__label">Добавить</label>
-								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="" />
+								<label class="form-control__label">Ваш опыт</label>
+								<input class="form-control__input cid" autocomplete="off" type="text" placeholder="" value="" />
 							</div>
 						</div>
 					</div>
 
 					<div class="popup__bottom">
-						<button class="btn__pink" type="button">Применить</button>
+						<button class="btn__pink" id="addButton" type="button">Добавить</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<script src="https://api-maps.yandex.ru/2.1/?apikey=562bae56-7532-4afb-bb3e-e10bfb191f68&lang=ru_RU&_v=20230414164238" type="text/javascript"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js?_v=20230414164238"></script>
-	<script src="js/app.min.js?_v=20230414164238"></script>
+
+	<div id="popup-choice-2" aria-hidden="true" class="popup popup_choice">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="title">
+							Опыт работы с больными по диагнозам
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+					<div class="form__row-grid">
+						<div class="form__col-grid col-12">
+							<div class="form-control">
+								<label class="form-control__label">Ваш опыт</label>
+								<input class="form-control__input cid-2" autocomplete="off" type="text" placeholder="" value="" />
+							</div>
+						</div>
+					</div>
+					<div class="popup__bottom">
+						<button class="btn__pink" id="addButton-2" type="button">Добавить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="popup-choice-3" aria-hidden="true" class="popup popup_choice">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="title">
+							Дополнительные обязанности
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+					<div class="form__row-grid">
+						<div class="form__col-grid col-12">
+							<div class="form-control">
+								<label class="form-control__label">Ваш опыт</label>
+								<input class="form-control__input cid-3" autocomplete="off" type="text" placeholder="" value="" />
+							</div>
+						</div>
+					</div>
+					<div class="popup__bottom">
+						<button class="btn__pink" id="addButton-3" type="button">Добавить</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="popup-avatar" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Выбрать аватар
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+					<p class="popup__text">
+						Вы можете выбрать один из аватаров
+					</p>
+					<ul class="popup__avatar-list">
+						<li class="popup__avatar-item">
+							<img src="img/avatar/1.png" alt="Avatar 1" data-src="img/avatar/1.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/2.png" alt="Avatar 2" data-src="img/avatar/2.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/3.png" alt="Avatar 3" data-src="img/avatar/3.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/4.png" alt="Avatar 4" data-src="img/avatar/4.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/5.png" alt="Avatar 5" data-src="img/avatar/5.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/6.png" alt="Avatar 6" data-src="img/avatar/6.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/7.png" alt="Avatar 7" data-src="img/avatar/7.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/8.png" alt="Avatar 8" data-src="img/avatar/8.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/9.png" alt="Avatar 9" data-src="img/avatar/9.png">
+						</li>
+						<li class="popup__avatar-item">
+							<img src="img/avatar/10.png" alt="Avatar 10" data-src="img/avatar/10.png">
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Информация о пациенте -->
+	<div id="popup-info" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Александра Макарова
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Контакты подопечного
+					</p>
+
+					<div class="form__row-grid mb-35">
+						<div class="form__col-grid col-12 col-md-4">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Город</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Казань" />
+							</div>
+						</div>
+
+						<div class="form__col-grid col-12 col-md-6">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Адрес</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="ул. Профсоюзная, дом 23" />
+							</div>
+						</div>
+
+						<div class="form__col-grid col-12 col-md-2">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Кв/офис</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="15" />
+							</div>
+						</div>
+						<div class="form__col-grid col-12 col-md-4">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Номер телефона</label>
+								<input class="form-control__input phone-mask" autocomplete="off" type="text" placeholder="" value="+7 999 156-19-92" />
+							</div>
+						</div>
+						<div class="form__col-grid col-12 col-md-4">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Телефон ответственного</label>
+								<input class="form-control__input phone-mask" autocomplete="off" type="text" placeholder="" value="+7 843 205-36-78" />
+							</div>
+						</div>
+						<div class="form__col-grid col-12 col-md-4">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Телефон родственника</label>
+								<input class="form-control__input phone-mask" autocomplete="off" type="text" placeholder="" value="+7 297 588-20-47" />
+							</div>
+						</div>
+					</div>
+					<p class="popup__text">
+						Важная информация
+					</p>
+					<div class="form__row-grid">
+						<div class="form__col-grid col-12">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Болезни нервной системы</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Болезнь Альцгеймера с поздним началом" />
+							</div>
+						</div>
+						<div class="form__col-grid col-12">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Психические расстройства и расстройства поведения</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Деменция при болезни Альцгеймера атипичная или смешанного типа" />
+							</div>
+						</div>
+						<div class="form__col-grid col-12">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Важно знать </label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Отсутствие ограничений в повседневной жизни; отсутствие деменции" />
+							</div>
+						</div>
+					</div>
+
+					<div class="popup__bottom">
+						<button class="btn__pink _w-280" type="button" data-popup="#popup-complete">Завершить
+							сотрудничество</button>
+						<div class="form__help">
+							<i class="icon__security-user"></i>
+							<p class="form__help-text">
+								Это полностью отменит все ваше сотрудничесво с подопченым
+								и все записи задания будут отменены
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Добавить комментарий -->
+	<div id="popup-comment" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Добавить комментарий
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Ваш комментарий клиенту
+					</p>
+
+					<div class="form__row-grid mb-30">
+						<div class="form__col-grid col-12">
+							<div class="form-control">
+								<label class="form-control__label">Ваш комментарий</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Необходимо купить моющие средства" />
+							</div>
+						</div>
+					</div>
+
+					<p class="popup__text">
+						Загрузите не менее 2 фотографий
+					</p>
+					<ul class="form__photo-attach-list">
+						<li class="form__attach-photo">
+							<label for="productImage">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage2">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage2" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage3">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage3" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage4">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage4" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage5">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage5" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage6">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage6" accept="image/png, image/jpeg" data-id="">
+						</li>
+					</ul>
+					<div class="popup__bottom">
+						<button class="btn__pink" type="button">Отправить комментарий</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Загрузить отчет -->
+	<div id="popup-report" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Загрузить отчет
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Задача · Уборка дома пожилого человека
+					</p>
+
+					<div class="form__row-grid mb-30">
+						<div class="form__col-grid col-12">
+							<div class="form-control">
+								<label class="form-control__label">Ваш комментарий</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Выполнила уборку всех комнат. " />
+							</div>
+						</div>
+					</div>
+
+					<p class="popup__text">
+						Загрузите не менее 2 фотографий
+					</p>
+					<ul class="form__photo-attach-list">
+						<li class="form__attach-photo">
+							<label for="productImage7">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage7" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage8">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage8" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage9">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage9" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage10">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage10" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage11">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage11" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage12">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage12" accept="image/png, image/jpeg" data-id="">
+						</li>
+					</ul>
+					<div class="popup__bottom">
+						<button class="btn__pink" type="button">Сохранить изменения</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Завершить сотрудничество -->
+	<div id="popup-complete" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Завершить сотрудничество
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Укажите причину завершения сотрудничества
+					</p>
+
+					<div class="form__row-grid mb-30">
+						<div class="form__col-grid col-12">
+							<div class="form-control">
+								<label class="form-control__label">Ваш комментарий</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Нет возможности выполнить все поставленные задачи клиента" />
+							</div>
+						</div>
+					</div>
+
+					<p class="popup__text">
+						Вы можете загрузить фото
+					</p>
+					<ul class="form__photo-attach-list">
+						<li class="form__attach-photo">
+							<label for="productImage13">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage13" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage14">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage14" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage15">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage15" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage16">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage16" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage17">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage17" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage18">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage18" accept="image/png, image/jpeg" data-id="">
+						</li>
+					</ul>
+					<div class="popup__bottom">
+						<button class="btn__pink" type="button">Отправить комментарий</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="popup-assistant" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Выбрать сиделку
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Выберите сиделку из тех кому вы отправляли заявку
+					</p>
+
+					<ul class="popup-assistant__list">
+						<li class="popup-assistant__item">
+							<div class="profile-assistant">
+								<div class="profile-assistant__avatar">
+									<img src="img/assistant/1.png" alt="">
+								</div>
+								<div class="profile-assistant__profile-wrap">
+									<h5 class="profile-assistant__name">
+										Альфия Хабировна
+									</h5>
+									<div class="profile-assistant__details">
+										<span class="profile-assistant__rating">
+											Рейтинг 4.9
+										</span>
+										<span class="profile-assistant__reviews">
+											48 отзывов
+										</span>
+									</div>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-assistant__item">
+							<div class="profile-assistant">
+								<div class="profile-assistant__avatar">
+									<img src="img/assistant/5.png" alt="">
+								</div>
+								<div class="profile-assistant__profile-wrap">
+									<h5 class="profile-assistant__name">
+										Камила Равилевна
+									</h5>
+									<div class="profile-assistant__details">
+										<span class="profile-assistant__rating">
+											Рейтинг 4.7
+										</span>
+										<span class="profile-assistant__reviews">
+											12 отзывов
+										</span>
+									</div>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-assistant__item">
+							<div class="profile-assistant">
+								<div class="profile-assistant__avatar">
+									<img src="img/assistant/4.png" alt="">
+								</div>
+								<div class="profile-assistant__profile-wrap">
+									<h5 class="profile-assistant__name">
+										Ярослав Станиславов
+									</h5>
+									<div class="profile-assistant__details">
+										<span class="profile-assistant__rating">
+											Рейтинг 4.4
+										</span>
+										<span class="profile-assistant__reviews">
+											22 отзывов
+										</span>
+									</div>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-assistant__item">
+							<div class="profile-assistant">
+								<div class="profile-assistant__avatar">
+									<img src="img/assistant/6.png" alt="">
+								</div>
+								<div class="profile-assistant__profile-wrap">
+									<h5 class="profile-assistant__name">
+										Марат Хасанов
+									</h5>
+									<div class="profile-assistant__details">
+										<span class="profile-assistant__rating">
+											Рейтинг 4.9
+										</span>
+										<span class="profile-assistant__reviews">
+											34 отзывов
+										</span>
+									</div>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-assistant__item">
+							<div class="profile-assistant">
+								<div class="profile-assistant__avatar">
+									<img src="img/assistant/3.png" alt="">
+								</div>
+								<div class="profile-assistant__profile-wrap">
+									<h5 class="profile-assistant__name">
+										Зарина Бекполатовна
+									</h5>
+									<div class="profile-assistant__details">
+										<span class="profile-assistant__rating">
+											Рейтинг 4.6
+										</span>
+										<span class="profile-assistant__reviews">
+											15 отзывов
+										</span>
+									</div>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-assistant__item">
+							<div class="profile-assistant">
+								<div class="profile-assistant__avatar">
+									<img src="img/assistant/2.png" alt="">
+								</div>
+								<div class="profile-assistant__profile-wrap">
+									<h5 class="profile-assistant__name">
+										Галина Николаевна
+									</h5>
+									<div class="profile-assistant__details">
+										<span class="profile-assistant__rating">
+											Рейтинг 4.9
+										</span>
+										<span class="profile-assistant__reviews">
+											48 отзывов
+										</span>
+									</div>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+					</ul>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-task" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Задание сиделке
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Выберите задания для сиделки
+					</p>
+
+					<ul class="popup-task__list">
+						<li class="popup-task__item">
+							<div class="popup-task__body">
+								<div class="popup-task__icon-add-square">
+									<i class="icon__add-square"></i>
+								</div>
+								<div class="popup-task__wrap">
+									<h5 class="popup-task__title">
+										Создать собственное задание
+									</h5>
+									<p class="popup-task__text">
+										Можно заполнить в свободной форме
+									</p>
+								</div>
+							</div>
+
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-task__item">
+							<div class="popup-task__body">
+								<div class="popup-task__icon-receipt">
+									<i class="icon__receipt"></i>
+								</div>
+								<div class="popup-task__wrap">
+									<h5 class="popup-task__title">
+										Контроль приема лекарств подопечным
+									</h5>
+									<p class="popup-task__text">
+										10 минут на задачу
+									</p>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-task__item">
+							<div class="popup-task__body">
+								<div class="popup-task__icon-receipt">
+									<i class="icon__receipt"></i>
+								</div>
+								<div class="popup-task__wrap">
+									<h5 class="popup-task__title">
+										Переодевание подопечного
+									</h5>
+									<p class="popup-task__text">
+										10 минут на задачу
+									</p>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-task__item">
+							<div class="popup-task__body">
+								<div class="popup-task__icon-receipt">
+									<i class="icon__receipt"></i>
+								</div>
+								<div class="popup-task__wrap">
+									<h5 class="popup-task__title">
+										Кормление подопечного
+									</h5>
+									<p class="popup-task__text">
+										10 минут на задачу
+									</p>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-task__item">
+							<div class="popup-task__body">
+								<div class="popup-task__icon-receipt">
+									<i class="icon__receipt"></i>
+								</div>
+								<div class="popup-task__wrap">
+									<h5 class="popup-task__title">
+										Купание подопечного
+									</h5>
+									<p class="popup-task__text">
+										10 минут на задачу
+									</p>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+						<li class="popup-task__item">
+							<div class="popup-task__body">
+								<div class="popup-task__icon-receipt">
+									<i class="icon__receipt"></i>
+								</div>
+								<div class="popup-task__wrap">
+									<h5 class="popup-task__title">
+										Простейшие медицинские процедуры
+									</h5>
+									<p class="popup-task__text">
+										10 минут на задачу
+									</p>
+								</div>
+							</div>
+							<button class="btn-primary toggle-btn" type="button">
+								<span>Выбрать</span>
+							</button>
+						</li>
+					</ul>
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div id="popup-task-day" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Создать задачу на день
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Опишите дополнительную задачу на этот день
+					</p>
+
+					<div class="form__row-grid mb-30">
+						<div class="form__col-grid col-12">
+							<div class="form-control">
+								<label class="form-control__label">Ваш комментарий</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Проверить давление подопечного" />
+							</div>
+						</div>
+						<div class="form__col-grid col-12 col-sm-6">
+							<div class="form-control__select">
+								<label class="form-control__label">Время на задачу</label>
+								<select class="form">
+									<option value="1" selected>160 минут</option>
+									<option value="2">120 минут</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form__col-grid col-12 col-sm-6">
+							<div class="form-control__select">
+								<label class="form-control__label">В какое время дня</label>
+								<select class="form">
+									<option value="1" selected>11:00</option>
+									<option value="2">9:00</option>
+								</select>
+							</div>
+						</div>
+
+
+					</div>
+
+
+					<div class="popup__bottom">
+						<button class="btn__pink" type="button">Создать задачу</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="popup-report-2" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Отчет · 9 марта
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<p class="popup__text">
+						Задача · Уборка дома пожилого человека
+					</p>
+
+					<div class="form__row-grid mb-30">
+						<div class="form__col-grid col-12">
+							<div class="form-control form-control__color">
+								<label class="form-control__label">Ваш комментарий</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Выполнила уборку всех комнат. " />
+							</div>
+						</div>
+					</div>
+
+
+
+					<p class="popup__text">
+						Фотографии от сиделки
+					</p>
+
+					<ul class="popup-photo__ul">
+						<li class="popup-photo__item">
+							<img src="img/photo/2.png" alt="">
+						</li>
+						<li class="popup-photo__item">
+							<img src="img/photo/6.png" alt="">
+						</li>
+						<li class="popup-photo__item">
+							<img src="img/photo/7.png" alt="">
+						</li>
+					</ul>
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- Заявка на замену -->
+	<div id="popup-replace" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Заявка на замену
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+					<p class="popup__text">
+						Заполните заявку
+					</p>
+					<div class="form__row-grid mb-30">
+						<div class="form__col-grid col-sm-6">
+							<div class="form-control__select">
+								<label class="form-control__label">Выберите тип замены</label>
+								<select class="form">
+									<option value="1" selected>Замена на одну дату</option>
+									<option value="2">Замена на две даты</option>
+								</select>
+							</div>
+						</div>
+
+						<div class="form__col-grid col-sm-6">
+							<div class="form-control">
+								<label class="form-control__label">Выберите дату</label>
+								<input class="form-control__input" name="formDate" autocomplete="off" type="text" placeholder="" value="14 апреля 2023" />
+								<i class="icon__calendar"></i>
+							</div>
+						</div>
+
+						<div class="form__col-grid col-12">
+							<div class="form-control">
+								<label class="form-control__label">Причина замены</label>
+								<input class="form-control__input" autocomplete="off" type="text" placeholder="" value="Сломалась машина, не успею попасть в город" />
+							</div>
+						</div>
+					</div>
+
+					<p class="popup__text">
+						Вы можете загрузить фото
+					</p>
+					<ul class="form__photo-attach-list">
+						<li class="form__attach-photo">
+							<label for="productImage22">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage22" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage23">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage23" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage24">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage24" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage25">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage25" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage26">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage26" accept="image/png, image/jpeg" data-id="">
+						</li>
+						<li class="form__attach-photo">
+							<label for="productImage27">
+								<div class="form__icon-wrap">
+									<i class="icon__camera-mini"></i>
+								</div>
+								<img class="form__image-preview" src="" alt="">
+							</label>
+							<input type="file" class="form-control productImage" id="productImage27" accept="image/png, image/jpeg" data-id="">
+						</li>
+					</ul>
+					<div class="popup__bottom">
+						<button class="btn__pink" type="button" data-popup="#popup-accepted">Отправить заявку</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Заявка принята -->
+	<div id="popup-accepted" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<div class="popup__body">
+					<div class="popup__head">
+						<h4 class="popup__title">
+							Заявка на замену
+						</h4>
+						<button data-close type="button" class="popup__close">
+							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M15.625 4.375L4.375 15.625" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+								<path d="M15.625 15.625L4.375 4.375" stroke="#27314A" stroke-linecap="round" stroke-linejoin="round" />
+							</svg>
+						</button>
+					</div>
+
+					<div class="popup-row">
+						<div class="popup-wrap">
+							<p class="popup__text">
+								Оставайтесь на связи! С вами свяжется
+								ответственный менеджер по вашему запросу.
+							</p>
+							<div class="popup-contacts">
+								<span class="popup-contacts__text">
+									Или позвоните по номеру
+								</span>
+								<a href="tel:+78552782835">8 8552 78-28-35</a>
+							</div>
+							<button class="btn__pink" type="button">Прекрасно</button>
+						</div>
+						<div class="popup-image">
+							<img src="img/other/сharacter.svg" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://api-maps.yandex.ru/2.1/?apikey=562bae56-7532-4afb-bb3e-e10bfb191f68&lang=ru_RU&_v=20230424110207" type="text/javascript"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.5.141/pdf.min.js?_v=20230424110207"></script>
+	<script src="js/app.min.js?_v=20230424110207"></script>
 </body>
 
 </html>

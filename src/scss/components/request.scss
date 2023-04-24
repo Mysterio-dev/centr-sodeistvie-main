@@ -22,6 +22,16 @@
         justify-content: space-between;
         padding: rem(13) 0;
 
+        &._completed {
+            .request__info {
+                opacity: .5;
+            }
+
+            .request__wrap {
+                opacity: .5; 
+            }
+        }
+
 
         border-top: 1px solid var(--gray-light);
 
@@ -29,12 +39,12 @@
             border-bottom: 1px solid var(--gray-light);
         }
 
-        @media (min-width:$mobile){
-             align-items: center; 
+        @media (min-width:$mobile) {
+            align-items: center;
         }
 
-        @media (max-width:$mobile){
-             flex-direction: column; 
+        @media (max-width:$mobile) {
+            flex-direction: column;
         }
     }
 
@@ -51,14 +61,31 @@
     // .request__avatar
 
     &__avatar {
+        position: relative;
+        z-index: 1;
         width: rem(46);
         height: rem(46);
-        min-width: rem(46);
-        min-height: rem(46);
-        border-radius: rem(50);
+        background-color: var(--white);
+        border-radius: 50%;
+        box-shadow: 4px 4px 44px rgba(39, 49, 74, 0.12);
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: -1;
+            display: block;
+            background: url('@img/icons/user-2.svg');
+            width: rem(22);
+            height: rem(22);
+            background-size: contain;
+        }
 
         img {
             width: 100%;
+            border-radius: 50%;
         }
     }
 
@@ -88,7 +115,7 @@
         line-height: math.div(28, 22);
         font-weight: 500;
 
-      
+
     }
 
     // .request__reception-active
@@ -124,17 +151,18 @@
     &__wrap {
         display: flex;
         gap: rem(16);
-        @media (min-width:$mobile){
+
+        @media (min-width:$mobile) {
             margin-right: rem(35);
         }
 
-        @media (max-width:$mobile){
-             margin-right: rem(15); 
+        @media (max-width:$mobile) {
+            margin-right: rem(15);
         }
 
-        @media (max-width:$mobileSmall){
-             flex-direction: column; 
-             gap: 0;
+        @media (max-width:$mobileSmall) {
+            flex-direction: column;
+            gap: 0;
         }
     }
 
@@ -186,6 +214,99 @@
     &__control {
         display: flex;
         align-items: center;
+        justify-content: right;
         gap: rem(10);
+        width: rem(60);
     }
 }
+
+
+.request-monitoring {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: rem(17);
+    border-radius: rem(24);
+    border: 1px solid var(--pink);
+    padding: rem(11) rem(15);
+    margin-bottom: rem(30);
+    min-height: rem(70);
+
+
+    @media (max-width:$mobileSmall){
+         padding: rem(10); 
+    }
+
+    .icon__arrow-right {
+        margin: 0 rem(6);
+
+        @media (max-width:$mobileSmall){
+             display: none; 
+        }
+    }
+
+    // .request-monitoring__wrap
+
+    &__wrap {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        font-weight: 500;
+        @include adaptiveValue("font-size", 16,12);
+        line-height: math.div( 28,22 );
+    }
+
+    // .request-monitoring__title
+
+    &__title {
+        font-weight: 500;
+        @include adaptiveValue("font-size", 12,10 );
+        color: var(--pink);
+        margin-bottom: rem(8);
+    }
+
+    // .request-monitoring__ward
+
+    &__ward {
+        display: flex;
+        align-items: center;
+    }
+
+    // .request-monitoring__address
+
+    &__address {}
+
+
+
+    // .request-monitoring__body
+
+    &__body {
+        display: flex;
+        align-items: center;
+        gap: rem(17);
+
+        @media (max-width:$mobileSmall){
+             gap: rem(10); 
+        }
+    }
+
+
+
+    // .request-monitoring__icon
+
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(34);
+        height: rem(34);
+        min-width: rem(34);
+        min-height: rem(34);
+        background: var(--white);
+        border-radius: rem(8);
+    }
+
+
+}
+
+

@@ -1,0 +1,56 @@
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: rem(16);
+
+    // .user-card__image
+
+    &__image {
+        img {
+            width: 100%;
+            max-width: rem(46);
+        }
+    }
+
+    // .user-card__body
+
+    &__body {}
+
+    // .user-card__title
+
+    &__title {
+        @include adaptiveValue("font-size", 16, 14);
+        font-weight: 500;
+        margin-bottom: rem(5);
+    }
+
+    // .user-card__review
+
+    &__review {
+        display: flex;
+        align-items: center;
+        gap: rem(8);
+
+    }
+
+    // .user-card__rating
+
+    &__rating {}
+
+    // .user-card__rating-text
+
+    &__rating-text {
+        font-weight: 500;
+        font-size: rem(12);
+    }
+
+
+
+    // .user-card__address
+
+    &__address {
+        font-style: normal;
+        font-size: rem(12);
+    }
+
+}

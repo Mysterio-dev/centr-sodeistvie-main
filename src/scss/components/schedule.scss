@@ -129,6 +129,23 @@
     overflow: auto;
     padding-bottom: rem(15);
 
+
+
+
+    // .workScheduleTable__record
+
+    &__record {
+        display: inline-flex;
+        align-items: center;
+        padding: rem(5) rem(8);
+        color: var(--white);
+        background: var(--blue-dark);
+        font-weight: 500;
+        font-size: rem(12);
+        border-radius: rem(18);
+    }
+
+
     // .workScheduleTable__col
 
     &__col {

@@ -1,0 +1,41 @@
+.notification {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: var(--blue-dark);
+    color: var(--white);
+    border-radius: rem(10);
+    font-weight: 500;
+    @include adaptiveValue("font-size", 14, 12);
+    padding: rem(7) rem(15);
+    // .notification__title
+
+    &__title {
+        display: flex;
+        align-items: center;
+
+
+
+
+        @media (min-width:$mobileSmall) {
+            &::after {
+                content: '';
+                background: url('@img/icons/arrow-light.png') no-repeat;
+                background-size: cover;
+                width: rem(18);
+                height: rem(18);
+                margin: 0 rem(4);
+            }
+        }
+    }
+
+    // .notification__user
+
+    &__user {
+        border-bottom: 1px solid var(--white);
+    }
+}
+
+.notification-row {
+    margin-bottom: rem(30);
+}

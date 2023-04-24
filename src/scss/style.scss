@@ -51,8 +51,8 @@ $responsiveType: 1;
 body {
 	// Скролл заблокирован
 	.lock & {
-		overflow: hidden;
-		touch-action: none;
+		// overflow: hidden;
+		// touch-action: none;
 	}
 	// Сайт загружен
 	.loaded & {
@@ -145,7 +145,11 @@ body {
 @import "components/request";
 @import "components/choice";
 @import "components/workTime";
-
+@import "components/user-card";
+@import "components/application-accepted";
+@import "components/chat";
+@import "components/profile";
+@import "components/notice";
 
 
 @import "utilities/pagination";
@@ -168,6 +172,8 @@ body {
 @import "pages/advantage";
 @import "pages/deposit";
 @import "pages/donate";
+@import "pages/wards";
+@import "pages/monitoring";
 
 @import "modules/header";
 @import "modules/footer";
@@ -176,6 +182,7 @@ body {
 @import "modules/hero";
 @import "modules/tariffs";
 @import "modules/questions";
+@import "modules/navbar";
 
 @import "sliders/letter";
 @import "sliders/documents";

@@ -5,6 +5,8 @@
     &__location {
         display: block;
         background: url('@img/icons/location.svg') no-repeat;
+        min-width: rem(16);
+        min-height: rem(16);
         width: rem(16);
         height: rem(16);
         background-size: contain;
@@ -201,32 +203,286 @@
         background-size: contain;
     }
 
- 
 
-		// .icon__del
 
-		&__del {
-            display: block;
-            background: url('@img/icons/close-circle.svg') no-repeat;
-            width: rem(16);
-            height: rem(16);
-            background-size: contain;
-           
-		}
+    // .icon__del
 
- 
+    &__del {
+        display: block;
+        background: url('@img/icons/close-circle.svg') no-repeat;
+        width: rem(16);
+        height: rem(16);
+        background-size: contain;
 
-            // .icon__plus
-    
-            &__plus {
-                display: block;
-                background: url('@img/icons/plus.svg') no-repeat;
-                width: rem(20);
-                height: rem(20);
-                background-size: contain;
-            }
-    
-    
+    }
+
+
+
+    // .icon__plus
+
+    &__plus {
+        display: block;
+        background: url('@img/icons/plus.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+    }
+
+
+
+
+    // .icon__back
+
+    &__back {
+        display: block;
+        background: url('@img/icons/back.svg') no-repeat;
+        width: rem(24);
+        height: rem(24);
+        background-size: contain;
+    }
+
+
+
+    // .icon__accepted
+
+    &__accepted {
+        display: block;
+        background: url('@img/icons/user-tick.svg') no-repeat;
+        width: rem(24);
+        height: rem(24);
+        min-width: rem(24);
+        min-height: rem(24);
+        background-size: contain;
+    }
+
+
+
+
+    // .icon__send
+
+    &__send {
+        display: block;
+        background: url('@img/icons/send.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+    }
+
+
+
+    // .icon__photo
+
+    &__photo {
+        display: block;
+        background: url('@img/icons/camera.svg') no-repeat;
+        width: rem(24);
+        height: rem(24);
+        background-size: contain;
+    }
+
+
+
+    // .icon__share
+
+    &__share {
+        display: block;
+        background: url('@img/icons/share.svg') no-repeat;
+        width: rem(24);
+        height: rem(24);
+        background-size: contain;
+    }
+
+
+
+    // .icon__clock-light
+
+    &__clock-light {
+        display: block;
+        background: url('@img/icons/clock-white.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+    }
+
+
+
+    // .icon__add-circle
+
+    &__add-circle {
+        display: block;
+        background: url('@img/icons/add-circle.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+    }
+
+
+
+    // .icon__like-shapes-dark
+
+    &__like-shapes-dark {
+        display: block;
+        background: url('@img/icons/like-shapes-dark.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+    }
+
+
+
+
+    // .icon__clock-red
+
+    &__clock-red {
+        display: block;
+        background: url('@img/icons/clock-red.svg') no-repeat;
+        width: rem(24);
+        height: rem(24);
+        min-width: rem(24);
+        min-height: rem(24);
+        background-size: contain;
+    }
+
+
+
+
+    // .icon__info
+
+    &__info {
+        display: block;
+        background: url('@img/icons/info-circle.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+    }
+
+
+
+
+    // .icon__flag
+
+    &__flag {
+        display: block;
+        background: url('@img/icons/flag.svg') no-repeat;
+        min-width: rem(24);
+        min-height: rem(24);
+        background-size: contain;
+    }
+
+
+
+    // .icon__receipt
+
+    &__receipt {
+        display: block;
+        background: url('@img/icons/receipt.svg') no-repeat;
+        min-width: rem(24);
+        min-height: rem(24);
+        background-size: contain;
+    }
+
+
+
+    // .icon__tick-circle
+
+    &__tick-circle {
+        display: block;
+        background: url('@img/icons/tick-circle.svg') no-repeat;
+        min-width: rem(24);
+        min-height: rem(24);
+        background-size: contain;
+    }
+
+
+
+    // .icon__story
+
+    &__story {
+        display: block;
+        background: url('@img/icons/story.svg') no-repeat;
+        min-width: rem(24);
+        min-height: rem(24);
+        background-size: contain;
+    }
+
+
+
+
+    // .icon__message-text
+
+    &__message-text {
+        display: block;
+        background: url('@img/icons/message-text_2.svg') no-repeat;
+        min-width: rem(24);
+        min-height: rem(24);
+        background-size: contain;
+    }
+
+
+
+    // .icon__user-cirlce-add
+
+    &__user-cirlce-add {
+        display: block;
+        background: url('@img/icons/user-cirlce-add.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+    }
+
+
+
+    // .icon__camera-mini
+
+    &__camera-mini {
+        display: block;
+        background: url('@img/icons/camera.svg') no-repeat;
+        width: rem(20);
+        height: rem(20);
+        background-size: contain;
+
+    }
+
+
+
+
+
+    // .icon__arrow-down
+
+    &__arrow-down {
+        display: block;
+        background: url('@img/icons/arrow-down_pink.svg') no-repeat;
+        width: rem(18);
+        height: rem(18);
+        background-size: contain;
+
+
+    }
+
+
+
+    // .icon__add-square
+
+    &__add-square {
+        display: block;
+        background: url('@img/icons/add-square.svg') no-repeat;
+        width: rem(24);
+        height: rem(24);
+        background-size: contain;
+    }
+
+    // .icon__tick-square 
+    &__tick-square {
+        display: block;
+        background: url('@img/icons/tick-square.svg') no-repeat;
+        width: rem(24);
+        height: rem(24);
+        background-size: contain;
+    }
+
+
+
+
 
 
 }

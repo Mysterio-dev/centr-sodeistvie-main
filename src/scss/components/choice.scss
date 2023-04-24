@@ -1,6 +1,7 @@
 .choice {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: rem(10);
 
     // .choice__list

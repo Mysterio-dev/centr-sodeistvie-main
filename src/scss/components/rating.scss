@@ -3,20 +3,20 @@
     align-items: center;
     gap: rem(2);
 
-    // .rating__star
+    // // .rating__star
 
-    &__star {
-        path {
-            fill: #D6DAE2;
-        }
+    // &__star {
+    //     path {
+    //         fill: #D6DAE2;
+    //     }
 
-        &._active {
-            path {
-                fill: #07B3E8
-            }
+    //     &._active {
+    //         path {
+    //             fill: #07B3E8
+    //         }
 
-        }
-    }
+    //     }
+    // }
 
     &__value {
         font-size: rem(12);

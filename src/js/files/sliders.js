@@ -480,6 +480,29 @@ function initSliders() {
 		
 		});
 	}
+
+	if (document.querySelector('.week__slider')) { // Указываем скласс нужного слайдера
+		// Создаем слайдер
+		new Swiper('.week__slider', { // Указываем скласс нужного слайдера
+			// Подключаем модули слайдера
+			// для конкретного случая
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 'auto',
+			spaceBetween: 10,
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.prev',
+				nextEl: '.next',
+			},
+
+			
+
+		
+		});
+	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)
 function initSlidersScroll() {

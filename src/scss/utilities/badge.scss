@@ -24,10 +24,20 @@
 
       }
 
+        // ._success-dark
+
+        &._success-dark {
+            gap: rem(8);
+            background: var(--gray-3);
+            color: var(--blue-dark);
+            padding: rem(5) rem(5) rem(5) rem(14);
+
+      }
+
       // primary
 
       &._primary {
-            gap: rem(12);
+            gap: rem(8);
             background: var(--gray-3);
             color: var(--pink);
             padding: rem(5) rem(5) rem(5) rem(14);
@@ -39,7 +49,7 @@
       // ._secondary
 
       &._secondary {
-            gap: rem(10);
+            gap: rem(8);
             padding: rem(5) rem(2) rem(5) rem(14);
             background: var(--blue-dark);
             color: var(--white);
@@ -65,4 +75,25 @@
       }
 
 
+   
+    
+      
+  
+      
+      
+
+
+}
+
+
+.badge-approval {
+      display: flex;
+      align-items: center;
+      padding: rem(5) rem(13);
+      background: var(--pink);
+      color: var(--white);
+     @include adaptiveValue("font-size", 14,12 );
+      font-weight: 500;
+      border-radius: rem(10);
+      color: var(--white);
 }

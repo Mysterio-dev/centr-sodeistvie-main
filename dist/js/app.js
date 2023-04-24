@@ -1,5 +1,9 @@
 (() => {
     var __webpack_modules__ = {
+        807: module => {
+            var canUseDOM = !!("undefined" !== typeof window && window.document && window.document.createElement);
+            module.exports = canUseDOM;
+        },
         125: module => {
             /*!
  * dist/inputmask.min
@@ -11423,9 +11427,979 @@
                     clickable: true
                 }
             });
+            if (document.querySelector(".week__slider")) new core(".week__slider", {
+                modules: [ Navigation ],
+                observer: true,
+                observeParents: true,
+                slidesPerView: "auto",
+                spaceBetween: 10,
+                navigation: {
+                    prevEl: ".prev",
+                    nextEl: ".next"
+                }
+            });
         }
         window.addEventListener("load", (function(e) {
             initSliders();
+        }));
+        var can_use_dom = __webpack_require__(807);
+        function isObject_isObject(value) {
+            var type = typeof value;
+            return null != value && ("object" == type || "function" == type);
+        }
+        const lodash_es_isObject = isObject_isObject;
+        var freeGlobal = "object" == typeof global && global && global.Object === Object && global;
+        const _freeGlobal = freeGlobal;
+        var freeSelf = "object" == typeof self && self && self.Object === Object && self;
+        var root = _freeGlobal || freeSelf || Function("return this")();
+        const _root = root;
+        var now_now = function() {
+            return _root.Date.now();
+        };
+        const lodash_es_now = now_now;
+        var reWhitespace = /\s/;
+        function trimmedEndIndex(string) {
+            var index = string.length;
+            while (index-- && reWhitespace.test(string.charAt(index))) ;
+            return index;
+        }
+        const _trimmedEndIndex = trimmedEndIndex;
+        var reTrimStart = /^\s+/;
+        function baseTrim(string) {
+            return string ? string.slice(0, _trimmedEndIndex(string) + 1).replace(reTrimStart, "") : string;
+        }
+        const _baseTrim = baseTrim;
+        var Symbol = _root.Symbol;
+        const _Symbol = Symbol;
+        var objectProto = Object.prototype;
+        var _getRawTag_hasOwnProperty = objectProto.hasOwnProperty;
+        var nativeObjectToString = objectProto.toString;
+        var symToStringTag = _Symbol ? _Symbol.toStringTag : void 0;
+        function getRawTag(value) {
+            var isOwn = _getRawTag_hasOwnProperty.call(value, symToStringTag), tag = value[symToStringTag];
+            try {
+                value[symToStringTag] = void 0;
+                var unmasked = true;
+            } catch (e) {}
+            var result = nativeObjectToString.call(value);
+            if (unmasked) if (isOwn) value[symToStringTag] = tag; else delete value[symToStringTag];
+            return result;
+        }
+        const _getRawTag = getRawTag;
+        var _objectToString_objectProto = Object.prototype;
+        var _objectToString_nativeObjectToString = _objectToString_objectProto.toString;
+        function objectToString(value) {
+            return _objectToString_nativeObjectToString.call(value);
+        }
+        const _objectToString = objectToString;
+        var nullTag = "[object Null]", undefinedTag = "[object Undefined]";
+        var _baseGetTag_symToStringTag = _Symbol ? _Symbol.toStringTag : void 0;
+        function baseGetTag(value) {
+            if (null == value) return void 0 === value ? undefinedTag : nullTag;
+            return _baseGetTag_symToStringTag && _baseGetTag_symToStringTag in Object(value) ? _getRawTag(value) : _objectToString(value);
+        }
+        const _baseGetTag = baseGetTag;
+        function isObjectLike(value) {
+            return null != value && "object" == typeof value;
+        }
+        const lodash_es_isObjectLike = isObjectLike;
+        var symbolTag = "[object Symbol]";
+        function isSymbol(value) {
+            return "symbol" == typeof value || lodash_es_isObjectLike(value) && _baseGetTag(value) == symbolTag;
+        }
+        const lodash_es_isSymbol = isSymbol;
+        var NAN = 0 / 0;
+        var reIsBadHex = /^[-+]0x[0-9a-f]+$/i;
+        var reIsBinary = /^0b[01]+$/i;
+        var reIsOctal = /^0o[0-7]+$/i;
+        var freeParseInt = parseInt;
+        function toNumber(value) {
+            if ("number" == typeof value) return value;
+            if (lodash_es_isSymbol(value)) return NAN;
+            if (lodash_es_isObject(value)) {
+                var other = "function" == typeof value.valueOf ? value.valueOf() : value;
+                value = lodash_es_isObject(other) ? other + "" : other;
+            }
+            if ("string" != typeof value) return 0 === value ? value : +value;
+            value = _baseTrim(value);
+            var isBinary = reIsBinary.test(value);
+            return isBinary || reIsOctal.test(value) ? freeParseInt(value.slice(2), isBinary ? 2 : 8) : reIsBadHex.test(value) ? NAN : +value;
+        }
+        const lodash_es_toNumber = toNumber;
+        var FUNC_ERROR_TEXT = "Expected a function";
+        var nativeMax = Math.max, nativeMin = Math.min;
+        function debounce_debounce(func, wait, options) {
+            var lastArgs, lastThis, maxWait, result, timerId, lastCallTime, lastInvokeTime = 0, leading = false, maxing = false, trailing = true;
+            if ("function" != typeof func) throw new TypeError(FUNC_ERROR_TEXT);
+            wait = lodash_es_toNumber(wait) || 0;
+            if (lodash_es_isObject(options)) {
+                leading = !!options.leading;
+                maxing = "maxWait" in options;
+                maxWait = maxing ? nativeMax(lodash_es_toNumber(options.maxWait) || 0, wait) : maxWait;
+                trailing = "trailing" in options ? !!options.trailing : trailing;
+            }
+            function invokeFunc(time) {
+                var args = lastArgs, thisArg = lastThis;
+                lastArgs = lastThis = void 0;
+                lastInvokeTime = time;
+                result = func.apply(thisArg, args);
+                return result;
+            }
+            function leadingEdge(time) {
+                lastInvokeTime = time;
+                timerId = setTimeout(timerExpired, wait);
+                return leading ? invokeFunc(time) : result;
+            }
+            function remainingWait(time) {
+                var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime, timeWaiting = wait - timeSinceLastCall;
+                return maxing ? nativeMin(timeWaiting, maxWait - timeSinceLastInvoke) : timeWaiting;
+            }
+            function shouldInvoke(time) {
+                var timeSinceLastCall = time - lastCallTime, timeSinceLastInvoke = time - lastInvokeTime;
+                return void 0 === lastCallTime || timeSinceLastCall >= wait || timeSinceLastCall < 0 || maxing && timeSinceLastInvoke >= maxWait;
+            }
+            function timerExpired() {
+                var time = lodash_es_now();
+                if (shouldInvoke(time)) return trailingEdge(time);
+                timerId = setTimeout(timerExpired, remainingWait(time));
+            }
+            function trailingEdge(time) {
+                timerId = void 0;
+                if (trailing && lastArgs) return invokeFunc(time);
+                lastArgs = lastThis = void 0;
+                return result;
+            }
+            function cancel() {
+                if (void 0 !== timerId) clearTimeout(timerId);
+                lastInvokeTime = 0;
+                lastArgs = lastCallTime = lastThis = timerId = void 0;
+            }
+            function flush() {
+                return void 0 === timerId ? result : trailingEdge(lodash_es_now());
+            }
+            function debounced() {
+                var time = lodash_es_now(), isInvoking = shouldInvoke(time);
+                lastArgs = arguments;
+                lastThis = this;
+                lastCallTime = time;
+                if (isInvoking) {
+                    if (void 0 === timerId) return leadingEdge(lastCallTime);
+                    if (maxing) {
+                        clearTimeout(timerId);
+                        timerId = setTimeout(timerExpired, wait);
+                        return invokeFunc(lastCallTime);
+                    }
+                }
+                if (void 0 === timerId) timerId = setTimeout(timerExpired, wait);
+                return result;
+            }
+            debounced.cancel = cancel;
+            debounced.flush = flush;
+            return debounced;
+        }
+        const lodash_es_debounce = debounce_debounce;
+        var throttle_FUNC_ERROR_TEXT = "Expected a function";
+        function throttle(func, wait, options) {
+            var leading = true, trailing = true;
+            if ("function" != typeof func) throw new TypeError(throttle_FUNC_ERROR_TEXT);
+            if (lodash_es_isObject(options)) {
+                leading = "leading" in options ? !!options.leading : leading;
+                trailing = "trailing" in options ? !!options.trailing : trailing;
+            }
+            return lodash_es_debounce(func, wait, {
+                leading,
+                maxWait: wait,
+                trailing
+            });
+        }
+        const lodash_es_throttle = throttle;
+        var __assign = function() {
+            __assign = Object.assign || function __assign(t) {
+                for (var s, i = 1, n = arguments.length; i < n; i++) {
+                    s = arguments[i];
+                    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
+                }
+                return t;
+            };
+            return __assign.apply(this, arguments);
+        };
+        var cachedScrollbarWidth = null;
+        var cachedDevicePixelRatio = null;
+        if (can_use_dom) window.addEventListener("resize", (function() {
+            if (cachedDevicePixelRatio !== window.devicePixelRatio) {
+                cachedDevicePixelRatio = window.devicePixelRatio;
+                cachedScrollbarWidth = null;
+            }
+        }));
+        function scrollbarWidth() {
+            if (null === cachedScrollbarWidth) {
+                if ("undefined" === typeof document) {
+                    cachedScrollbarWidth = 0;
+                    return cachedScrollbarWidth;
+                }
+                var body = document.body;
+                var box = document.createElement("div");
+                box.classList.add("simplebar-hide-scrollbar");
+                body.appendChild(box);
+                var width = box.getBoundingClientRect().right;
+                body.removeChild(box);
+                cachedScrollbarWidth = width;
+            }
+            return cachedScrollbarWidth;
+        }
+        function getElementWindow$1(element) {
+            if (!element || !element.ownerDocument || !element.ownerDocument.defaultView) return window;
+            return element.ownerDocument.defaultView;
+        }
+        function getElementDocument$1(element) {
+            if (!element || !element.ownerDocument) return document;
+            return element.ownerDocument;
+        }
+        var getOptions$1 = function(obj) {
+            var initialObj = {};
+            var options = Array.prototype.reduce.call(obj, (function(acc, attribute) {
+                var option = attribute.name.match(/data-simplebar-(.+)/);
+                if (option) {
+                    var key = option[1].replace(/\W+(.)/g, (function(_, chr) {
+                        return chr.toUpperCase();
+                    }));
+                    switch (attribute.value) {
+                      case "true":
+                        acc[key] = true;
+                        break;
+
+                      case "false":
+                        acc[key] = false;
+                        break;
+
+                      case void 0:
+                        acc[key] = true;
+                        break;
+
+                      default:
+                        acc[key] = attribute.value;
+                    }
+                }
+                return acc;
+            }), initialObj);
+            return options;
+        };
+        function addClasses$1(el, classes) {
+            var _a;
+            if (!el) return;
+            (_a = el.classList).add.apply(_a, classes.split(" "));
+        }
+        function removeClasses$1(el, classes) {
+            if (!el) return;
+            classes.split(" ").forEach((function(className) {
+                el.classList.remove(className);
+            }));
+        }
+        function classNamesToQuery$1(classNames) {
+            return ".".concat(classNames.split(" ").join("."));
+        }
+        var helpers = Object.freeze({
+            __proto__: null,
+            addClasses: addClasses$1,
+            classNamesToQuery: classNamesToQuery$1,
+            getElementDocument: getElementDocument$1,
+            getElementWindow: getElementWindow$1,
+            getOptions: getOptions$1,
+            removeClasses: removeClasses$1
+        });
+        var getElementWindow = getElementWindow$1, getElementDocument = getElementDocument$1, getOptions = getOptions$1, dist_addClasses = addClasses$1, dist_removeClasses = removeClasses$1, classNamesToQuery = classNamesToQuery$1;
+        var SimpleBarCore = function() {
+            function SimpleBarCore(element, options) {
+                if (void 0 === options) options = {};
+                var _this = this;
+                this.removePreventClickId = null;
+                this.minScrollbarWidth = 20;
+                this.stopScrollDelay = 175;
+                this.isScrolling = false;
+                this.isMouseEntering = false;
+                this.scrollXTicking = false;
+                this.scrollYTicking = false;
+                this.wrapperEl = null;
+                this.contentWrapperEl = null;
+                this.contentEl = null;
+                this.offsetEl = null;
+                this.maskEl = null;
+                this.placeholderEl = null;
+                this.heightAutoObserverWrapperEl = null;
+                this.heightAutoObserverEl = null;
+                this.rtlHelpers = null;
+                this.scrollbarWidth = 0;
+                this.resizeObserver = null;
+                this.mutationObserver = null;
+                this.elStyles = null;
+                this.isRtl = null;
+                this.mouseX = 0;
+                this.mouseY = 0;
+                this.onMouseMove = function() {};
+                this.onWindowResize = function() {};
+                this.onStopScrolling = function() {};
+                this.onMouseEntered = function() {};
+                this.onScroll = function() {
+                    var elWindow = getElementWindow(_this.el);
+                    if (!_this.scrollXTicking) {
+                        elWindow.requestAnimationFrame(_this.scrollX);
+                        _this.scrollXTicking = true;
+                    }
+                    if (!_this.scrollYTicking) {
+                        elWindow.requestAnimationFrame(_this.scrollY);
+                        _this.scrollYTicking = true;
+                    }
+                    if (!_this.isScrolling) {
+                        _this.isScrolling = true;
+                        dist_addClasses(_this.el, _this.classNames.scrolling);
+                    }
+                    _this.showScrollbar("x");
+                    _this.showScrollbar("y");
+                    _this.onStopScrolling();
+                };
+                this.scrollX = function() {
+                    if (_this.axis.x.isOverflowing) _this.positionScrollbar("x");
+                    _this.scrollXTicking = false;
+                };
+                this.scrollY = function() {
+                    if (_this.axis.y.isOverflowing) _this.positionScrollbar("y");
+                    _this.scrollYTicking = false;
+                };
+                this._onStopScrolling = function() {
+                    dist_removeClasses(_this.el, _this.classNames.scrolling);
+                    if (_this.options.autoHide) {
+                        _this.hideScrollbar("x");
+                        _this.hideScrollbar("y");
+                    }
+                    _this.isScrolling = false;
+                };
+                this.onMouseEnter = function() {
+                    if (!_this.isMouseEntering) {
+                        dist_addClasses(_this.el, _this.classNames.mouseEntered);
+                        _this.showScrollbar("x");
+                        _this.showScrollbar("y");
+                        _this.isMouseEntering = true;
+                    }
+                    _this.onMouseEntered();
+                };
+                this._onMouseEntered = function() {
+                    dist_removeClasses(_this.el, _this.classNames.mouseEntered);
+                    if (_this.options.autoHide) {
+                        _this.hideScrollbar("x");
+                        _this.hideScrollbar("y");
+                    }
+                    _this.isMouseEntering = false;
+                };
+                this._onMouseMove = function(e) {
+                    _this.mouseX = e.clientX;
+                    _this.mouseY = e.clientY;
+                    if (_this.axis.x.isOverflowing || _this.axis.x.forceVisible) _this.onMouseMoveForAxis("x");
+                    if (_this.axis.y.isOverflowing || _this.axis.y.forceVisible) _this.onMouseMoveForAxis("y");
+                };
+                this.onMouseLeave = function() {
+                    _this.onMouseMove.cancel();
+                    if (_this.axis.x.isOverflowing || _this.axis.x.forceVisible) _this.onMouseLeaveForAxis("x");
+                    if (_this.axis.y.isOverflowing || _this.axis.y.forceVisible) _this.onMouseLeaveForAxis("y");
+                    _this.mouseX = -1;
+                    _this.mouseY = -1;
+                };
+                this._onWindowResize = function() {
+                    _this.scrollbarWidth = _this.getScrollbarWidth();
+                    _this.hideNativeScrollbar();
+                };
+                this.onPointerEvent = function(e) {
+                    if (!_this.axis.x.track.el || !_this.axis.y.track.el || !_this.axis.x.scrollbar.el || !_this.axis.y.scrollbar.el) return;
+                    var isWithinTrackXBounds, isWithinTrackYBounds;
+                    _this.axis.x.track.rect = _this.axis.x.track.el.getBoundingClientRect();
+                    _this.axis.y.track.rect = _this.axis.y.track.el.getBoundingClientRect();
+                    if (_this.axis.x.isOverflowing || _this.axis.x.forceVisible) isWithinTrackXBounds = _this.isWithinBounds(_this.axis.x.track.rect);
+                    if (_this.axis.y.isOverflowing || _this.axis.y.forceVisible) isWithinTrackYBounds = _this.isWithinBounds(_this.axis.y.track.rect);
+                    if (isWithinTrackXBounds || isWithinTrackYBounds) {
+                        e.stopPropagation();
+                        if ("pointerdown" === e.type && "touch" !== e.pointerType) {
+                            if (isWithinTrackXBounds) {
+                                _this.axis.x.scrollbar.rect = _this.axis.x.scrollbar.el.getBoundingClientRect();
+                                if (_this.isWithinBounds(_this.axis.x.scrollbar.rect)) _this.onDragStart(e, "x"); else _this.onTrackClick(e, "x");
+                            }
+                            if (isWithinTrackYBounds) {
+                                _this.axis.y.scrollbar.rect = _this.axis.y.scrollbar.el.getBoundingClientRect();
+                                if (_this.isWithinBounds(_this.axis.y.scrollbar.rect)) _this.onDragStart(e, "y"); else _this.onTrackClick(e, "y");
+                            }
+                        }
+                    }
+                };
+                this.drag = function(e) {
+                    var _a, _b, _c, _d, _e, _f, _g, _h, _j, _k, _l;
+                    if (!_this.draggedAxis || !_this.contentWrapperEl) return;
+                    var eventOffset;
+                    var track = _this.axis[_this.draggedAxis].track;
+                    var trackSize = null !== (_b = null === (_a = track.rect) || void 0 === _a ? void 0 : _a[_this.axis[_this.draggedAxis].sizeAttr]) && void 0 !== _b ? _b : 0;
+                    var scrollbar = _this.axis[_this.draggedAxis].scrollbar;
+                    var contentSize = null !== (_d = null === (_c = _this.contentWrapperEl) || void 0 === _c ? void 0 : _c[_this.axis[_this.draggedAxis].scrollSizeAttr]) && void 0 !== _d ? _d : 0;
+                    var hostSize = parseInt(null !== (_f = null === (_e = _this.elStyles) || void 0 === _e ? void 0 : _e[_this.axis[_this.draggedAxis].sizeAttr]) && void 0 !== _f ? _f : "0px", 10);
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if ("y" === _this.draggedAxis) eventOffset = e.pageY; else eventOffset = e.pageX;
+                    var dragPos = eventOffset - (null !== (_h = null === (_g = track.rect) || void 0 === _g ? void 0 : _g[_this.axis[_this.draggedAxis].offsetAttr]) && void 0 !== _h ? _h : 0) - _this.axis[_this.draggedAxis].dragOffset;
+                    dragPos = _this.isRtl ? (null !== (_k = null === (_j = track.rect) || void 0 === _j ? void 0 : _j[_this.axis[_this.draggedAxis].sizeAttr]) && void 0 !== _k ? _k : 0) - scrollbar.size - dragPos : dragPos;
+                    var dragPerc = dragPos / (trackSize - scrollbar.size);
+                    var scrollPos = dragPerc * (contentSize - hostSize);
+                    if ("x" === _this.draggedAxis && _this.isRtl) scrollPos = (null === (_l = SimpleBarCore.getRtlHelpers()) || void 0 === _l ? void 0 : _l.isScrollingToNegative) ? -scrollPos : scrollPos;
+                    _this.contentWrapperEl[_this.axis[_this.draggedAxis].scrollOffsetAttr] = scrollPos;
+                };
+                this.onEndDrag = function(e) {
+                    var elDocument = getElementDocument(_this.el);
+                    var elWindow = getElementWindow(_this.el);
+                    e.preventDefault();
+                    e.stopPropagation();
+                    dist_removeClasses(_this.el, _this.classNames.dragging);
+                    elDocument.removeEventListener("mousemove", _this.drag, true);
+                    elDocument.removeEventListener("mouseup", _this.onEndDrag, true);
+                    _this.removePreventClickId = elWindow.setTimeout((function() {
+                        elDocument.removeEventListener("click", _this.preventClick, true);
+                        elDocument.removeEventListener("dblclick", _this.preventClick, true);
+                        _this.removePreventClickId = null;
+                    }));
+                };
+                this.preventClick = function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                };
+                this.el = element;
+                this.options = __assign(__assign({}, SimpleBarCore.defaultOptions), options);
+                this.classNames = __assign(__assign({}, SimpleBarCore.defaultOptions.classNames), options.classNames);
+                this.axis = {
+                    x: {
+                        scrollOffsetAttr: "scrollLeft",
+                        sizeAttr: "width",
+                        scrollSizeAttr: "scrollWidth",
+                        offsetSizeAttr: "offsetWidth",
+                        offsetAttr: "left",
+                        overflowAttr: "overflowX",
+                        dragOffset: 0,
+                        isOverflowing: true,
+                        forceVisible: false,
+                        track: {
+                            size: null,
+                            el: null,
+                            rect: null,
+                            isVisible: false
+                        },
+                        scrollbar: {
+                            size: null,
+                            el: null,
+                            rect: null,
+                            isVisible: false
+                        }
+                    },
+                    y: {
+                        scrollOffsetAttr: "scrollTop",
+                        sizeAttr: "height",
+                        scrollSizeAttr: "scrollHeight",
+                        offsetSizeAttr: "offsetHeight",
+                        offsetAttr: "top",
+                        overflowAttr: "overflowY",
+                        dragOffset: 0,
+                        isOverflowing: true,
+                        forceVisible: false,
+                        track: {
+                            size: null,
+                            el: null,
+                            rect: null,
+                            isVisible: false
+                        },
+                        scrollbar: {
+                            size: null,
+                            el: null,
+                            rect: null,
+                            isVisible: false
+                        }
+                    }
+                };
+                if ("object" !== typeof this.el || !this.el.nodeName) throw new Error("Argument passed to SimpleBar must be an HTML element instead of ".concat(this.el));
+                this.onMouseMove = lodash_es_throttle(this._onMouseMove, 64);
+                this.onWindowResize = lodash_es_debounce(this._onWindowResize, 64, {
+                    leading: true
+                });
+                this.onStopScrolling = lodash_es_debounce(this._onStopScrolling, this.stopScrollDelay);
+                this.onMouseEntered = lodash_es_debounce(this._onMouseEntered, this.stopScrollDelay);
+                this.init();
+            }
+            SimpleBarCore.getRtlHelpers = function() {
+                if (SimpleBarCore.rtlHelpers) return SimpleBarCore.rtlHelpers;
+                var dummyDiv = document.createElement("div");
+                dummyDiv.innerHTML = '<div class="simplebar-dummy-scrollbar-size"><div></div></div>';
+                var scrollbarDummyEl = dummyDiv.firstElementChild;
+                var dummyChild = null === scrollbarDummyEl || void 0 === scrollbarDummyEl ? void 0 : scrollbarDummyEl.firstElementChild;
+                if (!dummyChild) return null;
+                document.body.appendChild(scrollbarDummyEl);
+                scrollbarDummyEl.scrollLeft = 0;
+                var dummyContainerOffset = SimpleBarCore.getOffset(scrollbarDummyEl);
+                var dummyChildOffset = SimpleBarCore.getOffset(dummyChild);
+                scrollbarDummyEl.scrollLeft = -999;
+                var dummyChildOffsetAfterScroll = SimpleBarCore.getOffset(dummyChild);
+                document.body.removeChild(scrollbarDummyEl);
+                SimpleBarCore.rtlHelpers = {
+                    isScrollOriginAtZero: dummyContainerOffset.left !== dummyChildOffset.left,
+                    isScrollingToNegative: dummyChildOffset.left !== dummyChildOffsetAfterScroll.left
+                };
+                return SimpleBarCore.rtlHelpers;
+            };
+            SimpleBarCore.prototype.getScrollbarWidth = function() {
+                try {
+                    if (this.contentWrapperEl && "none" === getComputedStyle(this.contentWrapperEl, "::-webkit-scrollbar").display || "scrollbarWidth" in document.documentElement.style || "-ms-overflow-style" in document.documentElement.style) return 0; else return scrollbarWidth();
+                } catch (e) {
+                    return scrollbarWidth();
+                }
+            };
+            SimpleBarCore.getOffset = function(el) {
+                var rect = el.getBoundingClientRect();
+                var elDocument = getElementDocument(el);
+                var elWindow = getElementWindow(el);
+                return {
+                    top: rect.top + (elWindow.pageYOffset || elDocument.documentElement.scrollTop),
+                    left: rect.left + (elWindow.pageXOffset || elDocument.documentElement.scrollLeft)
+                };
+            };
+            SimpleBarCore.prototype.init = function() {
+                if (can_use_dom) {
+                    this.initDOM();
+                    this.rtlHelpers = SimpleBarCore.getRtlHelpers();
+                    this.scrollbarWidth = this.getScrollbarWidth();
+                    this.recalculate();
+                    this.initListeners();
+                }
+            };
+            SimpleBarCore.prototype.initDOM = function() {
+                var _a, _b;
+                this.wrapperEl = this.el.querySelector(classNamesToQuery(this.classNames.wrapper));
+                this.contentWrapperEl = this.options.scrollableNode || this.el.querySelector(classNamesToQuery(this.classNames.contentWrapper));
+                this.contentEl = this.options.contentNode || this.el.querySelector(classNamesToQuery(this.classNames.contentEl));
+                this.offsetEl = this.el.querySelector(classNamesToQuery(this.classNames.offset));
+                this.maskEl = this.el.querySelector(classNamesToQuery(this.classNames.mask));
+                this.placeholderEl = this.findChild(this.wrapperEl, classNamesToQuery(this.classNames.placeholder));
+                this.heightAutoObserverWrapperEl = this.el.querySelector(classNamesToQuery(this.classNames.heightAutoObserverWrapperEl));
+                this.heightAutoObserverEl = this.el.querySelector(classNamesToQuery(this.classNames.heightAutoObserverEl));
+                this.axis.x.track.el = this.findChild(this.el, "".concat(classNamesToQuery(this.classNames.track)).concat(classNamesToQuery(this.classNames.horizontal)));
+                this.axis.y.track.el = this.findChild(this.el, "".concat(classNamesToQuery(this.classNames.track)).concat(classNamesToQuery(this.classNames.vertical)));
+                this.axis.x.scrollbar.el = (null === (_a = this.axis.x.track.el) || void 0 === _a ? void 0 : _a.querySelector(classNamesToQuery(this.classNames.scrollbar))) || null;
+                this.axis.y.scrollbar.el = (null === (_b = this.axis.y.track.el) || void 0 === _b ? void 0 : _b.querySelector(classNamesToQuery(this.classNames.scrollbar))) || null;
+                if (!this.options.autoHide) {
+                    dist_addClasses(this.axis.x.scrollbar.el, this.classNames.visible);
+                    dist_addClasses(this.axis.y.scrollbar.el, this.classNames.visible);
+                }
+            };
+            SimpleBarCore.prototype.initListeners = function() {
+                var _this = this;
+                var _a;
+                var elWindow = getElementWindow(this.el);
+                this.el.addEventListener("mouseenter", this.onMouseEnter);
+                this.el.addEventListener("pointerdown", this.onPointerEvent, true);
+                this.el.addEventListener("mousemove", this.onMouseMove);
+                this.el.addEventListener("mouseleave", this.onMouseLeave);
+                null === (_a = this.contentWrapperEl) || void 0 === _a ? void 0 : _a.addEventListener("scroll", this.onScroll);
+                elWindow.addEventListener("resize", this.onWindowResize);
+                if (!this.contentEl) return;
+                if (window.ResizeObserver) {
+                    var resizeObserverStarted_1 = false;
+                    var resizeObserver = elWindow.ResizeObserver || ResizeObserver;
+                    this.resizeObserver = new resizeObserver((function() {
+                        if (!resizeObserverStarted_1) return;
+                        elWindow.requestAnimationFrame((function() {
+                            _this.recalculate();
+                        }));
+                    }));
+                    this.resizeObserver.observe(this.el);
+                    this.resizeObserver.observe(this.contentEl);
+                    elWindow.requestAnimationFrame((function() {
+                        resizeObserverStarted_1 = true;
+                    }));
+                }
+                this.mutationObserver = new elWindow.MutationObserver((function() {
+                    elWindow.requestAnimationFrame((function() {
+                        _this.recalculate();
+                    }));
+                }));
+                this.mutationObserver.observe(this.contentEl, {
+                    childList: true,
+                    subtree: true,
+                    characterData: true
+                });
+            };
+            SimpleBarCore.prototype.recalculate = function() {
+                if (!this.heightAutoObserverEl || !this.contentEl || !this.contentWrapperEl || !this.wrapperEl || !this.placeholderEl) return;
+                var elWindow = getElementWindow(this.el);
+                this.elStyles = elWindow.getComputedStyle(this.el);
+                this.isRtl = "rtl" === this.elStyles.direction;
+                var contentElOffsetWidth = this.contentEl.offsetWidth;
+                var isHeightAuto = this.heightAutoObserverEl.offsetHeight <= 1;
+                var isWidthAuto = this.heightAutoObserverEl.offsetWidth <= 1 || contentElOffsetWidth > 0;
+                var contentWrapperElOffsetWidth = this.contentWrapperEl.offsetWidth;
+                var elOverflowX = this.elStyles.overflowX;
+                var elOverflowY = this.elStyles.overflowY;
+                this.contentEl.style.padding = "".concat(this.elStyles.paddingTop, " ").concat(this.elStyles.paddingRight, " ").concat(this.elStyles.paddingBottom, " ").concat(this.elStyles.paddingLeft);
+                this.wrapperEl.style.margin = "-".concat(this.elStyles.paddingTop, " -").concat(this.elStyles.paddingRight, " -").concat(this.elStyles.paddingBottom, " -").concat(this.elStyles.paddingLeft);
+                var contentElScrollHeight = this.contentEl.scrollHeight;
+                var contentElScrollWidth = this.contentEl.scrollWidth;
+                this.contentWrapperEl.style.height = isHeightAuto ? "auto" : "100%";
+                this.placeholderEl.style.width = isWidthAuto ? "".concat(contentElOffsetWidth || contentElScrollWidth, "px") : "auto";
+                this.placeholderEl.style.height = "".concat(contentElScrollHeight, "px");
+                var contentWrapperElOffsetHeight = this.contentWrapperEl.offsetHeight;
+                this.axis.x.isOverflowing = 0 !== contentElOffsetWidth && contentElScrollWidth > contentElOffsetWidth;
+                this.axis.y.isOverflowing = contentElScrollHeight > contentWrapperElOffsetHeight;
+                this.axis.x.isOverflowing = "hidden" === elOverflowX ? false : this.axis.x.isOverflowing;
+                this.axis.y.isOverflowing = "hidden" === elOverflowY ? false : this.axis.y.isOverflowing;
+                this.axis.x.forceVisible = "x" === this.options.forceVisible || true === this.options.forceVisible;
+                this.axis.y.forceVisible = "y" === this.options.forceVisible || true === this.options.forceVisible;
+                this.hideNativeScrollbar();
+                var offsetForXScrollbar = this.axis.x.isOverflowing ? this.scrollbarWidth : 0;
+                var offsetForYScrollbar = this.axis.y.isOverflowing ? this.scrollbarWidth : 0;
+                this.axis.x.isOverflowing = this.axis.x.isOverflowing && contentElScrollWidth > contentWrapperElOffsetWidth - offsetForYScrollbar;
+                this.axis.y.isOverflowing = this.axis.y.isOverflowing && contentElScrollHeight > contentWrapperElOffsetHeight - offsetForXScrollbar;
+                this.axis.x.scrollbar.size = this.getScrollbarSize("x");
+                this.axis.y.scrollbar.size = this.getScrollbarSize("y");
+                if (this.axis.x.scrollbar.el) this.axis.x.scrollbar.el.style.width = "".concat(this.axis.x.scrollbar.size, "px");
+                if (this.axis.y.scrollbar.el) this.axis.y.scrollbar.el.style.height = "".concat(this.axis.y.scrollbar.size, "px");
+                this.positionScrollbar("x");
+                this.positionScrollbar("y");
+                this.toggleTrackVisibility("x");
+                this.toggleTrackVisibility("y");
+            };
+            SimpleBarCore.prototype.getScrollbarSize = function(axis) {
+                var _a, _b;
+                if (void 0 === axis) axis = "y";
+                if (!this.axis[axis].isOverflowing || !this.contentEl) return 0;
+                var contentSize = this.contentEl[this.axis[axis].scrollSizeAttr];
+                var trackSize = null !== (_b = null === (_a = this.axis[axis].track.el) || void 0 === _a ? void 0 : _a[this.axis[axis].offsetSizeAttr]) && void 0 !== _b ? _b : 0;
+                var scrollbarRatio = trackSize / contentSize;
+                var scrollbarSize;
+                scrollbarSize = Math.max(~~(scrollbarRatio * trackSize), this.options.scrollbarMinSize);
+                if (this.options.scrollbarMaxSize) scrollbarSize = Math.min(scrollbarSize, this.options.scrollbarMaxSize);
+                return scrollbarSize;
+            };
+            SimpleBarCore.prototype.positionScrollbar = function(axis) {
+                var _a, _b, _c;
+                if (void 0 === axis) axis = "y";
+                var scrollbar = this.axis[axis].scrollbar;
+                if (!this.axis[axis].isOverflowing || !this.contentWrapperEl || !scrollbar.el || !this.elStyles) return;
+                var contentSize = this.contentWrapperEl[this.axis[axis].scrollSizeAttr];
+                var trackSize = (null === (_a = this.axis[axis].track.el) || void 0 === _a ? void 0 : _a[this.axis[axis].offsetSizeAttr]) || 0;
+                var hostSize = parseInt(this.elStyles[this.axis[axis].sizeAttr], 10);
+                var scrollOffset = this.contentWrapperEl[this.axis[axis].scrollOffsetAttr];
+                scrollOffset = "x" === axis && this.isRtl && (null === (_b = SimpleBarCore.getRtlHelpers()) || void 0 === _b ? void 0 : _b.isScrollOriginAtZero) ? -scrollOffset : scrollOffset;
+                if ("x" === axis && this.isRtl) scrollOffset = (null === (_c = SimpleBarCore.getRtlHelpers()) || void 0 === _c ? void 0 : _c.isScrollingToNegative) ? scrollOffset : -scrollOffset;
+                var scrollPourcent = scrollOffset / (contentSize - hostSize);
+                var handleOffset = ~~((trackSize - scrollbar.size) * scrollPourcent);
+                handleOffset = "x" === axis && this.isRtl ? -handleOffset + (trackSize - scrollbar.size) : handleOffset;
+                scrollbar.el.style.transform = "x" === axis ? "translate3d(".concat(handleOffset, "px, 0, 0)") : "translate3d(0, ".concat(handleOffset, "px, 0)");
+            };
+            SimpleBarCore.prototype.toggleTrackVisibility = function(axis) {
+                if (void 0 === axis) axis = "y";
+                var track = this.axis[axis].track.el;
+                var scrollbar = this.axis[axis].scrollbar.el;
+                if (!track || !scrollbar || !this.contentWrapperEl) return;
+                if (this.axis[axis].isOverflowing || this.axis[axis].forceVisible) {
+                    track.style.visibility = "visible";
+                    this.contentWrapperEl.style[this.axis[axis].overflowAttr] = "scroll";
+                    this.el.classList.add("".concat(this.classNames.scrollable, "-").concat(axis));
+                } else {
+                    track.style.visibility = "hidden";
+                    this.contentWrapperEl.style[this.axis[axis].overflowAttr] = "hidden";
+                    this.el.classList.remove("".concat(this.classNames.scrollable, "-").concat(axis));
+                }
+                if (this.axis[axis].isOverflowing) scrollbar.style.display = "block"; else scrollbar.style.display = "none";
+            };
+            SimpleBarCore.prototype.showScrollbar = function(axis) {
+                if (void 0 === axis) axis = "y";
+                if (this.axis[axis].isOverflowing && !this.axis[axis].scrollbar.isVisible) {
+                    dist_addClasses(this.axis[axis].scrollbar.el, this.classNames.visible);
+                    this.axis[axis].scrollbar.isVisible = true;
+                }
+            };
+            SimpleBarCore.prototype.hideScrollbar = function(axis) {
+                if (void 0 === axis) axis = "y";
+                if (this.axis[axis].isOverflowing && this.axis[axis].scrollbar.isVisible) {
+                    dist_removeClasses(this.axis[axis].scrollbar.el, this.classNames.visible);
+                    this.axis[axis].scrollbar.isVisible = false;
+                }
+            };
+            SimpleBarCore.prototype.hideNativeScrollbar = function() {
+                if (!this.offsetEl) return;
+                this.offsetEl.style[this.isRtl ? "left" : "right"] = this.axis.y.isOverflowing || this.axis.y.forceVisible ? "-".concat(this.scrollbarWidth, "px") : "0px";
+                this.offsetEl.style.bottom = this.axis.x.isOverflowing || this.axis.x.forceVisible ? "-".concat(this.scrollbarWidth, "px") : "0px";
+            };
+            SimpleBarCore.prototype.onMouseMoveForAxis = function(axis) {
+                if (void 0 === axis) axis = "y";
+                var currentAxis = this.axis[axis];
+                if (!currentAxis.track.el || !currentAxis.scrollbar.el) return;
+                currentAxis.track.rect = currentAxis.track.el.getBoundingClientRect();
+                currentAxis.scrollbar.rect = currentAxis.scrollbar.el.getBoundingClientRect();
+                if (this.isWithinBounds(currentAxis.track.rect)) {
+                    this.showScrollbar(axis);
+                    dist_addClasses(currentAxis.track.el, this.classNames.hover);
+                    if (this.isWithinBounds(currentAxis.scrollbar.rect)) dist_addClasses(currentAxis.scrollbar.el, this.classNames.hover); else dist_removeClasses(currentAxis.scrollbar.el, this.classNames.hover);
+                } else {
+                    dist_removeClasses(currentAxis.track.el, this.classNames.hover);
+                    if (this.options.autoHide) this.hideScrollbar(axis);
+                }
+            };
+            SimpleBarCore.prototype.onMouseLeaveForAxis = function(axis) {
+                if (void 0 === axis) axis = "y";
+                dist_removeClasses(this.axis[axis].track.el, this.classNames.hover);
+                dist_removeClasses(this.axis[axis].scrollbar.el, this.classNames.hover);
+                if (this.options.autoHide) this.hideScrollbar(axis);
+            };
+            SimpleBarCore.prototype.onDragStart = function(e, axis) {
+                var _a;
+                if (void 0 === axis) axis = "y";
+                var elDocument = getElementDocument(this.el);
+                var elWindow = getElementWindow(this.el);
+                var scrollbar = this.axis[axis].scrollbar;
+                var eventOffset = "y" === axis ? e.pageY : e.pageX;
+                this.axis[axis].dragOffset = eventOffset - ((null === (_a = scrollbar.rect) || void 0 === _a ? void 0 : _a[this.axis[axis].offsetAttr]) || 0);
+                this.draggedAxis = axis;
+                dist_addClasses(this.el, this.classNames.dragging);
+                elDocument.addEventListener("mousemove", this.drag, true);
+                elDocument.addEventListener("mouseup", this.onEndDrag, true);
+                if (null === this.removePreventClickId) {
+                    elDocument.addEventListener("click", this.preventClick, true);
+                    elDocument.addEventListener("dblclick", this.preventClick, true);
+                } else {
+                    elWindow.clearTimeout(this.removePreventClickId);
+                    this.removePreventClickId = null;
+                }
+            };
+            SimpleBarCore.prototype.onTrackClick = function(e, axis) {
+                var _this = this;
+                var _a, _b, _c, _d;
+                if (void 0 === axis) axis = "y";
+                var currentAxis = this.axis[axis];
+                if (!this.options.clickOnTrack || !currentAxis.scrollbar.el || !this.contentWrapperEl) return;
+                e.preventDefault();
+                var elWindow = getElementWindow(this.el);
+                this.axis[axis].scrollbar.rect = currentAxis.scrollbar.el.getBoundingClientRect();
+                var scrollbar = this.axis[axis].scrollbar;
+                var scrollbarOffset = null !== (_b = null === (_a = scrollbar.rect) || void 0 === _a ? void 0 : _a[this.axis[axis].offsetAttr]) && void 0 !== _b ? _b : 0;
+                var hostSize = parseInt(null !== (_d = null === (_c = this.elStyles) || void 0 === _c ? void 0 : _c[this.axis[axis].sizeAttr]) && void 0 !== _d ? _d : "0px", 10);
+                var scrolled = this.contentWrapperEl[this.axis[axis].scrollOffsetAttr];
+                var t = "y" === axis ? this.mouseY - scrollbarOffset : this.mouseX - scrollbarOffset;
+                var dir = t < 0 ? -1 : 1;
+                var scrollSize = -1 === dir ? scrolled - hostSize : scrolled + hostSize;
+                var speed = 40;
+                var scrollTo = function() {
+                    if (!_this.contentWrapperEl) return;
+                    if (-1 === dir) {
+                        if (scrolled > scrollSize) {
+                            scrolled -= speed;
+                            _this.contentWrapperEl[_this.axis[axis].scrollOffsetAttr] = scrolled;
+                            elWindow.requestAnimationFrame(scrollTo);
+                        }
+                    } else if (scrolled < scrollSize) {
+                        scrolled += speed;
+                        _this.contentWrapperEl[_this.axis[axis].scrollOffsetAttr] = scrolled;
+                        elWindow.requestAnimationFrame(scrollTo);
+                    }
+                };
+                scrollTo();
+            };
+            SimpleBarCore.prototype.getContentElement = function() {
+                return this.contentEl;
+            };
+            SimpleBarCore.prototype.getScrollElement = function() {
+                return this.contentWrapperEl;
+            };
+            SimpleBarCore.prototype.removeListeners = function() {
+                var elWindow = getElementWindow(this.el);
+                this.el.removeEventListener("mouseenter", this.onMouseEnter);
+                this.el.removeEventListener("pointerdown", this.onPointerEvent, true);
+                this.el.removeEventListener("mousemove", this.onMouseMove);
+                this.el.removeEventListener("mouseleave", this.onMouseLeave);
+                if (this.contentWrapperEl) this.contentWrapperEl.removeEventListener("scroll", this.onScroll);
+                elWindow.removeEventListener("resize", this.onWindowResize);
+                if (this.mutationObserver) this.mutationObserver.disconnect();
+                if (this.resizeObserver) this.resizeObserver.disconnect();
+                this.onMouseMove.cancel();
+                this.onWindowResize.cancel();
+                this.onStopScrolling.cancel();
+                this.onMouseEntered.cancel();
+            };
+            SimpleBarCore.prototype.unMount = function() {
+                this.removeListeners();
+            };
+            SimpleBarCore.prototype.isWithinBounds = function(bbox) {
+                return this.mouseX >= bbox.left && this.mouseX <= bbox.left + bbox.width && this.mouseY >= bbox.top && this.mouseY <= bbox.top + bbox.height;
+            };
+            SimpleBarCore.prototype.findChild = function(el, query) {
+                var matches = el.matches || el.webkitMatchesSelector || el.mozMatchesSelector || el.msMatchesSelector;
+                return Array.prototype.filter.call(el.children, (function(child) {
+                    return matches.call(child, query);
+                }))[0];
+            };
+            SimpleBarCore.rtlHelpers = null;
+            SimpleBarCore.defaultOptions = {
+                forceVisible: false,
+                clickOnTrack: true,
+                scrollbarMinSize: 25,
+                scrollbarMaxSize: 0,
+                ariaLabel: "scrollable content",
+                classNames: {
+                    contentEl: "simplebar-content",
+                    contentWrapper: "simplebar-content-wrapper",
+                    offset: "simplebar-offset",
+                    mask: "simplebar-mask",
+                    wrapper: "simplebar-wrapper",
+                    placeholder: "simplebar-placeholder",
+                    scrollbar: "simplebar-scrollbar",
+                    track: "simplebar-track",
+                    heightAutoObserverWrapperEl: "simplebar-height-auto-observer-wrapper",
+                    heightAutoObserverEl: "simplebar-height-auto-observer",
+                    visible: "simplebar-visible",
+                    horizontal: "simplebar-horizontal",
+                    vertical: "simplebar-vertical",
+                    hover: "simplebar-hover",
+                    dragging: "simplebar-dragging",
+                    scrolling: "simplebar-scrolling",
+                    scrollable: "simplebar-scrollable",
+                    mouseEntered: "simplebar-mouse-entered"
+                },
+                scrollableNode: null,
+                contentNode: null,
+                autoHide: true
+            };
+            SimpleBarCore.getOptions = getOptions;
+            SimpleBarCore.helpers = helpers;
+            return SimpleBarCore;
+        }();
+        var extendStatics = function(d, b) {
+            extendStatics = Object.setPrototypeOf || {
+                __proto__: []
+            } instanceof Array && function(d, b) {
+                d.__proto__ = b;
+            } || function(d, b) {
+                for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p];
+            };
+            return extendStatics(d, b);
+        };
+        function __extends(d, b) {
+            if ("function" !== typeof b && null !== b) throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
+            extendStatics(d, b);
+            function __() {
+                this.constructor = d;
+            }
+            d.prototype = null === b ? Object.create(b) : (__.prototype = b.prototype, new __);
+        }
+        var _a = SimpleBarCore.helpers, dist_getOptions = _a.getOptions, simplebar_dist_addClasses = _a.addClasses;
+        var SimpleBar = function(_super) {
+            __extends(SimpleBar, _super);
+            function SimpleBar() {
+                var args = [];
+                for (var _i = 0; _i < arguments.length; _i++) args[_i] = arguments[_i];
+                var _this = _super.apply(this, args) || this;
+                SimpleBar.instances.set(args[0], _this);
+                return _this;
+            }
+            SimpleBar.initDOMLoadedElements = function() {
+                document.removeEventListener("DOMContentLoaded", this.initDOMLoadedElements);
+                window.removeEventListener("load", this.initDOMLoadedElements);
+                Array.prototype.forEach.call(document.querySelectorAll("[data-simplebar]"), (function(el) {
+                    if ("init" !== el.getAttribute("data-simplebar") && !SimpleBar.instances.has(el)) new SimpleBar(el, dist_getOptions(el.attributes));
+                }));
+            };
+            SimpleBar.removeObserver = function() {
+                var _a;
+                null === (_a = SimpleBar.globalObserver) || void 0 === _a ? void 0 : _a.disconnect();
+            };
+            SimpleBar.prototype.initDOM = function() {
+                var _this = this;
+                var _a, _b, _c;
+                if (!Array.prototype.filter.call(this.el.children, (function(child) {
+                    return child.classList.contains(_this.classNames.wrapper);
+                })).length) {
+                    this.wrapperEl = document.createElement("div");
+                    this.contentWrapperEl = document.createElement("div");
+                    this.offsetEl = document.createElement("div");
+                    this.maskEl = document.createElement("div");
+                    this.contentEl = document.createElement("div");
+                    this.placeholderEl = document.createElement("div");
+                    this.heightAutoObserverWrapperEl = document.createElement("div");
+                    this.heightAutoObserverEl = document.createElement("div");
+                    simplebar_dist_addClasses(this.wrapperEl, this.classNames.wrapper);
+                    simplebar_dist_addClasses(this.contentWrapperEl, this.classNames.contentWrapper);
+                    simplebar_dist_addClasses(this.offsetEl, this.classNames.offset);
+                    simplebar_dist_addClasses(this.maskEl, this.classNames.mask);
+                    simplebar_dist_addClasses(this.contentEl, this.classNames.contentEl);
+                    simplebar_dist_addClasses(this.placeholderEl, this.classNames.placeholder);
+                    simplebar_dist_addClasses(this.heightAutoObserverWrapperEl, this.classNames.heightAutoObserverWrapperEl);
+                    simplebar_dist_addClasses(this.heightAutoObserverEl, this.classNames.heightAutoObserverEl);
+                    while (this.el.firstChild) this.contentEl.appendChild(this.el.firstChild);
+                    this.contentWrapperEl.appendChild(this.contentEl);
+                    this.offsetEl.appendChild(this.contentWrapperEl);
+                    this.maskEl.appendChild(this.offsetEl);
+                    this.heightAutoObserverWrapperEl.appendChild(this.heightAutoObserverEl);
+                    this.wrapperEl.appendChild(this.heightAutoObserverWrapperEl);
+                    this.wrapperEl.appendChild(this.maskEl);
+                    this.wrapperEl.appendChild(this.placeholderEl);
+                    this.el.appendChild(this.wrapperEl);
+                    null === (_a = this.contentWrapperEl) || void 0 === _a ? void 0 : _a.setAttribute("tabindex", "0");
+                    null === (_b = this.contentWrapperEl) || void 0 === _b ? void 0 : _b.setAttribute("role", "region");
+                    null === (_c = this.contentWrapperEl) || void 0 === _c ? void 0 : _c.setAttribute("aria-label", this.options.ariaLabel);
+                }
+                if (!this.axis.x.track.el || !this.axis.y.track.el) {
+                    var track = document.createElement("div");
+                    var scrollbar = document.createElement("div");
+                    simplebar_dist_addClasses(track, this.classNames.track);
+                    simplebar_dist_addClasses(scrollbar, this.classNames.scrollbar);
+                    track.appendChild(scrollbar);
+                    this.axis.x.track.el = track.cloneNode(true);
+                    simplebar_dist_addClasses(this.axis.x.track.el, this.classNames.horizontal);
+                    this.axis.y.track.el = track.cloneNode(true);
+                    simplebar_dist_addClasses(this.axis.y.track.el, this.classNames.vertical);
+                    this.el.appendChild(this.axis.x.track.el);
+                    this.el.appendChild(this.axis.y.track.el);
+                }
+                SimpleBarCore.prototype.initDOM.call(this);
+                this.el.setAttribute("data-simplebar", "init");
+            };
+            SimpleBar.prototype.unMount = function() {
+                SimpleBarCore.prototype.unMount.call(this);
+                SimpleBar.instances["delete"](this.el);
+            };
+            SimpleBar.initHtmlApi = function() {
+                this.initDOMLoadedElements = this.initDOMLoadedElements.bind(this);
+                if ("undefined" !== typeof MutationObserver) {
+                    this.globalObserver = new MutationObserver(SimpleBar.handleMutations);
+                    this.globalObserver.observe(document, {
+                        childList: true,
+                        subtree: true
+                    });
+                }
+                if ("complete" === document.readyState || "loading" !== document.readyState && !document.documentElement.doScroll) window.setTimeout(this.initDOMLoadedElements); else {
+                    document.addEventListener("DOMContentLoaded", this.initDOMLoadedElements);
+                    window.addEventListener("load", this.initDOMLoadedElements);
+                }
+            };
+            SimpleBar.handleMutations = function(mutations) {
+                mutations.forEach((function(mutation) {
+                    mutation.addedNodes.forEach((function(addedNode) {
+                        if (1 === addedNode.nodeType) if (addedNode.hasAttribute("data-simplebar")) !SimpleBar.instances.has(addedNode) && document.documentElement.contains(addedNode) && new SimpleBar(addedNode, dist_getOptions(addedNode.attributes)); else addedNode.querySelectorAll("[data-simplebar]").forEach((function(el) {
+                            if ("init" !== el.getAttribute("data-simplebar") && !SimpleBar.instances.has(el) && document.documentElement.contains(el)) new SimpleBar(el, dist_getOptions(el.attributes));
+                        }));
+                    }));
+                    mutation.removedNodes.forEach((function(removedNode) {
+                        if (1 === removedNode.nodeType) if ("init" === removedNode.getAttribute("data-simplebar")) SimpleBar.instances.has(removedNode) && !document.documentElement.contains(removedNode) && SimpleBar.instances.get(removedNode).unMount(); else Array.prototype.forEach.call(removedNode.querySelectorAll('[data-simplebar="init"]'), (function(el) {
+                            SimpleBar.instances.has(el) && !document.documentElement.contains(el) && SimpleBar.instances.get(el).unMount();
+                        }));
+                    }));
+                }));
+            };
+            SimpleBar.instances = new WeakMap;
+            return SimpleBar;
+        }(SimpleBarCore);
+        if (can_use_dom) SimpleBar.initHtmlApi();
+        if (document.querySelectorAll("[data-simplebar]").length) document.querySelectorAll("[data-simplebar]").forEach((scrollBlock => {
+            new SimpleBar(scrollBlock, {
+                autoHide: false
+            });
         }));
         let addWindowScrollEvent = false;
         setTimeout((() => {
@@ -11456,15 +12430,15 @@ LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR
 OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
 PERFORMANCE OF THIS SOFTWARE.
 ***************************************************************************** */
-        var __assign = function() {
-            __assign = Object.assign || function __assign(t) {
+        var lightgallery_es5_assign = function() {
+            lightgallery_es5_assign = Object.assign || function __assign(t) {
                 for (var s, i = 1, n = arguments.length; i < n; i++) {
                     s = arguments[i];
                     for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p)) t[p] = s[p];
                 }
                 return t;
             };
-            return __assign.apply(this, arguments);
+            return lightgallery_es5_assign.apply(this, arguments);
         };
         function __spreadArrays() {
             for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
@@ -12048,10 +13022,10 @@ PERFORMANCE OF THIS SOFTWARE.
                 return this;
             }
             LightGallery.prototype.generateSettings = function(options) {
-                this.settings = __assign(__assign({}, lightGalleryCoreSettings), options);
+                this.settings = lightgallery_es5_assign(lightgallery_es5_assign({}, lightGalleryCoreSettings), options);
                 if (this.settings.isMobile && "function" === typeof this.settings.isMobile ? this.settings.isMobile() : utils.isMobile()) {
-                    var mobileSettings = __assign(__assign({}, this.settings.mobileSettings), this.settings.mobileSettings);
-                    this.settings = __assign(__assign({}, this.settings), mobileSettings);
+                    var mobileSettings = lightgallery_es5_assign(lightgallery_es5_assign({}, this.settings.mobileSettings), this.settings.mobileSettings);
+                    this.settings = lightgallery_es5_assign(lightgallery_es5_assign({}, this.settings), mobileSettings);
                 }
             };
             LightGallery.prototype.normalizeSettings = function() {
@@ -13178,6 +14152,283 @@ PERFORMANCE OF THIS SOFTWARE.
                 });
             }
         }
+        document.addEventListener("DOMContentLoaded", (function() {
+            const btnFavorite = document.querySelectorAll(".btn__favorite");
+            btnFavorite.forEach((function(e) {
+                e.addEventListener("click", (function() {
+                    this.classList.toggle("_active");
+                }));
+            }));
+            function hidePreloader() {
+                const preloader = document.querySelector(".preloader");
+                preloader.classList.add("fade-out");
+                setTimeout((() => {
+                    preloader.style.display = "none";
+                }));
+            }
+            window.onload = function() {
+                hidePreloader();
+            };
+            const attachBtn = document.querySelector(".btn__attach");
+            const docUpload = document.querySelector("#doc-upload");
+            if (attachBtn && docUpload) attachBtn.addEventListener("click", (function() {
+                docUpload.click();
+            }));
+            const radioButtons = document.querySelectorAll(".аmount__root input[type=radio]");
+            radioButtons.forEach((button => {
+                button.addEventListener("click", (() => {
+                    radioButtons.forEach((button => button.checked = false));
+                    button.checked = true;
+                }));
+            }));
+            const amountPlaceholder = document.querySelector(".amountOther__root input[type=number]");
+            if (amountPlaceholder) {
+                amountPlaceholder.addEventListener("focus", (() => {
+                    amountPlaceholder.placeholder = "";
+                }));
+                amountPlaceholder.addEventListener("blur", (() => {
+                    amountPlaceholder.placeholder = "Другая сумма";
+                }));
+            }
+            const amountOtherInput = document.querySelector(".amountOther__input");
+            const amountInputs = document.querySelectorAll(".аmount__input");
+            if (amountOtherInput && amountInputs.length > 0) {
+                amountOtherInput.addEventListener("focus", (function() {
+                    amountInputs.forEach((function(input) {
+                        input.checked = false;
+                    }));
+                }));
+                amountOtherInput.addEventListener("click", (function() {
+                    amountInputs.forEach((function(input) {
+                        input.checked = false;
+                    }));
+                }));
+            }
+            const checkboxes = document.querySelectorAll(".timeList__item > input[type=checkbox]");
+            if (checkboxes.length > 0) {
+                let checkboxCount = 1;
+                checkboxes.forEach((checkbox => {
+                    const checkboxId = `item${checkboxCount}`;
+                    checkbox.id = checkboxId;
+                    const label = checkbox.nextElementSibling;
+                    label.setAttribute("for", checkboxId);
+                    checkboxCount++;
+                }));
+            }
+            const checkboxesdate = document.querySelectorAll(".dateList__item > input[type=checkbox]");
+            if (checkboxesdate.length > 0) {
+                let checkboxCount = 1;
+                checkboxesdate.forEach((checkbox => {
+                    const checkboxId = `date${checkboxCount}`;
+                    checkbox.id = checkboxId;
+                    const label = checkbox.nextElementSibling;
+                    label.setAttribute("for", checkboxId);
+                    checkboxCount++;
+                }));
+            }
+            const checkboxesWorkTime = document.querySelectorAll('.workTime__item input[type="checkbox"]');
+            checkboxesWorkTime.forEach((checkbox => {
+                const item = checkbox.closest(".workTime__item");
+                if (!checkbox.checked) item.classList.add("disabled");
+                checkbox.addEventListener("change", (() => {
+                    if (checkbox.checked) item.classList.remove("disabled"); else item.classList.add("disabled");
+                }));
+            }));
+            const checkboxTime = document.querySelectorAll(".checkboxTime__input");
+            checkboxTime.forEach(((checkbox, index) => {
+                const id = `t_${index + 1}`;
+                checkbox.setAttribute("id", id);
+                const label = checkbox.nextElementSibling;
+                label.setAttribute("for", id);
+            }));
+        }));
+        const photoUpload = document.getElementById("photo-upload");
+        const formUploadPhoto = document.querySelector(".form-upload__photo");
+        const formUploadText = document.querySelector(".form-upload__text");
+        if (photoUpload) photoUpload.addEventListener("change", (() => {
+            const file = photoUpload.files[0];
+            const reader = new FileReader;
+            const img = document.createElement("img");
+            reader.addEventListener("load", (() => {
+                img.src = reader.result;
+                if (formUploadPhoto) {
+                    formUploadPhoto.innerHTML = "";
+                    formUploadPhoto.appendChild(img);
+                    formUploadPhoto.classList.add("loaded");
+                }
+            }));
+            if (file) {
+                reader.readAsDataURL(file);
+                const fileName = file.name.length > 15 ? file.name.slice(0, 15) + "..." : file.name;
+                if (formUploadText) formUploadText.textContent = fileName;
+            } else if (formUploadText) formUploadText.textContent = "Загрузить фото";
+        }));
+        const input = document.querySelector("#productImage");
+        const imagesList = document.querySelector("#prodImages");
+        if (input) input.addEventListener("change", (event => {
+            const files = event.target.files;
+            if (!files) return;
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const listItem = document.createElement("li");
+                listItem.setAttribute("data-ord", imagesList.children.length + 1);
+                const label = document.createElement("label");
+                label.setAttribute("for", `product_img_${file.name}`);
+                const span = document.createElement("span");
+                span.classList.add("deleteImage");
+                span.setAttribute("data-id", "");
+                span.setAttribute("data-ord", imagesList.children.length + 1);
+                span.addEventListener("click", (() => {
+                    imagesList.removeChild(listItem);
+                    input.value = "";
+                }));
+                const div = document.createElement("div");
+                if ("application/pdf" === file.type) {
+                    const canvas = document.createElement("canvas");
+                    const fileReader = new FileReader;
+                    fileReader.onload = function() {
+                        const typedarray = new Uint8Array(this.result);
+                        pdfjsLib.getDocument({
+                            data: typedarray
+                        }).promise.then((function(pdf) {
+                            pdf.getPage(1).then((function(page) {
+                                const viewport = page.getViewport({
+                                    scale: 1
+                                });
+                                canvas.width = viewport.width;
+                                canvas.height = viewport.height;
+                                const context = canvas.getContext("2d");
+                                const renderContext = {
+                                    canvasContext: context,
+                                    viewport
+                                };
+                                page.render(renderContext).promise.then((function() {
+                                    canvas.style.width = "100%";
+                                    canvas.style.maxWidth = "100%";
+                                    canvas.style.maxHeight = "100%";
+                                    canvas.style.display = "block";
+                                    canvas.style.objectFit = "cover";
+                                    div.appendChild(canvas);
+                                }));
+                            }));
+                        }));
+                    };
+                    fileReader.readAsArrayBuffer(file);
+                } else div.style.backgroundImage = `url('${URL.createObjectURL(file)}')`;
+                label.appendChild(span);
+                label.appendChild(div);
+                listItem.appendChild(label);
+                imagesList.appendChild(listItem);
+            }
+        }));
+        const priceInput = document.querySelector("#price-input");
+        if (priceInput) {
+            priceInput.addEventListener("input", (function(event) {
+                const newValue = event.target.value.replace(/[^0-9]/g, "");
+                const formattedValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+                event.target.value = formattedValue + " ₽";
+            }));
+            priceInput.addEventListener("keydown", (function(event) {
+                if ("Backspace" === event.key) {
+                    const currentValue = event.target.value.replace(/[^0-9]/g, "");
+                    event.target.value = currentValue.slice(0, -1);
+                    event.preventDefault();
+                }
+            }));
+        }
+        const inputs = document.querySelectorAll(".form-control__input");
+        inputs.forEach(((input, index) => {
+            const inputId = `input-${index}`;
+            const label = input.closest(".form-control").querySelector(".form-control__label");
+            if (label) {
+                label.setAttribute("for", inputId);
+                input.setAttribute("id", inputId);
+            }
+            if ("" !== input.value.trim()) label.classList.add("filled");
+            input.addEventListener("input", (() => {
+                if ("" !== input.value.trim()) label.classList.add("filled"); else label.classList.remove("filled");
+            }));
+        }));
+        function setAvatar(src) {
+            let avatarImage = document.getElementById("avatar-image");
+            if (avatarImage) {
+                avatarImage.src = src;
+                const popup = document.getElementById("popup-avatar");
+                const html = document.querySelector("html");
+                popup.classList.remove("popup_show");
+                html.classList.remove("popup-show", "lock");
+                popup.setAttribute("aria-hidden", "true");
+            }
+        }
+        document.addEventListener("DOMContentLoaded", (function() {
+            let avatarItems = document.querySelectorAll(".popup__avatar-item img");
+            avatarItems.forEach((function(item) {
+                item.addEventListener("click", (function() {
+                    let src = this.getAttribute("data-src");
+                    setAvatar(src);
+                }));
+            }));
+        }));
+        const toggleBtns = document.querySelectorAll(".toggle-btn");
+        toggleBtns.forEach((btn => {
+            btn.addEventListener("click", (() => {
+                const isActive = btn.classList.contains("active");
+                if (isActive) {
+                    btn.classList.remove("active");
+                    const icon = btn.querySelector(".icon__tick-square");
+                    if (icon) btn.removeChild(icon);
+                    const btnText = btn.querySelector("span");
+                    btnText.textContent = "Выбрать";
+                } else {
+                    btn.classList.add("active");
+                    const icon = document.createElement("i");
+                    icon.classList.add("icon__tick-square");
+                    btn.appendChild(icon);
+                    const btnText = btn.querySelector("span");
+                    btnText.textContent = "Выбран";
+                }
+            }));
+        }));
+        const fileInputList = document.querySelectorAll(".productImage");
+        fileInputList.forEach((function(fileInput) {
+            fileInput.addEventListener("change", (function() {
+                const file = this.files[0];
+                const imagePreview = this.parentNode.querySelector(".form__image-preview");
+                const iconWrap = this.parentNode.querySelector(".form__icon-wrap");
+                const label = this.parentNode.querySelector("label");
+                const deletePhoto = document.createElement("div");
+                if (iconWrap) iconWrap.remove();
+                if (file && file.type.match(/^image\//)) {
+                    const reader = new FileReader;
+                    reader.addEventListener("load", (function() {
+                        imagePreview.src = reader.result;
+                    }));
+                    reader.readAsDataURL(file);
+                    deletePhoto.classList.add("deletePhoto");
+                    this.parentNode.appendChild(deletePhoto);
+                    label.classList.add("active");
+                }
+            }));
+        }));
+        document.addEventListener("click", (function(event) {
+            const deletePhoto = event.target.closest(".deletePhoto");
+            if (deletePhoto) {
+                const formGroup = deletePhoto.parentNode;
+                const label = formGroup.querySelector("label");
+                const imagePreview = formGroup.querySelector(".form__image-preview");
+                const fileInput = formGroup.querySelector(".productImage");
+                const iconWrap = document.createElement("div");
+                const iconCameraMini = document.createElement("i");
+                fileInput.value = null;
+                imagePreview.src = "";
+                iconCameraMini.classList.add("icon__camera-mini");
+                iconWrap.classList.add("form__icon-wrap");
+                iconWrap.appendChild(iconCameraMini);
+                label.appendChild(iconWrap, fileInput);
+                label.classList.remove("active");
+                deletePhoto.remove();
+            }
+        }));
         function lastItemOf(arr) {
             return arr[arr.length - 1];
         }
@@ -14818,204 +16069,175 @@ PERFORMANCE OF THIS SOFTWARE.
             }
         };
         Object.assign(Datepicker.locales, ru);
-        const btnFavorite = document.querySelectorAll(".btn__favorite");
-        btnFavorite.forEach((function(e) {
-            e.addEventListener("click", (function() {
-                this.classList.toggle("_active");
-            }));
+        document.addEventListener("DOMContentLoaded", (function() {
+            const elem = document.querySelector('input[name="date"]');
+            new Datepicker(elem, {
+                language: "ru",
+                autohide: true,
+                clearButton: true,
+                minDate: new Date
+            });
+            const elem1 = document.querySelector('input[name="date1"]');
+            new Datepicker(elem1, {
+                language: "ru",
+                autohide: true,
+                clearButton: true,
+                format: "dd M.",
+                minDate: new Date
+            });
+            const elem2 = document.querySelector('input[name="formDate"]');
+            new Datepicker(elem2, {
+                autohide: true,
+                clearButton: true,
+                format: "d MM yyyy",
+                language: "ru",
+                minDate: new Date
+            });
+            const elem4 = document.querySelector('input[name="formDateEnd"]');
+            new Datepicker(elem4, {
+                autohide: true,
+                clearButton: true,
+                format: "d MM yyyy",
+                language: "ru",
+                minDate: new Date
+            });
         }));
-        function hidePreloader() {
-            const preloader = document.querySelector(".preloader");
-            preloader.classList.add("fade-out");
-            setTimeout((() => {
-                preloader.style.display = "none";
-            }), 100);
-        }
-        window.onload = function() {
-            hidePreloader();
-        };
-        const attachBtn = document.querySelector(".btn__attach");
-        const docUpload = document.querySelector("#doc-upload");
-        if (attachBtn && docUpload) attachBtn.addEventListener("click", (function() {
-            docUpload.click();
-        }));
-        const elem = document.querySelector('input[name="date"]');
-        new Datepicker(elem, {
-            language: "ru",
-            autohide: true,
-            clearButton: true,
-            minDate: new Date
-        });
-        const elem1 = document.querySelector('input[name="date1"]');
-        new Datepicker(elem1, {
-            language: "ru",
-            autohide: true,
-            clearButton: true,
-            format: "dd M.",
-            minDate: new Date
-        });
-        const elem2 = document.querySelector('input[name="formDate"]');
-        new Datepicker(elem2, {
-            autohide: true,
-            clearButton: true,
-            format: "d MM yyyy",
-            language: "ru"
-        });
-        const radioButtons = document.querySelectorAll(".аmount__root input[type=radio]");
-        radioButtons.forEach((button => {
-            button.addEventListener("click", (() => {
-                radioButtons.forEach((button => button.checked = false));
-                button.checked = true;
+        document.addEventListener("DOMContentLoaded", (function() {
+            const addBtn = document.querySelector("#addButton");
+            const inputChoice = document.querySelector(".cid");
+            const choiceList = document.querySelector("#choiceList");
+            addBtn.addEventListener("click", addItem);
+            inputChoice.addEventListener("keydown", handleInputKeydown);
+            const items = document.querySelectorAll("#choiceList .choice__item");
+            items.forEach((item => {
+                const btn = item.querySelector(".choice__btn-del");
+                btn.addEventListener("click", removeItem);
             }));
-        }));
-        const amountPlaceholder = document.querySelector(".amountOther__root input[type=number]");
-        if (amountPlaceholder) {
-            amountPlaceholder.addEventListener("focus", (() => {
-                amountPlaceholder.placeholder = "";
+            function addItem() {
+                if ("" === inputChoice.value.trim()) return;
+                const newItem = createItem(inputChoice.value);
+                choiceList.appendChild(newItem);
+                inputChoice.value = "";
+                const btn = newItem.querySelector(".choice__btn-del");
+                btn.addEventListener("click", removeItem);
+                const popup = document.getElementById("popup-choice-1");
+                const html = document.querySelector("html");
+                popup.classList.remove("popup_show");
+                html.classList.remove("popup-show", "lock");
+                popup.setAttribute("aria-hidden", "true");
+            }
+            function createItem(value) {
+                const item = document.createElement("li");
+                item.classList.add("choice__item");
+                const icon = document.createElement("i");
+                icon.classList.add("icon__del");
+                const btn = document.createElement("button");
+                btn.classList.add("choice__btn-del");
+                btn.appendChild(icon);
+                item.appendChild(btn);
+                const name = document.createElement("h4");
+                name.classList.add("choice__name");
+                name.textContent = value;
+                item.appendChild(name);
+                return item;
+            }
+            function removeItem(event) {
+                const item = event.target.closest(".choice__item");
+                if (item) item.remove();
+            }
+            function handleInputKeydown(event) {
+                if (13 === event.keyCode) addItem();
+            }
+            const addBtn2 = document.querySelector("#addButton-2");
+            const inputChoice2 = document.querySelector(".cid-2");
+            const choiceList2 = document.querySelector("#choiceList-2");
+            addBtn2.addEventListener("click", addItem2);
+            inputChoice2.addEventListener("keydown", handleInputKeydown2);
+            const items2 = document.querySelectorAll("#choiceList-2 .choice__item");
+            items2.forEach((item => {
+                const btn = item.querySelector(".choice__btn-del");
+                btn.addEventListener("click", removeItem2);
             }));
-            amountPlaceholder.addEventListener("blur", (() => {
-                amountPlaceholder.placeholder = "Другая сумма";
+            function addItem2() {
+                if ("" === inputChoice2.value.trim()) return;
+                const newItem = createItem(inputChoice2.value);
+                choiceList2.appendChild(newItem);
+                inputChoice2.value = "";
+                const btn = newItem.querySelector(".choice__btn-del");
+                btn.addEventListener("click", removeItem2);
+                const popup = document.getElementById("popup-choice-2");
+                const html = document.querySelector("html");
+                popup.classList.remove("popup_show");
+                html.classList.remove("popup-show", "lock");
+                popup.setAttribute("aria-hidden", "true");
+            }
+            function createItem(value) {
+                const item = document.createElement("li");
+                item.classList.add("choice__item");
+                const icon = document.createElement("i");
+                icon.classList.add("icon__del");
+                const btn = document.createElement("button");
+                btn.classList.add("choice__btn-del");
+                btn.appendChild(icon);
+                item.appendChild(btn);
+                const name = document.createElement("h4");
+                name.classList.add("choice__name");
+                name.textContent = value;
+                item.appendChild(name);
+                return item;
+            }
+            function removeItem2(event) {
+                const item = event.target.closest(".choice__item");
+                if (item) item.remove();
+            }
+            function handleInputKeydown2(event) {
+                if (13 === event.keyCode) addItem2();
+            }
+            const addBtn3 = document.querySelector("#addButton-3");
+            const inputChoice3 = document.querySelector(".cid-3");
+            const choiceList3 = document.querySelector("#choiceList-3");
+            addBtn3.addEventListener("click", addItem3);
+            inputChoice3.addEventListener("keydown", handleInputKeydown3);
+            const items3 = document.querySelectorAll("#choiceList-3 .choice__item");
+            items3.forEach((item => {
+                const btn = item.querySelector(".choice__btn-del");
+                btn.addEventListener("click", removeItem3);
             }));
-        }
-        const amountOtherInput = document.querySelector(".amountOther__input");
-        const amountInputs = document.querySelectorAll(".аmount__input");
-        if (amountOtherInput && amountInputs.length > 0) {
-            amountOtherInput.addEventListener("focus", (function() {
-                amountInputs.forEach((function(input) {
-                    input.checked = false;
-                }));
-            }));
-            amountOtherInput.addEventListener("click", (function() {
-                amountInputs.forEach((function(input) {
-                    input.checked = false;
-                }));
-            }));
-        }
-        const checkboxes = document.querySelectorAll(".timeList__item > input[type=checkbox]");
-        if (checkboxes.length > 0) {
-            let checkboxCount = 1;
-            checkboxes.forEach((checkbox => {
-                const checkboxId = `item${checkboxCount}`;
-                checkbox.id = checkboxId;
-                const label = checkbox.nextElementSibling;
-                label.setAttribute("for", checkboxId);
-                checkboxCount++;
-            }));
-        }
-        const checkboxesdate = document.querySelectorAll(".dateList__item > input[type=checkbox]");
-        if (checkboxesdate.length > 0) {
-            let checkboxCount = 1;
-            checkboxesdate.forEach((checkbox => {
-                const checkboxId = `date${checkboxCount}`;
-                checkbox.id = checkboxId;
-                const label = checkbox.nextElementSibling;
-                label.setAttribute("for", checkboxId);
-                checkboxCount++;
-            }));
-        }
-        document.addEventListener("DOMContentLoaded", (() => {
-            const photoUpload = document.getElementById("photo-upload");
-            const formUploadPhoto = document.querySelector(".form-upload__photo");
-            const formUploadText = document.querySelector(".form-upload__text");
-            photoUpload.addEventListener("change", (() => {
-                const file = photoUpload.files[0];
-                const reader = new FileReader;
-                const img = document.createElement("img");
-                reader.addEventListener("load", (() => {
-                    img.src = reader.result;
-                    formUploadPhoto.innerHTML = "";
-                    formUploadPhoto.appendChild(img);
-                    formUploadPhoto.classList.add("loaded");
-                }));
-                if (file) {
-                    reader.readAsDataURL(file);
-                    formUploadText.textContent = `${file.name}`;
-                } else formUploadText.textContent = "Загрузить фото";
-            }));
-            const input = document.querySelector("#productImage");
-            const imagesList = document.querySelector("#prodImages");
-            input.addEventListener("change", (event => {
-                const files = event.target.files;
-                if (!files) return;
-                for (let i = 0; i < files.length; i++) {
-                    const file = files[i];
-                    const listItem = document.createElement("li");
-                    listItem.setAttribute("data-ord", imagesList.children.length + 1);
-                    const label = document.createElement("label");
-                    label.setAttribute("for", `product_img_${file.name}`);
-                    const span = document.createElement("span");
-                    span.classList.add("deleteImage");
-                    span.setAttribute("data-id", "");
-                    span.setAttribute("data-ord", imagesList.children.length + 1);
-                    span.addEventListener("click", (() => {
-                        imagesList.removeChild(listItem);
-                        input.value = "";
-                    }));
-                    const div = document.createElement("div");
-                    if ("application/pdf" === file.type) {
-                        const canvas = document.createElement("canvas");
-                        const fileReader = new FileReader;
-                        fileReader.onload = function() {
-                            const typedarray = new Uint8Array(this.result);
-                            pdfjsLib.getDocument({
-                                data: typedarray
-                            }).promise.then((function(pdf) {
-                                pdf.getPage(1).then((function(page) {
-                                    const viewport = page.getViewport({
-                                        scale: 1
-                                    });
-                                    canvas.width = viewport.width;
-                                    canvas.height = viewport.height;
-                                    const context = canvas.getContext("2d");
-                                    const renderContext = {
-                                        canvasContext: context,
-                                        viewport
-                                    };
-                                    page.render(renderContext).promise.then((function() {
-                                        canvas.style.maxWidth = "100%";
-                                        canvas.style.maxHeight = "100%";
-                                        canvas.style.display = "block";
-                                        div.appendChild(canvas);
-                                    }));
-                                }));
-                            }));
-                        };
-                        fileReader.readAsArrayBuffer(file);
-                    } else div.style.backgroundImage = `url('${URL.createObjectURL(file)}')`;
-                    label.appendChild(span);
-                    label.appendChild(div);
-                    listItem.appendChild(label);
-                    imagesList.appendChild(listItem);
-                }
-            }));
-            const priceInput = document.querySelector("#price-input");
-            if (priceInput) priceInput.addEventListener("input", (function(event) {
-                const newValue = event.target.value.replace(/[^0-9]/g, "");
-                const formattedValue = newValue.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                event.target.value = formattedValue + " ₽";
-            }));
-            priceInput.addEventListener("keydown", (function(event) {
-                if ("Backspace" === event.key) {
-                    const currentValue = event.target.value.replace(/[^0-9]/g, "");
-                    event.target.value = currentValue.slice(0, -1);
-                    event.preventDefault();
-                }
-            }));
-            const checkboxes = document.querySelectorAll('.workTime__item input[type="checkbox"]');
-            checkboxes.forEach((checkbox => {
-                const item = checkbox.closest(".workTime__item");
-                if (!checkbox.checked) item.classList.add("disabled");
-                checkbox.addEventListener("change", (() => {
-                    if (checkbox.checked) item.classList.remove("disabled"); else item.classList.add("disabled");
-                }));
-            }));
-            const checkboxTime = document.querySelectorAll(".checkboxTime__input");
-            checkboxTime.forEach(((checkbox, index) => {
-                const id = `t_${index + 1}`;
-                checkbox.setAttribute("id", id);
-                const label = checkbox.nextElementSibling;
-                label.setAttribute("for", id);
-            }));
+            function addItem3() {
+                if ("" === inputChoice3.value.trim()) return;
+                const newItem = createItem(inputChoice3.value);
+                choiceList3.appendChild(newItem);
+                inputChoice3.value = "";
+                const btn = newItem.querySelector(".choice__btn-del");
+                btn.addEventListener("click", removeItem3);
+                const popup = document.getElementById("popup-choice-3");
+                const html = document.querySelector("html");
+                popup.classList.remove("popup_show");
+                html.classList.remove("popup-show", "lock");
+                popup.setAttribute("aria-hidden", "true");
+            }
+            function createItem(value) {
+                const item = document.createElement("li");
+                item.classList.add("choice__item");
+                const icon = document.createElement("i");
+                icon.classList.add("icon__del");
+                const btn = document.createElement("button");
+                btn.classList.add("choice__btn-del");
+                btn.appendChild(icon);
+                item.appendChild(btn);
+                const name = document.createElement("h4");
+                name.classList.add("choice__name");
+                name.textContent = value;
+                item.appendChild(name);
+                return item;
+            }
+            function removeItem3(event) {
+                const item = event.target.closest(".choice__item");
+                if (item) item.remove();
+            }
+            function handleInputKeydown3(event) {
+                if (13 === event.keyCode) addItem3();
+            }
         }));
         window["FLS"] = false;
         isWebp();

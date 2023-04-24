@@ -1,0 +1,346 @@
+.monitoring-request {
+
+    // .monitoring-request__title
+
+    &__title {
+        display: flex;
+        @include adaptiveValue("font-size", 18, 16);
+        margin-bottom: rem(10);
+
+        .week-day {
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                margin: -3px 6px 0;
+                border-radius: 50%;
+                background-color: black;
+                vertical-align: middle;
+            }
+        }
+
+    }
+
+    // .monitoring-request__list
+
+    &__list {}
+
+    // .monitoring-request__item
+
+    &__item {
+        display: grid;
+        gap: rem(15);
+        padding: rem(12) 0;
+        border-top: 1px solid var(--gray-light);
+
+
+        @media (min-width:$mobileSmall) {
+            grid-template-columns: minmax(110px, 120px) 1fr minmax(110px, 120px);
+        }
+
+        @media (max-width:$mobileSmall) {
+            grid-template-columns: 1fr;
+        }
+
+        &:last-child {
+            border-bottom: 1px solid var(--gray-light);
+        }
+    }
+
+    // .monitoring-request__value
+
+    &__value {}
+
+    // .monitoring-request__value-title
+
+    &__value-title {
+        color: var(--gray-6);
+        font-weight: 500;
+        margin-bottom: rem(5);
+        @include adaptiveValue("font-size", 12, 10);
+        line-height: math.div(28, 22);
+    }
+
+    // .monitoring-request__value-desc
+
+    &__value-desc {
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(28, 22);
+        font-weight: 500;
+    }
+
+
+
+    // .monitoring-request__block
+
+    &__block {
+       
+
+        @media (min-width:$mobile){
+            margin-bottom: rem(40);  
+        }
+
+        @media (max-width:$mobile){
+             margin-bottom: rem(25); 
+        }
+
+
+    }
+
+
+
+    // .monitoring-request__footer
+
+    &__footer {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        gap: rem(15);
+    }
+
+
+    // .monitoring-request__info
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: rem(13);
+        font-size: rem(12);
+        line-height: math.div(28, 22);
+        max-width: rem(380);
+        padding: 0 rem(15);
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+.monitoring {
+
+    // .monitoring__block
+
+    &__block {
+        margin-bottom: rem(40);
+    }
+
+    // .monitoring__title
+
+    &__title {
+        display: flex;
+        @include adaptiveValue("font-size", 18, 16);
+        margin-bottom: rem(10);
+
+        span {
+            &::before {
+                content: "";
+                display: inline-block;
+                width: 3px;
+                height: 3px;
+                margin: -3px 6px 0;
+                border-radius: 50%;
+                background-color: black;
+                vertical-align: middle;
+            }
+        }
+    }
+
+    // .monitoring__list
+
+    &__list {}
+
+    // .monitoring__item
+
+    &__item {
+        display: grid;
+        padding: rem(12) 0;
+        border-top: 1px solid var(--gray-light);
+        
+
+        
+
+        &._grid-item {
+            @media (min-width:$mobile) {
+                grid-template-columns: minmax(120px, 130px) minmax(110px, 120px) 1fr minmax(110px, 120px) minmax(130px, 140px);
+                gap: rem(30);
+            }
+
+            @media (max-width:$mobile){
+                gap: rem(15); 
+           }
+        }
+
+        &._grid-item-2 {
+            @media (min-width:$mobile) {
+                grid-template-columns: minmax(120px, 130px) minmax(110px, 120px) 1fr minmax(110px, 120px) 80px;
+                gap: rem(30);
+            }
+
+            @media (max-width:$mobile){
+                 gap: rem(15); 
+            }
+        }
+
+
+        &:last-child {
+            border-bottom: 1px solid var(--gray-light);
+        }
+    }
+
+    // .monitoring__status
+
+    &__status {
+        display: flex;
+        align-items: center;
+        gap: rem(10);
+        line-height: math.div(28, 22);
+        font-weight: 500;
+
+        &._active {
+            color: var(--pink);
+        }
+    }
+
+    // .monitoring__value
+
+    &__value {}
+
+    // .monitoring__value-title
+
+    &__value-title {
+        color: var(--gray-6);
+        font-weight: 500;
+        margin-bottom: rem(5);
+        @include adaptiveValue("font-size", 12, 10);
+        line-height: math.div(28, 22);
+    }
+
+    // .monitoring__value-desc
+
+    &__value-desc {
+        @include adaptiveValue("font-size", 14, 12);
+        line-height: math.div(28, 22);
+        font-weight: 500;
+    }
+
+    // .monitoring__control
+
+    &__control {
+        display: flex;
+        align-items: center;
+
+        @media (max-width:$mobile){
+             justify-content: start;
+             gap: rem(20); 
+        }
+    }
+
+
+
+
+    // .monitoring__show
+
+    &__show {
+        margin-top: rem(17);
+    }
+
+
+
+
+    // .monitoring__control-btn
+
+    &__control-btn {
+        display: flex;
+        align-items: center;
+        gap: rem(12);
+
+        @media (min-width:$mobile){
+            margin-left: auto;
+        }
+    }
+
+
+
+    // .monitoring__photo-attached
+
+    &__photo-attached {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: rem(40);
+        height: rem(40);
+        border-radius: rem(6);
+
+        img {
+            width: 100%;
+        }
+    }
+
+    // .monitoring__photo-count
+
+    &__photo-count {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: rem(3);
+        left: rem(3);
+        font-size: rem(11);
+        font-weight: 500;
+        color: var(--white);
+        border-radius: rem(4);
+        width: rem(14);
+        height: rem(14);
+        background: var(--blue-dark);
+
+    }
+
+
+    // .monitoring__inner
+
+    &__inner {
+        margin-top: rem(20);
+    }
+
+}
+
+
+.monitoring-card {
+    padding: rem(28) rem(28) rem(21);
+    border-radius: rem(40);
+    background: linear-gradient(white, white) padding-box, linear-gradient(178.36deg, #F1ECEC 1.39%, rgba(241, 236, 236, 0) 98.61%) border-box;
+    border: 1px solid transparent;
+    margin-bottom: rem(33);
+
+    @media (max-width:$mobileSmall){
+         margin-bottom: rem(15);
+
+         
+    }
+
+    .week__slider-container {
+        padding: 0;
+    }
+
+    .week__slide-prev {
+        left: -20px;
+    }
+
+    .week__slide-next {
+        right: -20px;
+    }
+}
+
+@media (max-width:$mobile){
+    .monitoring-card.mt-50 {
+        margin-top: rem(30);
+     } 
+}

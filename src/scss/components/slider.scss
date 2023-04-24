@@ -91,3 +91,171 @@
         display: none;
     }
 }
+
+
+
+.week {
+
+
+
+    // .week__slider-container
+
+    &__slider-container {
+        position: relative;
+        padding: 0 rem(25);
+    }
+
+
+    // .week__slider
+
+    &__slider {}
+
+    // .week__wrapper
+
+    &__wrapper {}
+
+    // .week__slide
+
+    &__slide {}
+
+    // .week__item
+
+    &__item {
+        text-align: center;
+
+        &._active {
+            .week__item-body {
+                background: var(--pink);
+            }
+
+            .week__time--from::after {
+                background: #E87294;
+            }
+        }
+    }
+
+    // .week__item-title
+
+    &__item-title {
+        color: var(--gray-4);
+        font-weight: 500;
+        font-size: rem(12);
+        margin-bottom: rem(5);
+    }
+
+    // .week__item-body
+
+    &__item-body {
+        padding: rem(7) rem(2) rem(8) rem(2);
+        width: rem(42);
+        border-radius: rem(10);
+        background: var(--blue-dark);
+        color: var(--white);
+        transition: var(--transition);
+
+        .week__number {
+
+            margin-bottom: rem(6);
+        }
+
+    }
+
+    // .week__number
+
+    &__number {
+        display: block;
+        font-size: rem(12);
+        font-weight: 500;
+    }
+
+    // .week__time
+
+    &__time {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(4);
+        font-size: rem(10);
+        font-weight: 500;
+    }
+
+    // .week__time--from
+
+    &__time--from {
+        &::after {
+            content: '';
+            width: rem(18);
+            height: rem(1);
+            background: #546183;
+            border-radius: rem(3);
+        }
+    }
+
+    // .week__time--to
+
+    &__time--to {}
+
+    // .week__number-wrap
+
+    &__number-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: rem(28);
+        height: rem(28);
+        background: var(--gray-3);
+        border-radius: rem(10);
+        color: var(--gray-4);
+        font-size: rem(12);
+        font-weight: 500;
+
+    }
+
+    // .week__slide-prev
+
+    &__slide-prev {
+        position: absolute;
+        top: rem(22);
+        left: 0;
+
+        svg {
+            path {
+                transition: all .2s ease;
+            }
+        } 
+
+        &:hover {
+            svg {
+                path {
+                    stroke: var(--pink);
+                }
+               
+            }
+        }
+    }
+
+    // .week__slide-next
+
+    &__slide-next {
+        position: absolute;
+        top: rem(22);
+        right: 0;
+
+        svg {
+            path {
+                transition: all .2s ease;
+            }
+        } 
+
+        &:hover {
+            svg {
+                path {
+                    stroke: var(--pink);
+                }
+               
+            }
+        }
+
+       
+    }
+}
