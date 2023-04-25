@@ -2,13 +2,7 @@ import { isMobile } from "./functions.js";
 import { flsModules } from "./modules.js";
 
 document.addEventListener("DOMContentLoaded", function () {
-  const btnFavorite = document.querySelectorAll(".btn__favorite");
 
-  btnFavorite.forEach(function (e) {
-    e.addEventListener("click", function () {
-      this.classList.toggle("_active");
-    });
-  });
 
   // Функцию загрузки preloader
   function hidePreloader() {
@@ -37,6 +31,8 @@ document.addEventListener("DOMContentLoaded", function () {
   } else {
   }
 
+  
+
   const radioButtons = document.querySelectorAll(
     ".аmount__root input[type=radio]"
   );
@@ -49,6 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
       button.checked = true;
     });
   });
+
 
   const amountPlaceholder = document.querySelector(
     ".amountOther__root input[type=number]"
@@ -78,89 +75,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   }
-
-  // Находим все теги <timeList__item input> с атрибутом type="checkbox"
-  const checkboxes = document.querySelectorAll(
-    ".timeList__item > input[type=checkbox]"
-  );
-
-  // Проверяем наличие найденных элементов
-  if (checkboxes.length > 0) {
-    let checkboxCount = 1;
-
-    // Для каждого элемента устанавливаем уникальный id и связываем его с тегом <label>
-    checkboxes.forEach((checkbox) => {
-      const checkboxId = `item${checkboxCount}`;
-      checkbox.id = checkboxId;
-      const label = checkbox.nextElementSibling;
-      label.setAttribute("for", checkboxId);
-      checkboxCount++;
-    });
-  } else {
-  }
-
-  // Находим все теги <tDateList__item input> с атрибутом type="checkbox"
-  const checkboxesdate = document.querySelectorAll(
-    ".dateList__item > input[type=checkbox]"
-  );
-
-  // Проверяем наличие найденных элементов
-  if (checkboxesdate.length > 0) {
-    let checkboxCount = 1;
-
-    // Для каждого элемента устанавливаем уникальный id и связываем его с тегом <label>
-    checkboxesdate.forEach((checkbox) => {
-      const checkboxId = `date${checkboxCount}`;
-      checkbox.id = checkboxId;
-      const label = checkbox.nextElementSibling;
-      label.setAttribute("for", checkboxId);
-      checkboxCount++;
-    });
-  } else {
-  }
-
-
-
-  const checkboxesWorkTime = document.querySelectorAll(
-    '.workTime__item input[type="checkbox"]'
-  );
-
-  checkboxesWorkTime.forEach((checkbox) => {
-    const item = checkbox.closest(".workTime__item");
-    if (!checkbox.checked) {
-      item.classList.add("disabled");
-    }
-
-    checkbox.addEventListener("change", () => {
-      if (checkbox.checked) {
-        item.classList.remove("disabled");
-      } else {
-        item.classList.add("disabled");
-      }
-    });
-  });
-
-  const checkboxTime = document.querySelectorAll(".checkboxTime__input");
-  checkboxTime.forEach((checkbox, index) => {
-    const id = `t_${index + 1}`;
-    checkbox.setAttribute("id", id);
-    const label = checkbox.nextElementSibling;
-    label.setAttribute("for", id);
-  });
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
 
 });
 

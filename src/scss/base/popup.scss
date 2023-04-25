@@ -269,11 +269,16 @@ body::after {
         @include adaptiveValue("font-size", 16, 14);
         line-height: math.div(28, 20);
 
+        &._active {
+            a {
+                color: var(--pink);
+            }
+        }
+
         a {
             display: flex;
             display: flex;
-            border-bottom: 1px dashed var(--pink);
-            padding: rem(8) 0;
+            padding: rem(7) 0;
         }
 
         &:hover {

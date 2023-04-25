@@ -14153,12 +14153,6 @@ PERFORMANCE OF THIS SOFTWARE.
             }
         }
         document.addEventListener("DOMContentLoaded", (function() {
-            const btnFavorite = document.querySelectorAll(".btn__favorite");
-            btnFavorite.forEach((function(e) {
-                e.addEventListener("click", (function() {
-                    this.classList.toggle("_active");
-                }));
-            }));
             function hidePreloader() {
                 const preloader = document.querySelector(".preloader");
                 preloader.classList.add("fade-out");
@@ -14204,43 +14198,6 @@ PERFORMANCE OF THIS SOFTWARE.
                     }));
                 }));
             }
-            const checkboxes = document.querySelectorAll(".timeList__item > input[type=checkbox]");
-            if (checkboxes.length > 0) {
-                let checkboxCount = 1;
-                checkboxes.forEach((checkbox => {
-                    const checkboxId = `item${checkboxCount}`;
-                    checkbox.id = checkboxId;
-                    const label = checkbox.nextElementSibling;
-                    label.setAttribute("for", checkboxId);
-                    checkboxCount++;
-                }));
-            }
-            const checkboxesdate = document.querySelectorAll(".dateList__item > input[type=checkbox]");
-            if (checkboxesdate.length > 0) {
-                let checkboxCount = 1;
-                checkboxesdate.forEach((checkbox => {
-                    const checkboxId = `date${checkboxCount}`;
-                    checkbox.id = checkboxId;
-                    const label = checkbox.nextElementSibling;
-                    label.setAttribute("for", checkboxId);
-                    checkboxCount++;
-                }));
-            }
-            const checkboxesWorkTime = document.querySelectorAll('.workTime__item input[type="checkbox"]');
-            checkboxesWorkTime.forEach((checkbox => {
-                const item = checkbox.closest(".workTime__item");
-                if (!checkbox.checked) item.classList.add("disabled");
-                checkbox.addEventListener("change", (() => {
-                    if (checkbox.checked) item.classList.remove("disabled"); else item.classList.add("disabled");
-                }));
-            }));
-            const checkboxTime = document.querySelectorAll(".checkboxTime__input");
-            checkboxTime.forEach(((checkbox, index) => {
-                const id = `t_${index + 1}`;
-                checkbox.setAttribute("id", id);
-                const label = checkbox.nextElementSibling;
-                label.setAttribute("for", id);
-            }));
         }));
         const photoUpload = document.getElementById("photo-upload");
         const formUploadPhoto = document.querySelector(".form-upload__photo");
@@ -14390,13 +14347,17 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
         }));
         const fileInputList = document.querySelectorAll(".productImage");
-        fileInputList.forEach((function(fileInput) {
+        fileInputList.forEach((function(fileInput, index) {
+            const uniqueId = `image-${index}`;
+            fileInput.setAttribute("id", uniqueId);
+            const label = fileInput.parentNode.querySelector("label");
+            label.setAttribute("for", uniqueId);
             fileInput.addEventListener("change", (function() {
                 const file = this.files[0];
                 const imagePreview = this.parentNode.querySelector(".form__image-preview");
                 const iconWrap = this.parentNode.querySelector(".form__icon-wrap");
-                const label = this.parentNode.querySelector("label");
                 const deletePhoto = document.createElement("div");
+                const uniqueDeleteId = `deletePhoto-${index}`;
                 if (iconWrap) iconWrap.remove();
                 if (file && file.type.match(/^image\//)) {
                     const reader = new FileReader;
@@ -14405,6 +14366,7 @@ PERFORMANCE OF THIS SOFTWARE.
                     }));
                     reader.readAsDataURL(file);
                     deletePhoto.classList.add("deletePhoto");
+                    deletePhoto.setAttribute("id", uniqueDeleteId);
                     this.parentNode.appendChild(deletePhoto);
                     label.classList.add("active");
                 }
@@ -14429,6 +14391,49 @@ PERFORMANCE OF THIS SOFTWARE.
                 deletePhoto.remove();
             }
         }));
+        const checkboxTime = document.querySelectorAll(".checkboxTime__input");
+        checkboxTime.forEach(((checkbox, index) => {
+            const id = `t_${index + 1}`;
+            checkbox.setAttribute("id", id);
+            const label = checkbox.nextElementSibling;
+            label.setAttribute("for", id);
+        }));
+        const checkboxesWorkTime = document.querySelectorAll('.workTime__item input[type="checkbox"]');
+        checkboxesWorkTime.forEach((checkbox => {
+            const item = checkbox.closest(".workTime__item");
+            if (!checkbox.checked) item.classList.add("disabled");
+            checkbox.addEventListener("change", (() => {
+                if (checkbox.checked) item.classList.remove("disabled"); else item.classList.add("disabled");
+            }));
+        }));
+        const checkboxesdate = document.querySelectorAll(".dateList__item > input[type=checkbox]");
+        if (checkboxesdate.length > 0) {
+            let checkboxCount = 1;
+            checkboxesdate.forEach((checkbox => {
+                const checkboxId = `date${checkboxCount}`;
+                checkbox.id = checkboxId;
+                const label = checkbox.nextElementSibling;
+                label.setAttribute("for", checkboxId);
+                checkboxCount++;
+            }));
+        }
+        const btnFavorite = document.querySelectorAll(".btn__favorite");
+        btnFavorite.forEach((function(e) {
+            e.addEventListener("click", (function() {
+                this.classList.toggle("_active");
+            }));
+        }));
+        const checkboxes = document.querySelectorAll(".timeList__item > input[type=checkbox]");
+        if (checkboxes.length > 0) {
+            let checkboxCount = 1;
+            checkboxes.forEach((checkbox => {
+                const checkboxId = `item${checkboxCount}`;
+                checkbox.id = checkboxId;
+                const label = checkbox.nextElementSibling;
+                label.setAttribute("for", checkboxId);
+                checkboxCount++;
+            }));
+        }
         function lastItemOf(arr) {
             return arr[arr.length - 1];
         }
@@ -16069,39 +16074,37 @@ PERFORMANCE OF THIS SOFTWARE.
             }
         };
         Object.assign(Datepicker.locales, ru);
-        document.addEventListener("DOMContentLoaded", (function() {
-            const elem = document.querySelector('input[name="date"]');
-            new Datepicker(elem, {
-                language: "ru",
-                autohide: true,
-                clearButton: true,
-                minDate: new Date
-            });
-            const elem1 = document.querySelector('input[name="date1"]');
-            new Datepicker(elem1, {
-                language: "ru",
-                autohide: true,
-                clearButton: true,
-                format: "dd M.",
-                minDate: new Date
-            });
-            const elem2 = document.querySelector('input[name="formDate"]');
-            new Datepicker(elem2, {
-                autohide: true,
-                clearButton: true,
-                format: "d MM yyyy",
-                language: "ru",
-                minDate: new Date
-            });
-            const elem4 = document.querySelector('input[name="formDateEnd"]');
-            new Datepicker(elem4, {
-                autohide: true,
-                clearButton: true,
-                format: "d MM yyyy",
-                language: "ru",
-                minDate: new Date
-            });
-        }));
+        const elem = document.querySelector('input[name="date"]');
+        elem && new Datepicker(elem, {
+            language: "ru",
+            autohide: true,
+            clearButton: true,
+            minDate: new Date
+        });
+        const elem1 = document.querySelector('input[name="date1"]');
+        elem1 && new Datepicker(elem1, {
+            language: "ru",
+            autohide: true,
+            clearButton: true,
+            format: "dd M.",
+            minDate: new Date
+        });
+        const elem2 = document.querySelector('input[name="formDate"]');
+        elem2 && new Datepicker(elem2, {
+            autohide: true,
+            clearButton: true,
+            format: "d MM yyyy",
+            language: "ru",
+            minDate: new Date
+        });
+        const elem4 = document.querySelector('input[name="formDateEnd"]');
+        elem4 && new Datepicker(elem4, {
+            autohide: true,
+            clearButton: true,
+            format: "d MM yyyy",
+            language: "ru",
+            minDate: new Date
+        });
         document.addEventListener("DOMContentLoaded", (function() {
             const addBtn = document.querySelector("#addButton");
             const inputChoice = document.querySelector(".cid");
